@@ -9,17 +9,12 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <script
+      defer
+      data-domain="adfree-sz-games.github.io"
+      src="https://stats.senty.com.au/js/script.js"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <script src="/GobalSettings.js"></script>
-
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register(
-          'https://adfree-sz-games.github.io/service-worker.js'
-        );
-      }
-    </script>
 
     <link
       rel="manifest"
@@ -154,14 +149,6 @@
 
   <script>
     var isFUll = false;
-
-    document.body.onkeyup = function (e) {
-      if (e.keyCode == 27) {
-        if (isFUll) {
-          //document.getElementById('game').style.width = '800px';
-        }
-      }
-    };
 
     function requestFullScreen(element) {
       // Supports most browsers and their versions.
