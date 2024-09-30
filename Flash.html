@@ -10,23 +10,6 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'G-C78TXR0XFK');
-    </script>
-
-    <script src=".GobalSettings.js"></script>
-
     <link
       rel="manifest"
       href="https://adfree-sz-games.github.io/manifest.json"
@@ -158,14 +141,6 @@
     </div>
     <script>
       var isFUll = false;
-
-      document.body.onkeyup = function (e) {
-        if (e.keyCode == 27) {
-          if (isFUll) {
-            //document.getElementById('game').style.width = '800px';
-          }
-        }
-      };
 
       function requestFullScreen(element) {
         // Supports most browsers and their versions.
