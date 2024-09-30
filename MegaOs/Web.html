@@ -1,0 +1,109 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Mega Os</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    background-color: rgb(161, 161, 161);
+    overflow: hidden;
+    min-width: 150px;
+  }
+
+  input[type="text"]::placeholder {
+    color: rgb(255, 255, 255);
+  }
+
+  input:focus {
+    outline: none;
+  }
+</style>
+
+<body>
+
+
+  <div
+    style="z-index: 1000; background-color: #2c2c2cb8; position: absolute; border-radius: 0px 0px 20px 20px; width: 100%; height: 45px;">
+    <span onclick="back()"
+      style="cursor: pointer; z-index: 10000000; position: absolute; color: white; top: 10px; left: 10px; background-color: #2c2c2c; border-radius: 50%;"
+      class="material-icons ">
+      arrow_back
+    </span>
+    <span onclick="forwards()"
+      style=" cursor: pointer; z-index: 10000000; position: absolute; color: white; top: 10px; left: 40px; background-color: #2c2c2c; border-radius: 50%;"
+      class="material-icons ">
+      arrow_forward
+    </span>
+    <span onclick="reload()"
+      style="cursor: pointer; z-index: 10000000; position: absolute; color: white; top: 10px; left: 70px; background-color: #2c2c2c; border-radius: 50%;"
+      class="material-icons ">
+      restart_alt
+    </span>
+
+    <span onclick="home()"
+      style="cursor: pointer; z-index: 10000000; position: absolute; color: white; top: 10px; left: 100px; background-color: #2c2c2c; border-radius: 50%;"
+      class="material-icons ">
+      home
+    </span>
+
+    <input id="url" type="text" placeholder="URL"
+      style="left: 50%; transform: translate(-50%, 0%); border-radius: 25px; height: 30px; top: 8px; position: absolute; color: white; width: 40%; border: none; background-color: rgba(128, 128, 128, 0.734);">
+  </div>
+
+  <iframe id="iframe" height="93%" width="100%"
+    style="border-radius: 10px; border: none; bottom: 0; position: absolute;"
+    src="https://adfree-sz-games.github.io/MegaOs/search.html"></iframe>
+
+
+
+
+  <script>
+
+
+    var input = document.getElementById('url')
+    var iframe = document.getElementById('iframe');
+
+    function back() {
+
+
+      iframe.contentWindow.history.back();
+    }
+    function forwards() {
+
+
+      iframe.contentWindow.history.forward();
+    }
+    function reload() {
+
+
+      iframe.contentWindow.location.reload();
+    }
+    function home() {
+
+
+      iframe.src = 'https://adfree-sz-games.github.io/MegaOs/search.html'
+    }
+    input.addEventListener('keydown', function (event) {
+      if (event.keyCode === 13) {
+        // Enter key was pressed, do something here
+        const urledit = 'https://' + input.value;
+        if (input.value.includes('https://')) {
+          iframe.src = input.value;
+          input.innerHTML = iframe.src;
+        } else if (input.value.toLowerCase() === 'google.com' || input.value.toLowerCase() === 'https://google.com') {
+          iframe.src = 'https://adfree-sz-games.github.io/MegaOs/search.html';
+
+        }
+        else {
+          iframe.src = urledit;
+          input.innerHTML = iframe.src;
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

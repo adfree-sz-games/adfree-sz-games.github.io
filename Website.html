@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <link rel="icon" href="https://adfree-sz-games.github.io/G.png" />
+    <title>Sz Games | Loader</title>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .btn-group button {
+        background-color: black;
+        /* Green background */
+
+        color: white;
+        /* White text */
+        padding: 10px 24px;
+        /* Some padding */
+        cursor: pointer;
+        /* Pointer/hand icon */
+        float: left;
+        /* Float the buttons side by side */
+      }
+
+      /* Clear floats (clearfix hack) */
+      .btn-group:after {
+        content: '';
+        clear: both;
+        display: table;
+      }
+
+      .btn-group button:not(:last-child) {
+        border-right: none;
+        /* Prevent double borders */
+      }
+
+      /* Add a background color on hover */
+      .btn-group button:hover {
+        background-color: grey;
+      }
+
+      /* Header/Logo Title */
+      .header {
+        padding: 60px;
+        text-align: center;
+        background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39));
+        color: white;
+        width: auto;
+        font-size: 30px;
+
+        border-radius: 15px;
+      }
+
+      /* Page Content */
+      #loading-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.8s;
+        z-index: 9999;
+      }
+
+      #loading-indicator {
+        border: 6px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 6px solid #222222;
+        width: 20px;
+        right: 100px;
+        height: 20px;
+        position: absolute;
+        -webkit-animation: spin 0.8s linear infinite;
+        /* Safari */
+        animation: spin 0.8s linear infinite;
+        z-index: 9999;
+        /* Add styles for your loading indicator here */
+      }
+
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loading-bar {
+        width: 80%;
+        height: 10px;
+        background-color: #d8d8d8;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .loading-progress {
+        height: 10px;
+        background: linear-gradient(to right, purple, red);
+        animation: gradient 0.7s linear infinite;
+        width: 0%;
+        border-radius: 20px;
+        transition: width 0.5s ease-in-out;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: left;
+        }
+
+        100% {
+          background-position: right;
+        }
+      }
+
+      .loading-text {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+
+      body.loading #loading-screen {
+        display: flex;
+      }
+
+      body.loading #content {
+        opacity: 0.3;
+      }
+    </style>
+    <style>
+      .game {
+        position: absolute;
+        color: white;
+
+        transform: scale(1.8);
+        z-index: 3;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .fade {
+        position: absolute;
+        background: linear-gradient(
+          to bottom,
+          #1d1d1d,
+          #1d1d1d5d,
+          rgba(39, 39, 39, 0)
+        );
+        width: 300px;
+        height: 150px;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+
+  <body onresize="resize()">
+    <div id="loading-ind">
+      <div id="loading-indicator"></div>
+      <h3
+        style="
+          position: absolute;
+          right: 5px;
+          top: -12px;
+          font-family: Arial, Helvetica, sans-serif;
+        "
+      >
+        Loading...
+      </h3>
+    </div>
+
+    <div id="loading-screen">
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <div id="loading-text" class="loading-text">Loading...</div>
+    </div>
+
+    <iframe
+      frameborder="0"
+      id="game"
+      style="
+        text-align: center;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+      "
+      src=""
+      allowfullscreen
+    ></iframe>
+
+    <h2
+      onclick="window.location = 'https://adfree-sz-games.github.io/unblock.html'"
+      style="cursor: pointer; position: fixed; bottom: -20px"
+    >
+      Back
+    </h2>
+    <h2 style="position: fixed; bottom: 10px">____</h2>
+    <h2
+      onclick="makeFullScreen()"
+      style="cursor: pointer; position: fixed; bottom: 20px"
+    >
+      Fullscreen
+    </h2>
+    <script>
+      var currentUrl = new URL(window.location.href);
+
+      var textElement = document.getElementById('game');
+      var loadtext = document.getElementById('loading-text');
+      var progressBar = document.querySelector('.loading-progress');
+      var iframeg = document.getElementById('port');
+      var loadingIndicator = document.getElementById('loading-ind');
+
+      var percent = 0;
+      var number = 1;
+
+      var iframeUrl = textElement.contentWindow.location.href;
+      setInterval(() => {
+        if (iframeUrl.indexOf('kazwire.com') !== -1) {
+          //console.log(iframeUrl)
+          console.log('Outside');
+          textElement.contentWindow.location.href =
+            currentUrl.searchParams.get('game');
+        } else {
+          console.log('inside');
+          // console.log(iframeUrl)
+        }
+      }, 1500);
+
+      loadingIndicator.style.display = 'none';
+
+      setInterval(function () {
+        //percent += 10;
+        progressBar.style.width = percent + '%';
+        if (percent >= 100) {
+          clearInterval();
+          document.getElementById('loading-screen').style.opacity = 0;
+          setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+          }, 800);
+        }
+      }, 100);
+      percent += 20;
+
+      loadtext.innerHTML = 'Connecting To The Server...';
+
+      step2();
+
+      function step2() {
+        if (number === 1) {
+          textElement.src = currentUrl.searchParams.get('game');
+          loadtext.innerHTML = 'Launching...';
+          setTimeout(() => {
+            percent += 100;
+          }, 1500);
+
+          number++;
+        }
+      }
+
+      document.body.onkeyup = function (e) {
+        if (e.keyCode == 27) {
+          document.getElementById('game').style.width = '800px';
+        }
+      };
+
+      function requestFullScreen(element) {
+        // Supports most browsers and their versions.
+        var requestMethod =
+          element.requestFullScreen ||
+          element.webkitRequestFullScreen ||
+          element.mozRequestFullScreen ||
+          element.msRequestFullscreen;
+
+        if (requestMethod) {
+          // Native full screen.
+          requestMethod.call(element);
+          let hh = window.innerHeight - 10;
+
+          document.getElementById('game').height = hh;
+        } else if (typeof window.ActiveXObject !== 'undefined') {
+          // Older IE.
+          var wscript = new ActiveXObject('WScript.Shell');
+          if (wscript !== null) {
+            wscript.SendKeys('{F11}');
+          }
+        }
+      }
+      var canvas = document.getElementById('game');
+
+      function makeFullScreen() {
+        requestFullScreen(canvas);
+      }
+
+      let hh = window.innerHeight - 10;
+
+      document.getElementById('game').height = hh;
+      window.onresize = function (event) {
+        let hh = window.innerHeight - 10;
+
+        document.getElementById('game').height = hh;
+      };
+      // Get the text element
+
+      // Get the current URL
+
+      // Check for the presence of the "text" parameter in the URL
+      if (currentUrl.searchParams.has('game')) {
+        // Set the text of the element to the value of the "text" parameter
+      }
+      console.log(currentUrl.searchParams.get('game'));
+    </script>
+  </body>
+</html>

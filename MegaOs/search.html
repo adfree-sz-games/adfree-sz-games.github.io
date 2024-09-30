@@ -1,0 +1,438 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Mega Os</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background-color: rgba(150, 150, 150, 0);
+    }
+    @keyframes Boot {
+        from {opacity: 0; background-color: black;}
+        to {opacity: 1; background-color: rgb(40, 40, 40);}
+    }
+    .loader {
+  border: 4px solid rgba(255, 255, 255, 0.762);
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.625);
+  border-left-color: transparent;
+  width: 25px;
+  height: 50px;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.616);
+  border-left-color: transparent;
+  width: 25px;
+  height: 25px;
+  animation: spin89345 1s linear infinite;
+}
+
+@keyframes spin89345 {
+  0% {
+    transform:  translate(-50%, -70%) rotate(0deg);
+  }
+
+  100% {
+    transform:  translate(-50%, -70%) rotate(360deg);
+  }
+}
+
+.UserSelect {
+    cursor: pointer;
+    transition: 0.5s;
+    float: left;
+    margin: 10px;
+}
+
+.UserSelect:hover {
+    transform: scale(1.1);
+}
+
+@keyframes SlideIn {
+    from{position: absolute; bottom: -100%;}
+    to {position: absolute; bottom: 0%;}
+}
+
+::-webkit-slider-runnable-track {
+  width: 5px;
+}
+
+.ItemBar {
+    transform: scale(1.0);
+    transition: 0.5s;
+    
+}
+.ItemBar:hover {
+    transform: scale(0.9);
+}
+.window {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 400px;
+  height: 300px;
+    border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  user-select: none;
+}
+
+.title-bar {
+  height: 20px;
+  padding: 5px;
+  background-color: #2c2c2c;
+  cursor: move;
+}
+
+.title {
+  display: inline-block;
+  margin-right: 10px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.close-btn {
+  float: right;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.Fullbtn {
+  float: right;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.content {
+
+  overflow: auto;
+  height: calc(100% - 40px);
+}
+.contentBackup {
+  padding: 10px;
+  overflow: auto;
+  height: calc(100% - 40px);
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #99999900;
+  cursor: nwse-resize;
+}
+
+</style>
+<body>
+   
+
+
+  <script async src="https://cse.google.com/cse.js?cx=959379c90dd014121">
+  </script>
+ 
+  <div style="" class="gcse-search">
+    
+  </div>
+    
+      
+     
+
+    <script>
+
+
+
+        var startScreen = document.getElementById('Start')
+
+        //--Stuff For Code--
+
+        function MakeWindow(Name, url) {
+            // Create the elements
+                          
+                        // Create the window div
+              const windowDiv = document.createElement('div');
+              windowDiv.classList.add('window');
+              var WindowScr = document.getElementById('DesktopArea')
+              // Create the title bar
+              const titleBar = document.createElement('div');
+              titleBar.classList.add('title-bar');
+
+              // Create the title span
+              const titleSpan = document.createElement('span');
+              titleSpan.classList.add('title');
+              titleSpan.textContent = Name;
+              titleBar.appendChild(titleSpan);
+
+              // Create the close button
+              const closeBtn = document.createElement('span');
+              closeBtn.classList.add('material-icons', 'close-btn');
+              closeBtn.style.color = 'white';
+              closeBtn.textContent = 'close';
+              titleBar.appendChild(closeBtn);
+
+              // Create the fullscreen button
+              const fullBtn = document.createElement('span');
+              fullBtn.classList.add('material-icons', 'Fullbtn');
+              fullBtn.style.color = 'white';
+              fullBtn.textContent = 'open_in_full';
+              titleBar.appendChild(fullBtn);
+
+              // Add the title bar to the window div
+              windowDiv.appendChild(titleBar);
+
+              // Create the content div
+              const contentDiv = document.createElement('div');
+              contentDiv.classList.add('content');
+
+              // Create the iframe
+              const iframe = document.createElement('iframe');
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.border = 'none';
+              iframe.style.position = 'absolute';
+              iframe.src = url;
+
+              // Add the iframe to the content div
+              contentDiv.appendChild(iframe);
+
+              // Add the content div to the window div
+              windowDiv.appendChild(contentDiv);
+
+              // Create the resize handle
+              const resizeHandle = document.createElement('div');
+              resizeHandle.classList.add('resize-handle');
+
+              // Add the resize handle to the window div
+              windowDiv.appendChild(resizeHandle);
+
+              // Add the window div to the body of the page
+              document.body.appendChild(windowDiv);
+              WindowScr.appendChild(windowDiv)
+            SetupWindowFunctions()
+        }
+
+        function alertMsg(msg) {
+            showFade('Alert')
+            SetInnerHtml('AlertText', msg)
+            setTimeout(() => {
+                hide('Alert')
+            }, 5000);
+        }
+        function hide(item) {
+            document.getElementById(item).style.display = "none"
+        }
+
+        function SetInnerHtml(item, msg) {
+            document.getElementById(item).innerHTML = msg;
+        }
+
+        function show(item) {
+            document.getElementById(item).style.display = "block"
+        }
+        function showFade(item) {
+            document.getElementById(item).style.opacity = 0;
+
+            document.getElementById(item).style.display = "block"
+            setTimeout(() => {
+                document.getElementById(item).style.opacity = 1
+            }, 300);
+            
+        }
+        function AnimationAdd(item, name, dur) {
+            document.getElementById(item).style.animation = name + " " + dur + "s"
+        }
+        
+        //--This Will Have Boot Screen Functions--
+
+
+        //--Event Functions--
+
+        function Start() {
+            hide('Start')
+            setTimeout(() => {
+                AnimationAdd('BootScreen', "Boot", "0.5")
+                show('BootScreen')
+                setTimeout(() => {
+                    showFade('LoadingBoot')
+                    setTimeout(() => {
+                        hide('BootScreen')
+                        setTimeout(() => {
+                            LogInScreen()
+                        }, 500);
+                    }, 3000);
+                }, 1000);
+            }, 300);
+           
+        }
+        
+
+        function LogInScreen() {
+            showFade('LoginScreen')
+            showFade('UserArea')
+        }
+
+        function Login(User) {
+            if(User==='Fishy') {
+                SetupDesktop('Fishy')
+                
+            }
+             else {
+                NoUser()
+            }
+        }
+        function SetupDesktop(user) {
+            hide('UserArea')
+            show('LoadingLogin')
+            SetupWindowFunctions()
+            alertMsg('Loaded Desktop Window Scripts!')
+            setTimeout(() => {
+                showFade('DesktopArea')
+            }, 4000);
+            SetTime()
+        }
+
+        //--Desktop Setup--
+
+        function SetupWindowFunctions() {
+            let windows = document.querySelectorAll('.window');
+let isResizing = false;
+let isDragging = false;
+let resizeHandleWlet 
+let resizeHandleWidth = 10;
+let resizeHandleEl = document.querySelectorAll('.window');
+
+let windowEl = document.querySelector('.window');
+let x = 0;idth = 10;
+
+let minWidth = 200;
+let minHeight = 150;
+let initialWidth = 0;
+let initialHeight = 0;
+let initialX = 0;
+let initialY = 0;
+let initialMouseX = 0;
+let initialMouseY = 0;
+let activeWindow = null;
+
+// Add event listeners for resizing and dragging each window
+for (let i = 0; i < windows.length; i++) {
+  let windowEl = windows[i];
+  let resizeHandleEl = windowEl.querySelector('.resize-handle');
+  let titleBarEl = windowEl.querySelector('.title-bar');
+  let closeBtnEl = windowEl.querySelector('.close-btn');
+  let FullBt = windowEl.querySelector('.fullbtn');
+  var IsFull = false
+
+  resizeHandleEl.addEventListener('mousedown', function(e) {
+    initialWidth = windowEl.offsetWidth;
+    initialHeight = windowEl.offsetHeight;
+    isResizing = true;
+    activeWindow = windowEl;
+  });
+
+  titleBarEl.addEventListener('mousedown', function(e) {
+    isDragging = true;
+    initialMouseX = e.clientX;
+    initialMouseY = e.clientY;
+    initialX = windowEl.offsetLeft;
+    initialY = windowEl.offsetTop;
+    activeWindow = windowEl;
+  });
+
+  closeBtnEl.addEventListener('click', function() {
+    windowEl.style.display = 'none';
+  });
+
+  FullBt.addEventListener('click', function() {
+    if(IsFull===false) {
+    windowEl.style.width = '100%';
+    windowEl.style.height = '100%';
+    windowEl.style.zIndex = "105"
+    windowEl.style.position = "fixed"
+    activeWindow = windowEl;
+    activeWindow.style.left = 0 + 'px';
+    activeWindow.style.top = 0 + 'px';
+    
+    } else {
+        windowEl.style.width = '100px';
+    windowEl.style.height = '100px';
+    windowEl.style.zIndex = "101"
+    windowEl.style.position = "absolute"
+    }
+  });
+}
+
+document.addEventListener('mousemove', function(e) {
+  if (isResizing && activeWindow) {
+    let width = initialWidth + (e.clientX - activeWindow.offsetLeft - initialWidth);
+    let height = initialHeight + (e.clientY - activeWindow.offsetTop - initialHeight);
+    activeWindow.style.width = Math.max(width, minWidth) + 'px';
+    activeWindow.style.height = Math.max(height, minHeight) + 'px';
+  } else if (isDragging && activeWindow) {
+    let dx = e.clientX - initialMouseX;
+    let dy = e.clientY - initialMouseY;
+    activeWindow.style.left = (initialX + dx) + 'px';
+    activeWindow.style.top = (initialY + dy) + 'px';
+  } else {
+    for (let i = 0; i < windows.length; i++) {
+      let windowEl = windows[i];
+      if (e.clientX > windowEl.offsetLeft + windowEl.offsetWidth - resizeHandleWidth &&
+         e.clientY > windowEl.offsetTop + windowEl.offsetHeight - resizeHandleWidth) {
+        windowEl.style.cursor = 'nwse-resize';
+      } else {
+        windowEl.style.cursor = 'default';
+      }
+    }
+  }
+});
+
+document.addEventListener('mouseup', function(e) {
+  isResizing = false;
+  isDragging = false;
+  activeWindow = null;
+});
+
+
+
+        }
+
+        function SetTime() {
+            setInterval(() => {
+                let now = new Date();
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                let ampm = hours >= 12 ? 'pm' : 'am';
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                minutes = minutes < 10 ? '0'+minutes : minutes;
+                let timeString = hours + ':' + minutes + ' ' + ampm;
+                
+
+
+                SetInnerHtml('Time', timeString)
+            }, 1000);
+        }
+
+        function NoUser(user) {
+            hide('UserArea')
+            show('NotFound')
+        }
+
+
+    </script>
+</body>
+</html>

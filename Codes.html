@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="https://adfree-sz-games.github.io/G.png" />
+    <title>Sz Games</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <style>
+    body {
+      background: #1d1d1d;
+      font-family: Arial, Helvetica, sans-serif;
+      background-repeat: repeat;
+    }
+
+    img {
+      margin: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-group button {
+      background-color: black;
+      /* Green background */
+
+      color: white;
+      /* White text */
+      padding: 10px 24px;
+      /* Some padding */
+      cursor: pointer;
+      /* Pointer/hand icon */
+      float: left;
+      /* Float the buttons side by side */
+    }
+
+    /* Clear floats (clearfix hack) */
+    .btn-group:after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+
+    .btn-group button:not(:last-child) {
+      border-right: none;
+      /* Prevent double borders */
+    }
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+      background-color: grey;
+    }
+
+    /* Header/Logo Title */
+    .header-halloween {
+      padding: 60px;
+      text-align: center;
+      background: linear-gradient(
+        to bottom right,
+        #ff7d31,
+        rgb(39, 39, 39),
+        rgb(39, 39, 39)
+      );
+      color: white;
+      width: auto;
+      font-size: 30px;
+      position: relative;
+      z-index: 1;
+      font-family: Arial, Helvetica, sans-serif;
+      border-radius: 15px;
+    }
+
+    .header {
+      position: relative;
+      z-index: 1;
+      padding: 60px;
+      text-align: center;
+      background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39));
+      color: white;
+      width: auto;
+      font-size: 30px;
+
+      font-family: Arial, Helvetica, sans-serif;
+      border-radius: 15px;
+    }
+
+    /* Page Content */
+  </style>
+  <style>
+    .game {
+      position: absolute;
+      color: white;
+
+      transform: scale(1.8);
+      z-index: 3;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .fade {
+      position: absolute;
+      background: linear-gradient(
+        to bottom,
+        #1d1d1d,
+        #1d1d1d5d,
+        rgba(39, 39, 39, 0)
+      );
+      width: 300px;
+      height: 150px;
+      border-radius: 15px;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 85vw;
+      margin: 1rem auto;
+    }
+
+    .bg,
+    .overlay {
+      text-align: center;
+    }
+
+    img,
+    .overlay {
+      transition: 0.3s all;
+      border-radius: 3px;
+    }
+  </style>
+  <style>
+    .topnav {
+      overflow: hidden;
+      position: fixed;
+      z-index: 5;
+      border-radius: 30px;
+      background-color: #333;
+    }
+
+    p {
+      transition: 0.5s;
+    }
+
+    .topnav p {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    p {
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #f2f2f2;
+      text-align: center;
+    }
+
+    .button2 {
+      display: inline-block;
+      transition: all 0.2s ease-in;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 1;
+      color: #ffffff;
+      padding: 0.7em 1.7em;
+      font-size: 18px;
+      border-radius: 0.5em;
+      background: #292929;
+      width: 100%;
+      border: 1px solid #393939;
+      box-shadow: 6px 6px 12px #292929, -6px -6px 12px #1d1d1d;
+    }
+
+    .button2:active {
+      color: #666;
+      box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    }
+
+    .button2:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scaleY(1) scaleX(1.25);
+      top: 100%;
+      width: 140%;
+      height: 180%;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 50%;
+      display: block;
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+      z-index: -1;
+    }
+
+    .button2:after {
+      content: '';
+      position: absolute;
+      left: 55%;
+      transform: translateX(-50%) scaleY(1) scaleX(1.45);
+      top: 180%;
+      width: 160%;
+      height: 190%;
+      background-color: #4a4a4a;
+      border-radius: 50%;
+      display: block;
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+      z-index: -1;
+    }
+
+    .button2:hover {
+      color: #ffffff;
+      border: 1px solid #373737;
+    }
+
+    .button2:hover:before {
+      top: -35%;
+      background-color: #2c2c2c;
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    }
+
+    .button2:hover:after {
+      top: -45%;
+      background-color: #424242;
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    }
+
+    .buttonn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 10px;
+      color: white;
+      text-shadow: 2px 2px rgb(116, 116, 116);
+      text-transform: uppercase;
+      border: solid 2px black;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 17px;
+      background-color: #373737;
+      border-radius: 50px;
+      position: relative;
+      transform: translate(-50%, 50%) scale(1.5);
+      left: 50%;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .buttonn:active {
+      transform: scale(0.9);
+      transition: all 100ms ease;
+    }
+
+    .buttonn svg {
+      transition: all 0.5s ease;
+      z-index: 2;
+    }
+
+    .play {
+      transition: all 0.5s ease;
+      transition-delay: 300ms;
+    }
+
+    .buttonn:hover svg {
+      transform: scale(3) translate(150%);
+    }
+
+    .now {
+      position: absolute;
+      left: 0;
+      transform: translateX(-100%);
+      transition: all 0.5s ease;
+      z-index: 2;
+    }
+
+    .buttonn:hover .now {
+      transform: translateX(50%);
+      transition-delay: 300ms;
+    }
+
+    .buttonn:hover .play {
+      transform: translateX(200%);
+      transition-delay: 300ms;
+    }
+
+    .btnn {
+      --glow-color: rgb(87, 87, 87);
+
+      border: 0.25em solid var(--glow-color);
+      padding: 1em 3em;
+      color: var(--glow-color);
+      font-size: 15px;
+      color: white;
+      font-weight: bold;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      background-color: var(--btn-color);
+      border-radius: 1em;
+      outline: none;
+      box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+      text-shadow: 0 0 0.5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .btnn::after {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--glow-spread-color);
+      filter: blur(2em);
+      opacity: 0.7;
+      transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+    }
+
+    .btnn:hover {
+      color: var(--btn-color);
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+      color: white;
+    }
+
+    .btnn:active {
+      box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 0.5em 0.25em var(--glow-color);
+    }
+
+    .btn {
+      --color: #878686;
+      --color2: rgb(10, 25, 30);
+      padding: 0.8em 1.75em;
+      background-color: transparent;
+      border-radius: 6px;
+      border: 0.3px solid var(--color);
+      transition: 0.5s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 1;
+      font-weight: 300;
+      left: 50%;
+      transform: translate(-50%, 100%);
+
+      font-size: 17px;
+      font-family: 'Roboto', 'Segoe UI', sans-serif;
+      text-transform: uppercase;
+      color: var(--color);
+    }
+
+    .btn::after,
+    .btn::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      transform: skew(90deg) translate(-50%, -50%);
+      position: absolute;
+      inset: 50%;
+      left: 25%;
+      z-index: -1;
+      transition: 0.5s ease-out;
+      background-color: var(--color);
+    }
+
+    .btn::before {
+      top: -50%;
+      left: -25%;
+      transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    .btn:hover::before {
+      transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    .btn:hover::after {
+      transform: skew(45deg) translate(-50%, -50%);
+    }
+
+    .btn:hover {
+      color: var(--color2);
+    }
+
+    .btn:active {
+      filter: brightness(0.7);
+      transform: scale(0.98);
+    }
+
+    buttonn {
+      padding: 17px 40px;
+      border-radius: 50px;
+      border: 0;
+      background-color: white;
+      box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      text-align: center;
+      font-size: 15px;
+      transition: all 0.5s ease;
+    }
+
+    buttonn:hover {
+      letter-spacing: 3px;
+      background-color: hsl(261deg 80% 48%);
+      color: hsl(0, 0%, 100%);
+      box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    }
+
+    buttonn:active {
+      letter-spacing: 3px;
+      background-color: hsl(261deg 80% 48%);
+      color: hsl(0, 0%, 100%);
+      box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+      transform: translateY(10px);
+      transition: 100ms;
+    }
+  </style>
+
+  <body>
+    <div class="header">
+      <!--img src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Gh.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img"-->
+      <img
+        src="https://adfree-sz-games.github.io/G.png"
+        style="position: relative; width: 150px; height: 150px"
+        alt="img"
+      />
+      <h1>Codes</h1>
+    </div>
+
+    <div style="margin: 5px">
+      <div
+        style="
+          background-color: #464646;
+          width: 100%;
+          height: 100%;
+          border-radius: 25px;
+          z-index: 10;
+        "
+      >
+        <br />
+        <button
+          onclick="window.location='https://adfree-sz-games.github.io/Menu.html'"
+          class="button2"
+        >
+          Back
+        </button>
+        <br />
+        <br />
+        <br />
+
+        <div
+          style="
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            text-align: center;
+            width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+          "
+        >
+          <h1 style="font-size: large">
+            Original file:
+            <br />
+            MzQwMCw4OTAwMDAwMCw3MjAwLDIsMCwwLDAsMCwwLDAsMCwxLDEsMCw0MzU5NS43OCw5OTk5OTksMCwwLDAsMCwwLDAsM
+          </h1>
+          <br />
+          <button
+            onclick="copy('MzQwMCw4OTAwMDAwMCw3MjAwLDIsMCwwLDAsMCwwLDAsMCwxLDEsMCw0MzU5NS43OCw5OTk5OTksMCwwLDAsMCwwLDAsM')"
+          >
+            Copy To Clipboard
+          </button>
+          <br />
+          <br />
+          <h1 style="font-size: large">
+            Only basic balls:
+            <br />
+            <br />
+            MzQwMCwxOTYyNjY5LjcwLDQ2NDEsMiwwLDAsMCwwLDAsMCwwLDEsMSwwLDQzNTk1Ljc4LDk5OTk5OSwxNTU5MywxNTU5MywwLDAsMCwwLDAsMCwwLDAsMCwwLDM1LDAsMCwwLDAsMCwwLDAsMCw5LDIxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCw5LDAsMCwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMSwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDEsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCw=
+          </h1>
+          <br />
+          <button
+            onclick="copy('MzQwMCwxOTYyNjY5LjcwLDQ2NDEsMiwwLDAsMCwwLDAsMCwwLDEsMSwwLDQzNTk1Ljc4LDk5OTk5OSwxNTU5MywxNTU5MywwLDAsMCwwLDAsMCwwLDAsMCwwLDM1LDAsMCwwLDAsMCwwLDAsMCw5LDIxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCw5LDAsMCwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMSwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDEsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCw=')"
+          >
+            Copy To Clipboard
+          </button>
+
+          <br />
+          <br />
+          <h1 style="font-size: large">
+            Sniper ball and laser only:
+            <br />
+            <br />
+            MzQxNywzMjQwMjEyOTcuNjksMTk1OCw1LDAsMTY3MSwxNjcxLDY3OSwyLDAsMiwxLDEsMCw0MzU5NS43OCw5OTk5OTksMTkyMjMsMTkyMjMsMCwwLDQ5MTIxNzk3Nyw0OTEyMTc5NzcsMCwwLDAsMCwwLDAsMCwwLDMwLDAsMCwwLDAsMCwwLDksMjEsMCwwLDYsMzAsMCwwLDAsMCwwLDAsMCwyNywwLDAsOSw5LDQsNSwwLDAsMSwwLDAsMCwwLDAsMCwwLDEsMSwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsNjc5LDAsMCwwLDAsMCwwLDAsMCw=Q
+          </h1>
+          <br />
+
+          <button
+            onclick="copy('MzQxNywzMjQwMjEyOTcuNjksMTk1OCw1LDAsMTY3MSwxNjcxLDY3OSwyLDAsMiwxLDEsMCw0MzU5NS43OCw5OTk5OTksMTkyMjMsMTkyMjMsMCwwLDQ5MTIxNzk3Nyw0OTEyMTc5NzcsMCwwLDAsMCwwLDAsMCwwLDMwLDAsMCwwLDAsMCwwLDksMjEsMCwwLDYsMzAsMCwwLDAsMCwwLDAsMCwyNywwLDAsOSw5LDQsNSwwLDAsMSwwLDAsMCwwLDAsMCwwLDEsMSwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsNjc5LDAsMCwwLDAsMCwwLDAsMCw=Q')"
+          >
+            Copy To Clipboard
+          </button>
+
+          <br />
+          <br />
+          <h1 style="font-size: large">
+            Updated sniper and laser:
+            <br />
+            <br />
+            MzcxMywyMjAwODkzMTY4LjQ3LDE5NTgsNTAsMCwyOTcxNywyOTcxNywxNjY2NSw1LDEsMTAsMSwxLDAsNDM1OTUuNzgsOTk5OTk5LDE5MjIzLDE5MjIzLDAsMCwxMDMzNzg0MjU0My4wMCwxMDMzNzg0MjU0My4wMCwwLDAsNDQzMzQ5Niw0NDMzNDk2LDAsMCwwLDAsNDYsMCwwLDAsMCwwLDAsOSwyMSwwLDAsNiw0MCwwLDAsMCwwLDAsMCwwLDQ5LDAsMCw5LDksNCw1LDAsMCwxLDAsMSwwLDAsMCwwLDEsMSwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDEsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwxNjY2NSwwLDAsMCwwLDAsMCwwLDAs
+          </h1>
+          <br />
+
+          <button
+            onclick="copy('MzcxMywyMjAwODkzMTY4LjQ3LDE5NTgsNTAsMCwyOTcxNywyOTcxNywxNjY2NSw1LDEsMTAsMSwxLDAsNDM1OTUuNzgsOTk5OTk5LDE5MjIzLDE5MjIzLDAsMCwxMDMzNzg0MjU0My4wMCwxMDMzNzg0MjU0My4wMCwwLDAsNDQzMzQ5Niw0NDMzNDk2LDAsMCwwLDAsNDYsMCwwLDAsMCwwLDAsOSwyMSwwLDAsNiw0MCwwLDAsMCwwLDAsMCwwLDQ5LDAsMCw5LDksNCw1LDAsMCwxLDAsMSwwLDAsMCwwLDEsMSwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDEsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwxNjY2NSwwLDAsMCwwLDAsMCwwLDAs')"
+          >
+            Copy To Clipboard
+          </button>
+
+          <br />
+          <br />
+          <h1 style="font-size: large">
+            Everything all together:
+            <br />
+            <br />
+            Mzc1OSwxOTA0NjU5NzUuMTgsMzk1LDU2LDAsMzQyMDksMzQyMDksMTk5ODksNSwxLDAsMSwxLDAsNDM1OTUuNzgsOTk5OTk5LDMzMDM4NywzMzAzODcsMjIyODcxODIsMjIyODcxODIsMTE5MDY4MTc5MzUuMDAsMTE5MDY4MTc5MzUuMDAsMzgxNzgwMzYsMzgxNzgwMzYsNTc3Mjg5NzYsNTc3Mjg5NzYsNjU4NzcwNiw2NTg3NzA2LDIsNDAsNDYsMzcsMzIsMzMsMCwwLDAsOSwyMSwwLDAsNiw0MCwwLDAsMCwwLDAsMCwwLDQ5LDAsMCw5LDksNCwxNCwwLDEsMSwxLDEsMSwwLDAsMCwxLDEsMSwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMTk5ODksMCwwLDAsMCwwLDAsMCwwLA==
+          </h1>
+          <br />
+
+          <button
+            onclick="copy('Mzc1OSwxOTA0NjU5NzUuMTgsMzk1LDU2LDAsMzQyMDksMzQyMDksMTk5ODksNSwxLDAsMSwxLDAsNDM1OTUuNzgsOTk5OTk5LDMzMDM4NywzMzAzODcsMjIyODcxODIsMjIyODcxODIsMTE5MDY4MTc5MzUuMDAsMTE5MDY4MTc5MzUuMDAsMzgxNzgwMzYsMzgxNzgwMzYsNTc3Mjg5NzYsNTc3Mjg5NzYsNjU4NzcwNiw2NTg3NzA2LDIsNDAsNDYsMzcsMzIsMzMsMCwwLDAsOSwyMSwwLDAsNiw0MCwwLDAsMCwwLDAsMCwwLDQ5LDAsMCw5LDksNCwxNCwwLDEsMSwxLDEsMSwwLDAsMCwxLDEsMSwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMTk5ODksMCwwLDAsMCwwLDAsMCwwLA==')"
+          >
+            Copy To Clipboard
+          </button>
+
+          <br />
+          <br />
+          <h1 style="font-size: large">
+            Update of everything:
+            <br />
+            <br />
+            NDMxNiwzMjQxNzg3Mjc0OC4xOCwxNjMsMTQ2LDAsODc2NzEsODc2NzEsNDUxNzgsNCw2LDEzLDEsMSwwLDQzNTk1Ljc4LDk5OTk5OSwxNjMxNDg3OSwxNjMxNDg3OSwxMDQ5MzQ4NjkwNS4wMCwxMDQ5MzQ4NjkwNS4wMCwxNjYzNzc4MjMxOS4wMCwxNjYzNzc4MjMxOS4wMCwxMDYyMTg4MDU1Ni4wMCwxMDYyMTg4MDU1Ni4wMCw0NDUwMDE2NjQ5LjAwLDQ0NTAwMTY2NDkuMDAsNjEzMzQ0NDU2LDYxMzM0NDQ1NiwyLDQwLDQ2LDM3LDMyLDMzLDAsMCwwLDksMjksNiwzMyw2LDQwLDgsMjQsNiwyMiw1LDE5LDAsNTksMCw3LDksOSw0LDE0LDEsMSwxLDEsMSwxLDAsMCwwLDEsMSwxLDEsMCwwLDAsMCwwLDAsMCwwLDAsMSwwLDAsMCwwLDEsMSwwLDAsMCwxLDEsMCwwLDAsMSwwLDAsMCwwLDAsMCwwLDAsMCwyNDE3OCwwLDAsMCw3LDAsMCwwLDAs
+          </h1>
+          <br />
+
+          <button
+            onclick="copy('NDMxNiwzMjQxNzg3Mjc0OC4xOCwxNjMsMTQ2LDAsODc2NzEsODc2NzEsNDUxNzgsNCw2LDEzLDEsMSwwLDQzNTk1Ljc4LDk5OTk5OSwxNjMxNDg3OSwxNjMxNDg3OSwxMDQ5MzQ4NjkwNS4wMCwxMDQ5MzQ4NjkwNS4wMCwxNjYzNzc4MjMxOS4wMCwxNjYzNzc4MjMxOS4wMCwxMDYyMTg4MDU1Ni4wMCwxMDYyMTg4MDU1Ni4wMCw0NDUwMDE2NjQ5LjAwLDQ0NTAwMTY2NDkuMDAsNjEzMzQ0NDU2LDYxMzM0NDQ1NiwyLDQwLDQ2LDM3LDMyLDMzLDAsMCwwLDksMjksNiwzMyw2LDQwLDgsMjQsNiwyMiw1LDE5LDAsNTksMCw3LDksOSw0LDE0LDEsMSwxLDEsMSwxLDAsMCwwLDEsMSwxLDEsMCwwLDAsMCwwLDAsMCwwLDAsMSwwLDAsMCwwLDEsMSwwLDAsMCwxLDEsMCwwLDAsMSwwLDAsMCwwLDAsMCwwLDAsMCwyNDE3OCwwLDAsMCw3LDAsMCwwLDAs')"
+          >
+            Copy To Clipboard
+          </button>
+
+          <br />
+          <br />
+          <h1 style="font-size: large">
+            All upgrades:
+            <br />
+            <br />
+            MjQzNzcsNjQwNDkyMjg4NjQ4LjMzLDgzLD
+          </h1>
+          <br />
+
+          <button onclick="copy('MjQzNzcsNjQwNDkyMjg4NjQ4LjMzLDgzLD')">
+            Copy To Clipboard
+          </button>
+
+          <br />
+          <br />
+          <h1 style="font-size: large">
+            Beat the level 200:
+            <br />
+            <br />
+            NjEwMywxOTI3ODAzMzk2MTEuNDc sMzA5LDg2NCwyNSw1ODA0MTksNjA4OTk
+            zNCwyODI2NTMzLDIsMzIzOSwzLDEsMSww LDQzNTk0Ljk1LDUyLDAsMTM5ODY3MjAyN
+            yw4MDI0MDcwMjMzMi4wMCwyNjU5MTY2 MzAxMzMuMDAsNTE0Njg1MDAxNzUuMDA
+            sMzExOTM1NjcyMDk2LjAwLDcxMjk2MzMyN jQ0LjAwLDM1MDExMjM5MjYwOS4wMCw5M
+            DA5NzcwMzY0NS4wMCw0MTU1NDQ3MjA4 NzIuMDAsMCw3MDY1MDM2NTQ1LjAwLDA
+            sNTIsNTEsNDQsNDMsMCwwLDAsMCwwLD AsNiw0OCw2LDU2LDgsNTIsNiw2MywwLDA
+            sMCw3Niw3MiwxMCw4LDksNCwxNCwxLDE sMSwxLDEsMSwxLDEsMSwxLDEsMSwxLDA
+            sMSwxLDAsMCwwLDAsMCwwLDAsMCwwLD AsMCwxLDEsMSwxLDAsMSwwLDAsMCwwL
+            DEsMSwwLDAsMCwwLDAsMCwwLDAsMjY3 OTA1LDAsMCw5LDIwLDEsMCwxLDAs
+          </h1>
+          <br />
+
+          <button
+            onclick="copy('NjEwMywxOTI3ODAzMzk2MTEuNDcsMzA5LDg2NCwyNSw1ODA0MTksNjA4OTkzNCwyODI2NTMzLDIsMzIzOSwzLDEsMSwwLDQzNTk0Ljk1LDUyLDAsMTM5ODY3MjAyNyw4MDI0MDcwMjMzMi4wMCwyNjU5MTY2MzAxMzMuMDAsNTE0Njg1MDAxNzUuMDAsMzExOTM1NjcyMDk2LjAwLDcxMjk2MzMyNjQ0LjAwLDM1MDExMjM5MjYwOS4wMCw5MDA5NzcwMzY0NS4wMCw0MTU1NDQ3MjA4NzIuMDAsMCw3MDY1MDM2NTQ1LjAwLDAsNTIsNTEsNDQsNDMsMCwwLDAsMCwwLDAsNiw0OCw2LDU2LDgsNTIsNiw2MywwLDAsMCw3Niw3MiwxMCw4LDksNCwxNCwxLDEsMSwxLDEsMSwxLDEsMSwxLDEsMSwxLDAsMSwxLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwxLDEsMSwxLDAsMSwwLDAsMCwwLDEsMSwwLDAsMCwwLDAsMCwwLDAsMjY3OTA1LDAsMCw5LDIwLDEsMCwxLDAs')"
+          >
+            Copy To Clipboard
+          </button>
+
+          <br />
+        </div>
+        <script>
+          function copy(txt) {
+            const textToCopy = txt;
+
+            navigator.clipboard
+              .writeText(textToCopy)
+              .then(() => {
+                alert('Copied');
+              })
+              .catch((error) => {
+                alert('Error copying text to clipboard:', error);
+              });
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
