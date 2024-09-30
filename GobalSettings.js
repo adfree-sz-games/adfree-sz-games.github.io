@@ -13,7 +13,6 @@ function getCookie(name) {
   return '';
 }
 
-//alert('hi')
 let Setting14b = getCookie('PagePrevent');
 
 function checkPageClose(event) {
@@ -249,91 +248,3 @@ function _0x155a() {
   return _0x155a();
 }
 _0x7b83f9();
-const _0x245fd1 = (function () {
-    let _0x3b853b = !![];
-    return function (_0x509958, _0x1d6c6c) {
-      const _0x532e7b = _0x3b853b
-        ? function () {
-            const _0x36a90a = _0xa809;
-            if (_0x1d6c6c) {
-              const _0x547738 = _0x1d6c6c[_0x36a90a(0x182)](
-                _0x509958,
-                arguments
-              );
-              return (_0x1d6c6c = null), _0x547738;
-            }
-          }
-        : function () {};
-      return (_0x3b853b = ![]), _0x532e7b;
-    };
-  })(),
-  _0x59482f = _0x245fd1(this, function () {
-    const _0x226128 = _0xa809;
-    let _0x4460f3;
-    try {
-      const _0x2a9362 = Function(_0x226128(0x174) + _0x226128(0x18c) + ');');
-      _0x4460f3 = _0x2a9362();
-    } catch (_0x4e700f) {
-      _0x4460f3 = window;
-    }
-    const _0x3dc4c7 = (_0x4460f3[_0x226128(0x187)] =
-        _0x4460f3[_0x226128(0x187)] || {}),
-      _0x234e32 = [
-        _0x226128(0x180),
-        'warn',
-        _0x226128(0x18d),
-        'error',
-        _0x226128(0x185),
-        _0x226128(0x16d),
-        _0x226128(0x184),
-      ];
-    for (
-      let _0x3445cc = 0x0;
-      _0x3445cc < _0x234e32[_0x226128(0x17b)];
-      _0x3445cc++
-    ) {
-      const _0x2a72d4 =
-          _0x245fd1[_0x226128(0x17d)]['prototype']['bind'](_0x245fd1),
-        _0x253c2d = _0x234e32[_0x3445cc],
-        _0x9753b8 = _0x3dc4c7[_0x253c2d] || _0x2a72d4;
-      (_0x2a72d4['__proto__'] = _0x245fd1['bind'](_0x245fd1)),
-        (_0x2a72d4[_0x226128(0x183)] =
-          _0x9753b8['toString']['bind'](_0x9753b8)),
-        (_0x3dc4c7[_0x253c2d] = _0x2a72d4);
-    }
-  });
-_0x59482f(),
-  document[_0x4482a8(0x17f)]('DOMContentLoaded', function () {
-    const _0x542d27 = _0x4482a8,
-      _0x323511 = [_0x542d27(0x178)];
-    function _0x1fca97() {
-      const _0x211e8e = _0x542d27;
-      try {
-        if (window[_0x211e8e(0x16b)] !== window['self'])
-          return new URL(document[_0x211e8e(0x181)])[_0x211e8e(0x176)];
-      } catch (_0xa3252) {
-        return console['error'](_0x211e8e(0x172), _0xa3252), null;
-      }
-      return null;
-    }
-    const _0x5b91db = _0x1fca97();
-    if (
-      _0x5b91db &&
-      _0x323511[_0x542d27(0x17c)]((_0x21a544) =>
-        _0x5b91db[_0x542d27(0x173)](_0x21a544)
-      )
-    ) {
-      document[_0x542d27(0x16e)]['innerHTML'] = '';
-      let _0x5cb1c5 = document[_0x542d27(0x189)]('h1');
-      (_0x5cb1c5[_0x542d27(0x16c)] =
-        'You\x20Are\x20Accessing\x20Sz\x20Games\x20From\x20A\x20Blacklisted\x20Domain\x20(A\x20Fake\x20Sz\x20Games\x20Site)'),
-        document[_0x542d27(0x16e)][_0x542d27(0x18b)](_0x5cb1c5);
-      let _0x336bb0 = document[_0x542d27(0x189)]('button');
-      (_0x336bb0['textContent'] = 'Go\x20To\x20Sz\x20Games'),
-        (_0x336bb0[_0x542d27(0x171)] = function () {
-          const _0x39a083 = _0x542d27;
-          window[_0x39a083(0x175)](_0x39a083(0x16f));
-        }),
-        document[_0x542d27(0x16e)][_0x542d27(0x18b)](_0x336bb0);
-    }
-  });

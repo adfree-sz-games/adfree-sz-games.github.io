@@ -13,59 +13,10 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
-
-    <!--ONESIGNAL PUSH-->
-    <script>
-      window.onload = function () {
-        const scriptEly = document.createElement('script');
-
-        scriptEly.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
-
-        scriptEly.addEventListener('load', () => {
-          window.OneSignal = window.OneSignal || [];
-          OneSignal.push(function () {
-            OneSignal.init({
-              appId: '08b63425-6f02-4ecb-ad79-8bb871e63518',
-              autoResubscribe: true, // This ensures the prompt shows again if dismissed
-
-              safari_web_id:
-                'web.onesignal.auto.54d60a3d-c0d7-4ae1-b490-c29a9cfa7b70',
-              notifyButton: {
-                enable: false,
-              },
-              promptOptions: {
-                customlink: {
-                  enabled: true /* Required to use the Custom Link */,
-                  style: 'button' /* Has value of 'button' or 'link' */,
-                  size: 'medium' /* One of 'small', 'medium', or 'large' */,
-                  color: {
-                    button:
-                      '#2e2e2e' /* Color of the button background if style = "button" */,
-                    text: 'white' /* Color of the prompt's text */,
-                  },
-                  text: {
-                    subscribe:
-                      'Subscribe to push notifications' /* Prompt's text when not subscribed */,
-                    unsubscribe:
-                      'Unsubscribe from push notifications' /* Prompt's text when subscribed */,
-                    explanation:
-                      'Get updates about new games and known issues.' /* Optional text appearing before the prompt button */,
-                  },
-                  unsubscribeEnabled: true /* Controls whether the prompt is visible after subscription */,
-                },
-              },
-            });
-          });
-        });
-
-        document.head.appendChild(scriptEly);
-      };
-    </script>
-
     <link rel="manifest" href="manifest.json" />
     <link
       rel="icon"
-      href="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/G2.png"
+      href="https://adfree-sz-games.github.io/G2.png"
       type="image/png"
     />
 
@@ -83,13 +34,10 @@
 
     <meta
       property="og:image"
-      content="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/G2.png"
+      content="https://adfree-sz-games.github.io/G2.png"
     />
 
-    <link
-      rel="icon"
-      href="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/G2.png"
-    />
+    <link rel="icon" href="https://adfree-sz-games.github.io/G2.png" />
     <meta
       name="description"
       content="The Best Place To Play over 100+ Games in school or at home."
@@ -110,18 +58,13 @@
     />
 
     <meta name="language" content="English" />
-    <script src="./GobalSettings.js"></script>
+    <!-- <script src="./GobalSettings.js"></script> -->
 
     <meta
       name="keywords"
       content="sz games, sz games unblocked, games, unblocked games, school, games, games to play, games on the web, html5 games, sz, sz-games, play games online,  online games"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927"
-      crossorigin="anonymous"
-    ></script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -444,7 +387,7 @@
       .ImageForGame {
         border-radius: 15px;
         width: 180px;
-        opacity: 0;
+        opacity: 90%;
 
         height: 180px;
         transition: 0.5s;
@@ -1438,7 +1381,7 @@
       "
     >
       <img
-        src="https://raw.githubusercontent.com/sz-games/home/main/G.png"
+        src="https://adfree-sz-games.github.io/G.png"
         style="
           z-index: 107;
           position: absolute;
@@ -1453,71 +1396,6 @@
 
       <div class="loaderNEW"></div>
     </div>
-
-    <script>
-      //document.getElementById('LOADINGSCREEN11').style.display = "block"
-
-      var LoadPWA = false;
-      let LOADCHECK = sessionStorage.getItem('HasLoadedPWA1');
-      if (
-        'matchMedia' in window &&
-        (window.matchMedia('(display-mode: standalone)').matches ||
-          window.navigator.standalone === true)
-      ) {
-        if (LOADCHECK === 'true') {
-          console.log('E-11.0');
-        } else {
-          console.log('E-33');
-          //document.getElementById('LOADINGSCREEN11').style.display = "block"
-
-          //LOADING PERCENTAGE
-          /*
-        window.addEventListener('load', function() {
-          // All resources have finished loading
-          document.getElementById('loading-percentage').textContent = '100%';
-        });
-  
-        window.addEventListener('DOMContentLoaded', function() {
-          // DOM content has finished loading
-          const totalResources = document.getElementsByTagName('*').length;
-          let loadedResources = 0;
-  
-          const loadingPercentage = document.getElementById('loading-percentage');
-  
-          function updateLoadingPercentage() {
-            loadedResources++;
-            const percentage = ((loadedResources / totalResources) * 100).toFixed(2);
-            loadingPercentage.textContent = percentage + '%';
-          }
-  
-          const elements = document.getElementsByTagName('*');
-          for (let i = 0; i < elements.length; i++) {
-            elements[i].addEventListener('load', updateLoadingPercentage);
-            elements[i].addEventListener('error', updateLoadingPercentage); // Handle resource load errors
-          }
-        });
-        //END
-        */
-
-          if (LoadPWA === false) {
-            window.addEventListener('load', function () {
-              //sessionStorage.setItem("HasLoadedPWA1", 'true');
-
-              LoadPWA = true;
-
-              //document.getElementById('LOADINGSCREEN11').style.opacity = 0
-              setTimeout(() => {
-                //document.getElementById('LOADINGSCREEN11').style.display = 'none'
-              }, 800);
-            });
-          }
-        }
-      } else {
-        console.log('External Code Did Not Load In');
-      }
-    </script>
-
-    <!--LOADER -->
 
     <div
       id="openercountdown"
@@ -1761,18 +1639,6 @@
           "
         ></i>
       </a>
-
-      <!--div onclick="NOTE11()" style="cursor: pointer;   font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;" >
-        <div style="background-color: rgb(255, 0, 0); width: 10px; height: 10px; border-radius: 50%; right: 0; position: absolute;">
-          <p style=" z-index: 9; color: black;"></p>
-        </div>
-      <span  class="material-icons notranslate"  >  
-     
-        
-        notifications
-        
-        </span>
-      </div-->
       <div id="OLD_NAV" style="display: none">
         <a href="./FNF.html">
           <h1
@@ -1791,8 +1657,6 @@
             Friday Night Funkin
           </h1>
         </a>
-
-        <!--a href="./unblock.html"-->
 
         <h1
           style="
@@ -1839,27 +1703,6 @@
     </div>
 
     <script>
-      var IsOpenLang = false;
-      function ToggleLang() {
-        if (IsOpenLang === false) {
-          document.getElementById('LangSelect').style.opacity = 1;
-          document.getElementById('LangSelect').classList.add('openLang');
-          document.getElementById('LangSelect').style.visibility = 'visible';
-          setTimeout(() => {
-            document.getElementById('LangSelect').classList.remove('openLang');
-            IsOpenLang = true;
-          }, 800);
-        } else if (IsOpenLang === true) {
-          document.getElementById('LangSelect').style.opacity = 0;
-
-          document.getElementById('LangSelect').style.visibility = 'hidden';
-
-          setTimeout(() => {
-            IsOpenLang = false;
-          }, 810);
-        }
-      }
-
       var myElement = document.getElementById('TopMenu'); // Get the element
       var Isscrolled = false;
       window.addEventListener('scroll', function () {
@@ -2339,14 +2182,6 @@
               </h1>
             </a>
           </div>
-
-          <!--div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
-
-    
-        <h1 style=" cursor: not-allowed;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: rgba(255, 255, 255, 0.597);  font-family: Arial, Helvetica, sans-serif; position: relative;">Apps</h1>
-      
-    
-    </div-->
 
           <div
             class="MenuIt"
@@ -3079,158 +2914,6 @@
       }
     </script>
 
-    <!--LANG-->
-    <div
-      id="LangSelect"
-      style="
-        transition: 0.5s;
-        visibility: hidden;
-        position: fixed;
-        z-index: 90;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-        background-color: #1d1d1d;
-        width: 350px;
-        border: solid rgba(56, 56, 56, 0.97) 5px;
-        border-radius: 15px;
-        height: 200px;
-      "
-    >
-      <span
-        onclick="ToggleLang()"
-        class="material-icons notranslate"
-        style="
-          cursor: pointer;
-          font-size: larger;
-          top: 10%;
-          transform: translate(-0%, -50%);
-          margin-right: 15px;
-          float: right;
-          color: white;
-          position: relative;
-        "
-      >
-        close
-      </span>
-
-      <p
-        style="
-          float: left;
-          top: 5%;
-          position: relative;
-          margin-left: 15px;
-          color: white;
-        "
-      >
-        Translate
-      </p>
-
-      <div
-        style="
-          top: 17%;
-          left: 8px;
-          width: 95%;
-          border-radius: 10px;
-          position: relative;
-          height: 2px;
-          background-color: #3d3d3d;
-        "
-      ></div>
-
-      <div
-        style="
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        "
-        id="google_translate_element"
-      ></div>
-
-      <script>
-        fetch('https://ipapi.co/json/')
-          .then((response) => {
-            if (response.status === 429) {
-              // Request returned with code 429 (Too Many Requests)
-              console.log('Too Many Requests');
-              // Handle the error or implement retry logic here
-              return;
-            }
-            return response.json();
-          })
-          .then((data) => {
-            if (data) {
-              var userCountryCode = data.country;
-
-              // Check if the user's country is different from the desired country
-              if (userCountryCode !== 'US') {
-                // Display the specific element for users in a different country
-                console.log('isNot');
-                IsOpenLang = true;
-                var element = document.getElementById('LangSelect');
-                element.style.visibility = 'visible';
-              } else {
-                console.log('us');
-              }
-            }
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-
-        var ToggledMenu3 = false;
-
-        function ToggleMenuBig() {
-          if (ToggledMenu3 === false) {
-            document.getElementById('SideMenuBigScreen').style.display =
-              'block';
-            document.getElementById('SideMenuBigScreen').style.opacity = 1;
-
-            document.getElementById('MMenuBig').style.display = 'block';
-
-            document.getElementById('MMenuBig').classList.add('SlSlideIn');
-
-            setTimeout(() => {
-              document.getElementById('MMenuBig').classList.remove('SlSlideIn');
-
-              ToggledMenu3 = true;
-            }, 500);
-          } else if (ToggledMenu3 === true) {
-            ToggledMenu3 = false;
-
-            document.getElementById('SideMenuBigScreen').style.opacity = 0;
-
-            document.getElementById('MMenuBig').classList.add('SlSlide');
-            setTimeout(() => {
-              document.getElementById('MMenuBig').classList.remove('SlSlide');
-              document.getElementById('MMenuBig').style.display = 'none';
-              document.getElementById('SideMenuBigScreen').style.display =
-                'none';
-            }, 500);
-          }
-        }
-      </script>
-
-      <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement(
-            {
-              pageLanguage: 'en',
-              autoDisplay: false,
-              excluded: '.notranslate',
-            },
-            'google_translate_element'
-          );
-        }
-      </script>
-
-      <script
-        type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-      ></script>
-    </div>
-
     <div id="Vip">
       <div
         style="
@@ -3696,7 +3379,7 @@
         z-index: 1;
         padding: 60px;
         text-align: center;
-        background-image: url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Waltah.gif?raw=true');
+        background-image: url('https://adfree-sz-games.github.io/Waltah.gif');
         background-repeat: no-repeat;
         background-position: 0px;
         background-size: cover;
@@ -3713,7 +3396,7 @@
         z-index: 1;
         padding: 60px;
         text-align: center;
-        background-image: url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/KanyeEast.gif?raw=true');
+        background-image: url('https://adKanyeEast.gif?raw=true');
         background-repeat: no-repeat;
         background-position: 0px;
         background-size: cover;
@@ -3730,7 +3413,7 @@
         z-index: 1;
         padding: 60px;
         text-align: center;
-        background-image: url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Shock.gif?raw=true');
+        background-image: url('https://adfree-sz-games.github.io/Shock.gif');
         background-repeat: no-repeat;
         background-position: 0px;
         background-size: cover;
@@ -3747,7 +3430,7 @@
         z-index: 1;
         padding: 60px;
         text-align: center;
-        background-image: url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/AMeme.gif?raw=true');
+        background-image: url('https://adfree-sz-games.github.io/AMeme.gif');
         background-repeat: no-repeat;
         background-position-y: 10px;
         background-size: cover;
@@ -3782,7 +3465,7 @@
         padding: 60px;
         text-align: center;
         background: rgba(172, 157, 157, 0);
-        background-image: url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/chip.gif?raw=true');
+        background-image: url('https://adfree-sz-games.github.io/chip.gif');
         background-position-y: 10px;
         background-size: cover;
         color: white;
@@ -3795,7 +3478,6 @@
     </style>
 
     <div id="Header" class="header">
-      <!--img src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Gh.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img"-->
       <img
         src="https://adfree-sz-games.github.io/G.png"
         fetchpriority="high"
@@ -3806,179 +3488,7 @@
       <p style="font-size: 20px">By Bobby</p>
     </div>
     <br />
-    <!-- ADCODE -->
-    <div
-      id="ad-grid"
-      style="
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        box-shadow: 0px 0px 10px black;
-        grid-gap: 0px;
-        width: 90%;
-        margin: 0 auto;
-      "
-    >
-      <!-- Row 1 -->
-      <div style="background-color: gray; height: 80px">
-        <ins
-          class="adsbygoogle"
-          id="ad-container1"
-          style="
-            display: block;
-            height: 80px !important;
-            width: 100%;
-            background-color: gray;
-          "
-          data-ad-client="ca-pub-1654900800235927"
-          data-ad-slot="6959226874"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <div style="background-color: gray; height: 80px">
-        <ins
-          class="adsbygoogle"
-          id="ad-container2"
-          style="
-            display: block;
-            height: 80px !important;
-            width: 100%;
-            background-color: gray;
-          "
-          data-ad-client="ca-pub-1654900800235927"
-          data-ad-slot="9203744669"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <!-- Row 2 -->
-      <div style="background-color: gray; height: 80px">
-        <ins
-          class="adsbygoogle"
-          id="ad-container3"
-          style="
-            display: block;
-            height: 80px !important;
-            width: 100%;
-            background-color: gray;
-          "
-          data-ad-client="ca-pub-1654900800235927"
-          data-ad-slot="6959226874"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <div style="background-color: gray; height: 80px">
-        <ins
-          class="adsbygoogle"
-          id="ad-container4"
-          style="
-            display: block;
-            height: 80px !important;
-            width: 100%;
-            background-color: gray;
-          "
-          data-ad-client="ca-pub-1654900800235927"
-          data-ad-slot="9203744669"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <!-- Row 3-->
-      <div style="background-color: gray; height: 80px">
-        <ins
-          class="adsbygoogle"
-          id="ad-container5"
-          style="
-            display: block;
-            height: 80px !important;
-            width: 100%;
-            background-color: gray;
-          "
-          data-ad-client="ca-pub-1654900800235927"
-          data-ad-slot="6959226874"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <div style="background-color: gray; height: 80px">
-        <ins
-          class="adsbygoogle"
-          id="ad-container6"
-          style="
-            display: block;
-            height: 80px !important;
-            width: 100%;
-            background-color: gray;
-          "
-          data-ad-client="ca-pub-1654900800235927"
-          data-ad-slot="9203744669"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <!-- Row 4-->
-      <div style="background-color: gray; height: 80px">
-        <ins
-          class="adsbygoogle"
-          id="ad-container5"
-          style="
-            display: block;
-            height: 80px !important;
-            width: 100%;
-            background-color: gray;
-          "
-          data-ad-client="ca-pub-1654900800235927"
-          data-ad-slot="6959226874"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <div style="background-color: gray; height: 80px">
-        <ins
-          class="adsbygoogle"
-          id="ad-container6"
-          style="
-            display: block;
-            height: 80px !important;
-            width: 100%;
-            background-color: gray;
-          "
-          data-ad-client="ca-pub-1654900800235927"
-          data-ad-slot="9203744669"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-    </div>
-
-    <style>
-      /* Media query for smaller screens */
-      @media (max-width: 768px) {
-        #ad-grid {
-          grid-template-columns: 1fr;
-          /* Stack ads vertically */
-        }
-      }
-    </style>
-
     <br />
-
     <script>
       console.log('eee');
       // Function to retrieve the value of a cookie
@@ -4110,51 +3620,6 @@
 
           setCookie('Header', 'chip', 365);
         }
-      }
-
-      // Usage example
-      const cookieValue = getCookie('IsVIP');
-
-      if (cookieValue) {
-        //console.log("The value of the cookie is: " + cookieValue);
-        document.getElementById('Vip').style.display = 'block';
-        document.getElementById('VIPBUTTON').style.display = 'block';
-        // Get the parent element that contains the image elements
-        const parentElement = document.getElementById('options');
-
-        // Get all the image elements within the parent element
-        const imageElements = parentElement.getElementsByTagName('img');
-
-        // Loop through each image element and load the data-src attribute
-        for (let i = 0; i < imageElements.length; i++) {
-          const image = imageElements[i];
-          const dataSrc = image.getAttribute('data-src');
-
-          if (dataSrc) {
-            // Set the data-src as the image source to load it
-            image.setAttribute('src', dataSrc);
-          }
-        }
-      } else {
-        console.log('The cookie is not set or expired.');
-        document.getElementById('Vip').style.display = 'none';
-        document.getElementById('VIPBUTTON').style.display = 'none';
-      }
-
-      const Header = getCookie('Header');
-      const bg = getCookie('BG');
-      if (Header) {
-        console.log('The value of the cookie is: ' + Header);
-        selectHeader(Header);
-      } else {
-        console.log('The cookie is not set or expired.');
-      }
-
-      if (bg) {
-        console.log('The value of the cookie is: ' + bg);
-        selectHeader2(bg);
-      } else {
-        console.log('The cookie is not set or expired.');
       }
 
       const opacitySlider = document.getElementById('opacitySlider');
@@ -4420,14 +3885,11 @@
         style="position: relative; float: left"
       >
         <a href="https://adfree-sz-games.github.io/home/webb/">
-          <!--p class="game" style="left: 105px;" >Infinite Tower</p>
-        <div class="fade" ></div-->
-
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/helix.webp?raw=true"
-            alt="game"
+            src="./cover/helix.webp"
+            alt="Infinite Tower"
           />
           <div
             class="textover"
@@ -4447,13 +3909,11 @@
         <a
           href="https://adfree-sz-games.github.io/games/unity.html?game=https://adfree-sz-games.github.io/games/tunnel-rush/"
         >
-          <!--p class="game" >Tunnel Rush</p>
-      <div class="fade" ></div-->
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/tunnel.webp?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/tunnel.webp"
+            alt="Tunnel Rush"
           />
           <div
             class="textover"
@@ -4473,13 +3933,11 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/games/spac/"
         >
-          <!--p class="game" >Space Wars </p>
-      <div class="fade" ></div-->
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/space.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/space.webp"
+            alt="Space War"
           />
           <div
             class="textover"
@@ -4502,8 +3960,8 @@
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/slope.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/slope.webp"
+            alt="Slope"
           />
           <div
             class="textover"
@@ -4530,8 +3988,8 @@
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Astr.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Astr.webp"
+            alt="Asteroids Belt"
           />
 
           <div
@@ -4555,8 +4013,8 @@
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/backroom.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/backroom.webp"
+            alt="Backrooms"
           />
 
           <div
@@ -4577,8 +4035,8 @@
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Slidein.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Slidein.webp"
+            alt="Slide In The Woods"
           />
 
           <div
@@ -4599,8 +4057,8 @@
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SurMode.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SurMode.webp"
+            alt="Survivor Mode"
           />
 
           <div
@@ -4619,8 +4077,8 @@
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Stack.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Stack.webp"
+            alt="Stack"
           />
 
           <div
@@ -4639,8 +4097,8 @@
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/hydra.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/hydra.webp"
+            alt="Fly Hydra"
           />
 
           <div
@@ -4661,8 +4119,8 @@
           <img
             fetchpriority="low"
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DunW.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DunW.webp"
+            alt="Dungeon Warrior"
           />
 
           <div
@@ -4684,8 +4142,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Airship.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Airship.webp"
+            alt="Iniltrating The Airship"
           />
           <div
             class="textover"
@@ -4706,8 +4164,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Complex.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Complex.webp"
+            alt="Fleeing The Complex"
           />
 
           <div
@@ -4729,8 +4187,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Prison.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Prison.webp"
+            alt="Escaping The Prison"
           />
 
           <div
@@ -4752,8 +4210,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BankH.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BankH.webp"
+            alt="Breaking The Bank"
           />
 
           <div
@@ -4775,8 +4233,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/StealD.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/StealD.webp"
+            alt="Stealing The Diamond"
           />
 
           <div
@@ -4798,8 +4256,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/PcB.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/PcB.webp"
+            alt="PC Breakdown"
           />
 
           <div
@@ -4817,8 +4275,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/lol.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/lol.webp"
+            alt="1v1 LOL"
           />
 
           <div
@@ -4836,8 +4294,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/run3s.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/run3s.webp"
+            alt="Run 3"
           />
 
           <div
@@ -4859,8 +4317,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/rid.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/rid.webp"
+            alt="Riddle School"
           />
 
           <div
@@ -4882,8 +4340,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/rid2.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/rid2.webp"
+            alt="Riddle School 2"
           />
 
           <div
@@ -4905,8 +4363,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/rid3.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/rid3.webp"
+            alt="Riddle School 3"
           />
 
           <div
@@ -4928,8 +4386,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/rid4.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/rid4.webp"
+            alt="Riddle School 4"
           />
 
           <div
@@ -4951,8 +4409,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/rid5.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/rid5.webp"
+            alt="Riddle School 5"
           />
 
           <div
@@ -4974,8 +4432,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/rid6.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/rid6.webp"
+            alt="Riddle Transfer"
           />
 
           <div
@@ -4997,8 +4455,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/rid7.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/rid7.webp"
+            alt="Riddle Transfer 2"
           />
 
           <div
@@ -5020,8 +4478,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/sub.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/sub.webp"
+            alt="Subway Surfers"
           />
 
           <div
@@ -5039,8 +4497,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/dino.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/dino.webp"
+            alt="Chrome Dino"
           />
 
           <div
@@ -5058,8 +4516,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/tetris.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/tetris.webp"
+            alt="Tetris"
           />
           <div class="textover" style="color: rgb(255, 255, 255) !important">
             Tetris
@@ -5073,8 +4531,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/paperio.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/paperio.webp"
+            alt="Paper.io 2"
           />
 
           <div class="textover" style="color: rgb(255, 255, 255) !important">
@@ -5093,8 +4551,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/papasbur.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/papasbur.webp"
+            alt="Papa's Burgeria"
           />
           <div
             class="textover"
@@ -5122,8 +4580,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/scoop.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/scoop.jpeg"
+            alt="Papa's Scooperia"
           />
           <div
             class="textover"
@@ -5151,8 +4609,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/sushiria.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/sushiria.jpg"
+            alt="Papa's Sushiria"
           />
           <div
             class="textover"
@@ -5180,8 +4638,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/bakeria.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/bakeria.jpg"
+            alt="Papa's Bakeria"
           />
           <div
             class="textover"
@@ -5209,8 +4667,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/pastaria.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/pastaria.jpg"
+            alt="Papa's Pastaria"
           />
           <div
             class="textover"
@@ -5238,8 +4696,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/cupcakeria.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/cupcakeria.jpg"
+            alt="Papa's Cupcakeria"
           />
           <div
             class="textover"
@@ -5267,8 +4725,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/pizzeria.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/pizzeria.jpg"
+            alt="Papa's Pizzeria"
           />
           <div
             class="textover"
@@ -5316,60 +4774,12 @@
         }
       </style>
 
-      <!--div id="medall" style="opacity: 0;  margin-left: 1px;  animation-duration: 15s; transition: 0.5s; position: fixed; z-index: 5; box-shadow: 12px 12px #39393963; top: 10%; border-radius: 0px 25px 25px 0px; width: 300px; height: 150px; background-color: #1d1d1d;">
-<h2 id="okf" style="margin-left: 50px; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif;">Medal Earned!</h2>
-<h2  id="namemed" style=" margin-left: 0px; color: white;">Afk</h2>
-<p  id="meddle" style=" color: white; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Stayed On The Home Page For 5 minutes.</p>
-</div-->
-
-      <!--script>
-  var afkk = document.getElementById('afkk')
-  var firststeps = document.getElementById('first-steps')
-  var afkpr = false;
-
-  var firstt = false;
-
-    afkk.style.color = "#595959";
-   
-   var Name = document.getElementById('namemed');
-   var description = document.getElementById('meddle');
-   var medd = document.getElementById('medall');
-   setInterval(displayHello, 1000);
-
-   function displayHello() {
-   if (localStorage.clickcount) {
-    afkk.style.color = 'white';
-} else {
-
-  afkk.style.color = "#595959";
-  //localStorage.clickcount = 1;
-}
-   }
-  setTimeout(() => {
-    
-    afkk.style.color = 'white';
- Name.innerHTML = "Afk";
- 
-  localStorage.clickcount = 1;
-
- description. innerHTML = "Stayed On The Home Page For 5 minutes.";
-   medd.style.opacity = 1;
-    medd.style.animation = 'medal 15s';
-    setTimeout(() => {
-
-   medd.style.opacity = 0;
-    
-  }, 15000);
-  }, 300000);
- 
-</script-->
-
       <div class="box" id="bloxorz" style="position: relative; float: left">
         <a href="https://adfree-sz-games.github.io/games/bloxx">
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/blox.jpeg?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/blox.jpeg"
+            alt="Bloxorz"
           />
           <div
             class="textover"
@@ -5391,8 +4801,8 @@
         <a href="https://mr-funkinguy.github.io/cookieclicker/">
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/click.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/click.png"
+            alt="Cookie Clicker"
           />
         </a>
       </div>
@@ -5401,8 +4811,8 @@
         <a href="https://adfree-sz-games.github.io/games/agario">
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/agario.jpeg?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/agario.jpeg"
+            alt="Agar.io"
           />
 
           <div
@@ -5448,8 +4858,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/bscLeg.avif?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/bscLeg.avif"
+            alt="Basketball Stars"
           />
           <div
             class="textover"
@@ -5466,8 +4876,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/storage3/blob/main/cr.jpeg?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/cr.jpeg"
+            alt="Crossy Road"
           />
           <div class="textover" style="">Crossy Road</div>
         </a>
@@ -5479,8 +4889,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/storage3/blob/main/eelslap/Screenshot%202023-04-25%20at%202.35.48%20PM.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/eelslap.png"
+            alt="Eel Slap"
           />
           <div class="textover" style="">eel Slap</div>
         </a>
@@ -5492,8 +4902,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Minecraft.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Minecraft.png"
+            alt="Minecraft"
           />
 
           <div class="textover" style="">Minecraft</div>
@@ -5510,8 +4920,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/storage3/blob/main/1/logo.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/1.png"
+            alt="WebGl Fluid Animation"
           />
           <div class="textover" style="">WebGl Fluid Animation</div>
         </a>
@@ -5527,8 +4937,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/storage3/blob/main/fs.jpeg?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/fs.jpeg"
+            alt="Funny Shooter"
           />
           <div
             class="textover"
@@ -5555,8 +4965,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/geo.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/geo.jpeg"
+            alt="Geomerty Dash"
           />
           <div class="textover" style="color: #ffffff !important">
             Geomerty Dash
@@ -5570,8 +4980,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Bitlife.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Bitlife.png"
+            alt="Bitlife"
           />
 
           <div class="textover" style="">Bitlife</div>
@@ -5588,8 +4998,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/Mr-funkinguy/lioxrytassets/main/other/adofai/unnamed.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/adofai.png"
+            alt="A Dance Of Fire And Ice"
           />
           <div class="textover" style="color: white !important">
             A Dance Of Fire And Ice
@@ -5603,8 +5013,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/superhot.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/superhot.jpeg"
+            alt="Super Hot"
           />
           <div class="textover" style="color: rgb(255, 255, 255) !important">
             Super Hot
@@ -5618,8 +5028,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/fnaf1.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/fnaf1.jpeg"
+            alt="Fnaf 1"
           />
           <div class="textover">FNAF</div>
         </a>
@@ -5631,8 +5041,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/fnaf2.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/fnaf2.webp"
+            alt="Fnaf 2"
           />
           <div class="textover">FNAF 2</div>
         </a>
@@ -5644,8 +5054,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/fnaf3.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/fnaf3.webp"
+            alt="Fnaf 3"
           />
           <div class="textover">FNAF 3</div>
         </a>
@@ -5657,8 +5067,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/fnaf4.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/fnaf4.jpeg"
+            alt="Fnaf 4"
           />
           <div class="textover">FNAF 4</div>
         </a>
@@ -5674,8 +5084,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SL1109.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SL1109.png"
+            alt="Fnaf Sister Location (Fan Made)"
           />
           <div class="textover">FNAF Sister Location (Fan Made)</div>
         </a>
@@ -5687,8 +5097,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FRUITNINJA.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FRUITNINJA.png"
+            alt="Fruit Ninja"
           />
           <div class="textover" style="color: rgb(255, 255, 255) !important">
             Fruit Ninja
@@ -5702,8 +5112,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/uno.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/uno.png"
+            alt="Uno"
           />
           <div class="textover">UNO</div>
         </a>
@@ -5719,8 +5129,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/67K.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/67K.avif"
+            alt="We Become What We Behold"
           />
 
           <div
@@ -5744,8 +5154,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Dreader.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Dreader.webp"
+            alt="Dreader"
           />
 
           <div
@@ -5763,8 +5173,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SNAKE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SNAKE.png"
+            alt="Snake"
           />
 
           <div
@@ -5782,8 +5192,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FlappyBird.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FlappyBird.png"
+            alt="Flappy Bird"
           />
 
           <div
@@ -5805,8 +5215,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/647K.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/647K.png"
+            alt="Mario Vs Luigi"
           />
 
           <div
@@ -5824,8 +5234,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/47K.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/47K.png"
+            alt="Sketchbook"
           />
 
           <div
@@ -5843,8 +5253,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/chess.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/chess.png"
+            alt="Chess"
           />
           <div
             class="textover"
@@ -5865,8 +5275,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/8Jk.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/8Jk.png"
+            alt="George And the Printer"
           />
 
           <div
@@ -5888,8 +5298,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/btd.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/btd.png"
+            alt="Bloons Tower Defense"
           />
           <div
             class="textover"
@@ -5905,13 +5315,6 @@
         </a>
       </div>
 
-      <!--div class="box" id="bloons Tower Defense 2" style="position: relative; float: left;">
-  <a href="https://adfree-sz-games.github.io/games/Flash.html?game=https://mr-funkinguy.github.io/GameStuff/gfiles/btd2/index.html">
-    <img class="ImageForGame"  data-src="https://mr-funkinguy.github.io/GameStuff/img/btd2.jpg" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important;">Bloons Tower Defense 2</div>
-  </a>
-</div-->
-
       <div
         class="box"
         id="bloons Tower Defense 3"
@@ -5922,8 +5325,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/btd3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/btd3.png"
+            alt="Bloons Tower Defense 3"
           />
           <div
             class="textover"
@@ -5949,8 +5352,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/btd4.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/btd4.png"
+            alt="Bloons Tower Defense 4"
           />
           <div
             class="textover"
@@ -5976,8 +5379,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/btd3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/btd5.png"
+            alt="Bloons Tower Defense 5"
           />
           <div
             class="textover"
@@ -5999,8 +5402,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://mr-funkinguy.github.io/sandboxels/icons/wallpaper.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/sandboxels.png"
+            alt="Sandboxels"
           />
           <div
             class="textover"
@@ -6023,8 +5426,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/storage3/blob/main/NOMG.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/noclip.png"
+            alt="Noclip"
           />
           <div
             class="textover"
@@ -6051,8 +5454,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/op9p.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/sf2.png"
+            alt="Street Fighter 2"
           />
 
           <div
@@ -6076,8 +5479,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/smash-karts.jpg?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/smash-karts.jpg"
+            alt="Smash Karts"
           />
           <div
             class="textover"
@@ -6104,8 +5507,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/storage3/blob/main/NOMG.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/combat-online.png"
+            alt="Combat Online"
           />
           <div
             class="textover"
@@ -6132,8 +5535,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/time-shooter-2.jpg?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/time-shooter-2.jpg"
+            alt="Time Shooter 2"
           />
           <div
             class="textover"
@@ -6160,8 +5563,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/storage3/blob/main/NOMG.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/happy-wheels.png"
+            alt="Happy Wheels"
           />
           <div
             class="textover"
@@ -6188,8 +5591,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/rooftop-snipers.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/rooftop-snipers.png"
+            alt="Rooftop Snipers"
           />
           <div
             class="textover"
@@ -6212,8 +5615,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/cube2.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/cube2.png"
+            alt="Cube 2"
           />
           <div
             class="textover"
@@ -6236,8 +5639,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/CubeEngine.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CubeEngine.png"
+            alt="Cube Engine"
           />
           <div
             class="textover"
@@ -6262,8 +5665,8 @@
         <a href="https://adfree-sz-games.github.io/Games2/sm64">
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/cover/64.jpeg?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/64.jpeg"
+            alt="Super Mario 64"
           />
           <div
             class="textover"
@@ -6286,8 +5689,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/09ML.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/09ML.avif"
+            alt="Doodle Jump"
           />
 
           <div
@@ -6315,8 +5718,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/drawthehill.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/drawthehill.jpeg"
+            alt="Draw The Hill"
           />
           <div
             class="textover"
@@ -6343,8 +5746,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/Games10/raw/main/fnaw/splash.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/fnaw.png"
+            alt="Five Nights at Winston's"
           />
           <div
             class="textover"
@@ -6366,8 +5769,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GFEUD.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GFEUD.webp"
+            alt="Google Feud"
           />
           <div
             class="textover"
@@ -6394,8 +5797,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/greybox.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/greybox.png"
+            alt="Grey Box Testing"
           />
           <div
             class="textover"
@@ -6418,8 +5821,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/Games10/raw/main/kitchen-gun-game/splash.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/kitchen-gun-game.png"
+            alt="Kitchen Gun"
           />
           <div
             class="textover"
@@ -6446,8 +5849,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/Games10/raw/main/noob-steve-parkour/512x512.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/noob-steve-parkour.png"
+            alt="Noob Steve Parkour"
           />
           <div
             class="textover"
@@ -6473,8 +5876,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/Games10/raw/main/popcat-classic/splash.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/popcat-classic.png"
+            alt="Popcat Classic"
           />
           <div
             class="textover"
@@ -6497,8 +5900,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/Games10/raw/main/polybranch/img/pic1.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/polybranch.png"
+            alt="PolyBranch"
           />
           <div
             class="textover"
@@ -6525,8 +5928,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/Games2/raw/main/push-your-luck/assets/img/push.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/push-your-luck.png"
+            alt="Push Your Luck"
           />
           <div
             class="textover"
@@ -6553,8 +5956,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/Games10/raw/main/papery-planes/splash.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/papery-planes.png"
+            alt="Papery Planes"
           />
           <div
             class="textover"
@@ -6577,8 +5980,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/Games10/raw/main/theheist/theheist.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/theheist.png"
+            alt="The Heist"
           />
           <div
             class="textover"
@@ -6601,8 +6004,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/incred.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/incredibox.jpeg"
+            alt="Incredibox"
           />
           <div
             class="textover"
@@ -6629,8 +6032,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ltf.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ltf.png"
+            alt="Learn To Fly"
           />
           <div
             class="textover"
@@ -6658,8 +6061,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ltf2.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ltf2.jpg"
+            alt="Learn To Fly 2"
           />
           <div
             class="textover"
@@ -6683,8 +6086,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/catnin.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/catnin.png"
+            alt="Cat Ninja"
           />
           <div
             class="textover"
@@ -6708,8 +6111,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/motox3m.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/motox3m.png"
+            alt="Moto X3M"
           />
           <div
             class="textover"
@@ -6733,8 +6136,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/X3M2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/X3M2.png"
+            alt="Moto X3M 2"
           />
           <div
             class="textover"
@@ -6762,8 +6165,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/X3M3.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/X3M3.avif"
+            alt="Moto X3M Pool Party"
           />
           <div
             class="textover"
@@ -6791,8 +6194,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/X3M9.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/X3M9.png"
+            alt="Moto X3M Spooky Land"
           />
           <div
             class="textover"
@@ -6820,8 +6223,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/X3M5.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/X3M5.jpeg"
+            alt="Moto X3M Winter"
           />
           <div
             class="textover"
@@ -6849,8 +6252,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FireW.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FireW.png"
+            alt="Fireboy & Watergirl 2"
           />
           <div
             class="textover"
@@ -6878,8 +6281,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/NOMGG.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/NOMGG.png"
+            alt="Boxing Random"
           />
           <div
             class="textover"
@@ -6907,8 +6310,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CSGO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CSGO.png"
+            alt="CSGO Clicker"
           />
           <div
             class="textover"
@@ -6932,8 +6335,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MKMART.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MKMART.avif"
+            alt="Monkey Mart"
           />
           <div
             class="textover"
@@ -6957,8 +6360,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Doom.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Doom.png"
+            alt="Doom"
           />
           <div
             class="textover"
@@ -6986,8 +6389,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/bthe.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/bthe.jpeg"
+            alt="Bob The Robber 2"
           />
           <div
             class="textover"
@@ -7011,8 +6414,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/thehotel.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/thehotel.png"
+            alt="The Hotel"
           />
           <div
             class="textover"
@@ -7036,8 +6439,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/UFS.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/UFS.webp"
+            alt="Ultimate Flash Sonic"
           />
           <div
             class="textover"
@@ -7065,8 +6468,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Hacker.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Hacker.png"
+            alt="Hacker Typer"
           />
           <div
             class="textover"
@@ -7090,8 +6493,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/2048.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/2048.png"
+            alt="2048"
           />
           <div
             class="textover"
@@ -7115,8 +6518,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Circles.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Circles.png"
+            alt="Circles"
           />
           <div
             class="textover"
@@ -7140,8 +6543,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/align4.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/align4.png"
+            alt="Align 4"
           />
           <div
             class="textover"
@@ -7165,8 +6568,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/AmoungUs.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/AmoungUs.jpeg"
+            alt="Among Us (Fan Made)"
           />
           <div
             class="textover"
@@ -7190,8 +6593,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Coloron.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Coloron.jpeg"
+            alt="Colorun"
           />
           <div
             class="textover"
@@ -7215,8 +6618,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/craftmine.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/craftmine.jpeg"
+            alt="Craftmine"
           />
           <div
             class="textover"
@@ -7244,8 +6647,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DOND.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DOND.webp"
+            alt="Deal Or No Deal"
           />
           <div
             class="textover"
@@ -7269,8 +6672,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/economicle.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/economicle.png"
+            alt="Economical"
           />
           <div
             class="textover"
@@ -7298,8 +6701,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/Economical-2.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/Economical-2.webp"
+            alt="Economical 2"
           />
           <div
             class="textover"
@@ -7327,8 +6730,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FCTYBalls.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FCTYBalls.avif"
+            alt="Factory Balls"
           />
           <div
             class="textover"
@@ -7356,8 +6759,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GTEWY.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GTEWY.avif"
+            alt="Gataway Shootout"
           />
           <div
             class="textover"
@@ -7381,8 +6784,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GrindCraft.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GrindCraft.jpeg"
+            alt="Grind Craft"
           />
           <div
             class="textover"
@@ -7410,8 +6813,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/113347.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/113347.jpeg"
+            alt="Madalin Stunt Cars 2"
           />
           <div
             class="textover"
@@ -7439,8 +6842,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/11456.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/11456.webp"
+            alt="Madalin Stunt Cars 3"
           />
           <div
             class="textover"
@@ -7464,8 +6867,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/q1k3.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/q1k3.avif"
+            alt="Q1K3"
           />
           <div
             class="textover"
@@ -7493,8 +6896,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/RVortrex.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/RVortrex.png"
+            alt="Rolly Vortex"
           />
           <div
             class="textover"
@@ -7518,8 +6921,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/slope2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/slope2.png"
+            alt="Slope 2"
           />
           <div
             class="textover"
@@ -7543,8 +6946,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/snowbattle.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/snowbattle.jpeg"
+            alt="Snowbattle"
           />
           <div
             class="textover"
@@ -7571,8 +6974,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/spacecompany.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/spacecompany.png"
+            alt="Space Company"
           />
           <div
             class="textover"
@@ -7600,8 +7003,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/STCKB3.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/STCKB3.webp"
+            alt="Stack Bump 3D"
           />
           <div
             class="textover"
@@ -7625,8 +7028,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/swerve.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/swerve.webp"
+            alt="Swerve"
           />
           <div
             class="textover"
@@ -7650,8 +7053,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/TheCube.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/TheCube.png"
+            alt="The Cube"
           />
           <div
             class="textover"
@@ -7679,8 +7082,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/TheLostBall.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/TheLostBall.png"
+            alt="The Lost Ball"
           />
           <div
             class="textover"
@@ -7704,8 +7107,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/townscaper.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/townscaper.jpeg"
+            alt="Townscaper"
           />
           <div
             class="textover"
@@ -7729,8 +7132,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/wordle.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/wordle.webp"
+            alt="Wordle"
           />
           <div
             class="textover"
@@ -7754,8 +7157,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://github.com/sz-games/storage3/blob/main/NOMG.png?raw=true"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/NOMG.png"
+            alt="Zelda 3D"
           />
           <div
             class="textover"
@@ -7779,8 +7182,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DGMINER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DGMINER.png"
+            alt="Doge Miner"
           />
           <div
             class="textover"
@@ -7798,16 +7201,6 @@
         </a>
       </div>
 
-      <!--div class="box"  id="Doge Miner 2" style="position: relative; float: left;">
-  <a href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/Games4/Dogeminer2">
-    
-    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DGMINER2.jpeg" alt="game">
- <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Doge Miner2</div>
-      
-  </a>
-
-</div-->
-
       <div
         class="box"
         id="Drift Hunters"
@@ -7818,8 +7211,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/drift-hunters.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/drift-hunters.png"
+            alt="Drift Hunters"
           />
           <div
             class="textover"
@@ -7843,7 +7236,7 @@
         >
           <img
             class="ImageForGame"
-            data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAElBMVEVELx2+fF74+/tfU8rcnXYmJijckvdIAAAANElEQVR4AWMYXkAQCZAhAOYqKRkbgzjGxkpKQCEyBFxclJRCQ12AIDRUScnFhSwBFDBgAgBawjyRK2AIpQAAAABJRU5ErkJggg=="
+            src="https://adfree-sz-games.github.io/cover/bloxd.io.png"
             alt="game"
           />
           <div
@@ -7868,8 +7261,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/VOX.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/VOX.png"
+            alt="Voxiom.io"
           />
           <div
             class="textover"
@@ -7893,8 +7286,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/STATIC2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/STATIC2.png"
+            alt="TV Static"
           />
           <div
             class="textover"
@@ -7922,8 +7315,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/WPNPK2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/WPNPK2.png"
+            alt="Tactical Weapon Pack 2"
           />
           <div
             class="textover"
@@ -7951,8 +7344,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SANTYISHOME.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SANTYISHOME.png"
+            alt="Santy Is Home"
           />
           <div
             class="textover"
@@ -7980,8 +7373,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/UNROLL.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/UNROLL.png"
+            alt="Sushi Unroll"
           />
           <div
             class="textover"
@@ -8009,8 +7402,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/0034.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/0034.png"
+            alt="Super Mario Construct"
           />
           <div
             class="textover"
@@ -8038,8 +7431,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/0035.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/0035.png"
+            alt="Win The Whitehouse"
           />
           <div
             class="textover"
@@ -8067,8 +7460,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ROCKETL5.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ROCKETL5.png"
+            alt="Rocket League"
           />
           <div
             class="textover"
@@ -8096,8 +7489,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/1094.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/1094.png"
+            alt="Missile Game"
           />
           <div
             class="textover"
@@ -8125,8 +7518,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/11940.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/11940.webp"
+            alt="Merge Round Racers"
           />
           <div
             class="textover"
@@ -8150,8 +7543,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/1190a.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/1190a.png"
+            alt="Frying Nemo"
           />
           <div
             class="textover"
@@ -8179,8 +7572,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/1109g.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/1109g.webp"
+            alt="Stick Duel Battle"
           />
           <div
             class="textover"
@@ -8208,8 +7601,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/091h.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/091h.png"
+            alt="Super Mario Bros"
           />
           <div
             class="textover"
@@ -8237,8 +7630,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/098BU.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/098BU.png"
+            alt="Cars Simulator"
           />
           <div
             class="textover"
@@ -8266,8 +7659,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/5BL.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/5BL.webp"
+            alt="The Worlds Hardest Game"
           />
           <div
             class="textover"
@@ -8295,8 +7688,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/59BJ.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/59BJ.jpeg"
+            alt="The Worlds Hardest Game 2"
           />
           <div
             class="textover"
@@ -8324,8 +7717,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/YU90.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/YU90.webp"
+            alt="Super Smash Flash"
           />
           <div
             class="textover"
@@ -8353,8 +7746,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/LACH2.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/LACH2.jpeg"
+            alt="Little Alchemy 2"
           />
           <div
             class="textover"
@@ -8378,8 +7771,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/0991L.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/0991L.webp"
+            alt="Angry Birds"
           />
           <div
             class="textover"
@@ -8403,8 +7796,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/HexGl.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/HexGl.jpeg"
+            alt="HexGl"
           />
           <div
             class="textover"
@@ -8432,8 +7825,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/jetpackjoyride.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/jetpackjoyride.webp"
+            alt="Jetpack Joyride"
           />
           <div
             class="textover"
@@ -8461,8 +7854,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MINI109.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MINI109.png"
+            alt="Mini Shooters"
           />
           <div
             class="textover"
@@ -8490,8 +7883,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/PIXEL901.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/PIXEL901.png"
+            alt="Pixel Gun Apocalypse 2"
           />
           <div
             class="textover"
@@ -8515,8 +7908,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/99balls.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/99balls.avif"
+            alt="99 Balls"
           />
           <div
             class="textover"
@@ -8544,8 +7937,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/9900ER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/9900ER.png"
+            ssalt="9007199254740992"
           />
           <div
             class="textover"
@@ -8573,8 +7966,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/00LM2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/00LM2.png"
+            alt="Angry Sharks"
           />
           <div
             class="textover"
@@ -8598,8 +7991,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ST141.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ST141.png"
+            alt="Station 141"
           />
           <div
             class="textover"
@@ -8623,8 +8016,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/098B.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/098B.png"
+            alt="Pipe Riders"
           />
           <div
             class="textover"
@@ -8652,8 +8045,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/0098K.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/0098K.avif"
+            alt="Adventure Drivers"
           />
           <div
             class="textover"
@@ -8681,8 +8074,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/098M.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/098M.png"
+            alt="Amazing Rope Police"
           />
           <div
             class="textover"
@@ -8710,8 +8103,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/10MINB.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/10MINB.webp"
+            alt="10 Minutes Till Dawn"
           />
           <div
             class="textover"
@@ -8739,8 +8132,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ctr.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ctr.png"
+            alt="Cut The Rope"
           />
           <div
             class="textover"
@@ -8768,8 +8161,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ctr2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ctr2.png"
+            alt="Cut The Rope 2"
           />
           <div
             class="textover"
@@ -8797,8 +8190,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/tr3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/tr3.png"
+            alt="Cut The Rope 3"
           />
           <div
             class="textover"
@@ -8826,8 +8219,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/098MN.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/098MN.jpeg"
+            alt="Defend The Tank"
           />
           <div
             class="textover"
@@ -8855,8 +8248,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BICEC.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BICEC.png"
+            alt="Bad Ice Cream"
           />
           <div
             class="textover"
@@ -8884,8 +8277,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BICEC2.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BICEC2.webp"
+            alt="Bad Ice Cream 2"
           />
           <div
             class="textover"
@@ -8913,8 +8306,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BICEC3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BICEC3.png"
+            alt="Bad Ice Cream 3"
           />
           <div
             class="textover"
@@ -8942,8 +8335,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/stormthehouse2.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/stormthehouse2.jpg"
+            alt="Storm The House 2"
           />
           <div
             class="textover"
@@ -8971,8 +8364,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/09KL.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/09KL.jpeg"
+            alt="Highway Justice"
           />
           <div
             class="textover"
@@ -8996,8 +8389,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/drive-mad.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/drive-mad.jpg"
+            alt="Drive Mad"
           />
           <div
             class="textover"
@@ -9021,8 +8414,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/connect3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/connect3.png"
+            alt="Connect 3"
           />
           <div
             class="textover"
@@ -9050,8 +8443,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/890P.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/890P.jpeg"
+            alt="Stickman Hook"
           />
           <div
             class="textover"
@@ -9079,8 +8472,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/0091GH.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/0091GH.jpeg"
+            alt="Champion Island"
           />
           <div
             class="textover"
@@ -9104,8 +8497,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/WORDLEE.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/WORDLEE.jpeg"
+            alt="Wordle"
           />
           <div
             class="textover"
@@ -9129,8 +8522,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/OVO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/OVO.png"
+            alt="OvO"
           />
           <div
             class="textover"
@@ -9154,8 +8547,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/eer6.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/eer6.png"
+            alt="The Battle"
           />
           <div
             class="textover"
@@ -9183,8 +8576,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/hwy-rcer.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/hwy-rcer.png"
+            alt="Highway Racer"
           />
           <div
             class="textover"
@@ -9208,8 +8601,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/PO09.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/PO09.png"
+            alt="Roommate"
           />
           <div
             class="textover"
@@ -9233,8 +8626,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CLOUDS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CLOUDS.png"
+            alt="1v1 Space"
           />
           <div
             class="textover"
@@ -9261,8 +8654,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/UZG.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/UZG.png"
+            alt="Untitled Zombie Game"
           />
           <div
             class="textover"
@@ -9290,8 +8683,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/2048CC.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/2048CC.png"
+            alt="Cupcake 2048"
           />
           <div
             class="textover"
@@ -9315,8 +8708,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/EVILG.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/EVILG.jpeg"
+            alt="Evil Glitch"
           />
           <div
             class="textover"
@@ -9344,8 +8737,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CANNONBSKT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CANNONBSKT.png"
+            alt="Cannon Basketball 4"
           />
           <div
             class="textover"
@@ -9373,8 +8766,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/67OPY.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/67OPY.webp"
+            alt="Dragon Vs Bricks"
           />
           <div
             class="textover"
@@ -9398,8 +8791,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DRIFTBOSS.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DRIFTBOSS.jpeg"
+            alt="Drift Boss"
           />
           <div
             class="textover"
@@ -9423,8 +8816,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/EGGYCAR.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/EGGYCAR.webp"
+            alt="Eggycar"
           />
           <div
             class="textover"
@@ -9448,8 +8841,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BLOCKPOST.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BLOCKPOST.avif"
+            alt="Blockpost"
           />
           <div
             class="textover"
@@ -9477,8 +8870,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/PORTALF.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/PORTALF.png"
+            alt="Portal Flash"
           />
           <div
             class="textover"
@@ -9506,8 +8899,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ICEAGEBABY.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ICEAGEBABY.png"
+            alt="Ice Age Baby"
           />
           <div
             class="textover"
@@ -9535,8 +8928,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BLACKHOLESQ.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BLACKHOLESQ.png"
+            alt="Black Hole Square"
           />
           <div
             class="textover"
@@ -9560,8 +8953,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/VM78.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/VM78.png"
+            alt="Virtual OS"
           />
           <div
             class="textover"
@@ -9589,8 +8982,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/30dollarwebsite.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/30dollarwebsite.png"
+            alt="30 Dollar Website"
           />
           <div
             class="textover"
@@ -9614,8 +9007,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GMYHM.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GMYHM.png"
+            alt="Gun Mayhem"
           />
           <div
             class="textover"
@@ -9643,8 +9036,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GMYHM.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GMYHM2.png"
+            alt="Gun Mayhem 2"
           />
           <div
             class="textover"
@@ -9672,8 +9065,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ANMVS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ANMVS.png"
+            alt="Animator Vs Animation"
           />
           <div
             class="textover"
@@ -9701,8 +9094,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BCHK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BCHK.png"
+            alt="Ballistic Chickens"
           />
           <div
             class="textover"
@@ -9730,8 +9123,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BRB5.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BRB5.png"
+            alt="Big Red Button"
           />
           <div
             class="textover"
@@ -9759,8 +9152,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BAFy.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BAFy.jpeg"
+            alt="Burger And Frights"
           />
           <div
             class="textover"
@@ -9784,8 +9177,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/zombotron.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ZOMBOTRON.png"
+            alt="Zombotron"
           />
           <div
             class="textover"
@@ -9809,8 +9202,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/JELLYTRCK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/JELLYTRCK.png"
+            alt="Jelly Truck"
           />
           <div
             class="textover"
@@ -9834,8 +9227,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/wheely6.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/WHEELY6.png"
+            alt="Wheely 6"
           />
           <div
             class="textover"
@@ -9863,8 +9256,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/google-solitaire.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GOOGLESOL.png"
+            alt="Google Solitaire"
           />
           <div
             class="textover"
@@ -9888,8 +9281,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/8ball.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/8BALL.png"
+            alt="8 Ball"
           />
           <div
             class="textover"
@@ -9913,8 +9306,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/890Bml.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/JACKSMITH.png"
+            alt="Jacksmith"
           />
           <div
             class="textover"
@@ -9942,8 +9335,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DNTFLL.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DNTFLL.png"
+            alt="Dont Fall .io"
           />
           <div
             class="textover"
@@ -9971,8 +9364,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SPACECADET.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SPACECADET.png"
+            alt="Space Cadet Pinball"
           />
           <div
             class="textover"
@@ -9996,8 +9389,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MAZE3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MAZE3.png"
+            alt="The Maze"
           />
           <div
             class="textover"
@@ -10021,8 +9414,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SKYRO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SKYRO.png"
+            alt="Rolling Sky"
           />
           <div
             class="textover"
@@ -10050,8 +9443,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SWATSH.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SWATSH.png"
+            alt="Time Shooter 3 S.W.A.T"
           />
           <div
             class="textover"
@@ -10079,8 +9472,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FANCYADV.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FANCYADV.png"
+            alt="Fancy Pants Adventure"
           />
           <div
             class="textover"
@@ -10108,8 +9501,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BASKETAND.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BASKETAND.png"
+            alt="Basket And Ball"
           />
           <div
             class="textover"
@@ -10137,8 +9530,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/PARKINGFUR.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/PARKINGFUR.png"
+            alt="Parking Fury 3"
           />
           <div
             class="textover"
@@ -10162,8 +9555,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SNAKEIO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SNAKEIO.png"
+            alt="Snake.io"
           />
           <div
             class="textover"
@@ -10191,8 +9584,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/STICKMANEPIC.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/STICKMANEPIC.png"
+            alt="Stickman Epic Battle"
           />
           <div
             class="textover"
@@ -10220,8 +9613,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SORTTHECOURT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SORTTHECOURT.png"
+            alt="Sort The Court"
           />
           <div
             class="textover"
@@ -10249,8 +9642,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SHUTTLEDECK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SHUTTLEDECK.png"
+            alt="Shuttle Deck"
           />
           <div
             class="textover"
@@ -10274,8 +9667,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SANSFIGHT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SANSFIGHT.png"
+            alt="Sans Fight"
           />
           <div
             class="textover"
@@ -10299,8 +9692,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SANDGAME.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SANDGAME.png"
+            alt="Sand Game"
           />
           <div
             class="textover"
@@ -10328,8 +9721,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/OREGONB.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/OREGONB.png"
+            alt="Oregon Trail Game"
           />
           <div
             class="textover"
@@ -10353,8 +9746,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/IDLESHARK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/IDLESHARK.png"
+            alt="Idle Shark"
           />
           <div
             class="textover"
@@ -10382,8 +9775,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DEATHRUN.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DEATHRUN.png"
+            alt="Death Run 3D"
           />
           <div
             class="textover"
@@ -10407,8 +9800,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CLEANUP.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CLEANUP.png"
+            alt="Clean Up.io"
           />
           <div
             class="textover"
@@ -10436,8 +9829,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CARSMASTER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CARSMASTER.png"
+            alt="Online Racing Game"
           />
           <div
             class="textover"
@@ -10465,8 +9858,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BALDIS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BALDIS.png"
+            alt="Baldis Basics"
           />
           <div
             class="textover"
@@ -10494,8 +9887,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/STARWARS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/STARWARS.png"
+            alt="Starwars Movie"
           />
           <div
             class="textover"
@@ -10519,8 +9912,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DRIFTCITY.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DRIFTCITY.png"
+            alt="Drift City"
           />
           <div
             class="textover"
@@ -10548,8 +9941,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BASEBALLG.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BASEBALLG.png"
+            alt="Google Baseball"
           />
           <div
             class="textover"
@@ -10577,8 +9970,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/HORDEKILLER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/HORDEKILLER.png"
+            alt="Horde Killer"
           />
           <div
             class="textover"
@@ -10606,8 +9999,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/TIMRACE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/TIMRACE.png"
+            alt="Timothys Race"
           />
           <div
             class="textover"
@@ -10631,8 +10024,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SLOWROADS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SLOWROADS.png"
+            alt="Slowroads"
           />
           <div
             class="textover"
@@ -10660,8 +10053,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/TACASSASIN.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/TACASSASIN.png"
+            alt="Tactical Assasin 2"
           />
           <div
             class="textover"
@@ -10685,8 +10078,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/OSU.webp"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/OSU.webp"
+            alt="Web OSU"
           />
           <div
             class="textover"
@@ -10714,8 +10107,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/VVPLANE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/VVPLANE.png"
+            alt="Very Very Plane"
           />
           <div
             class="textover"
@@ -10743,8 +10136,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/TINYFISH.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/TINYFISH.png"
+            alt="Tiny Fishing"
           />
           <div
             class="textover"
@@ -10768,8 +10161,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/WWH.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/WWH.png"
+            alt="Waterworks"
           />
           <div
             class="textover"
@@ -10793,8 +10186,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/vex3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/vex3.png"
+            alt="Vex 3"
           />
           <div
             class="textover"
@@ -10817,8 +10210,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/vex3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/vex3.png"
+            alt="Vex 4"
           />
           <div
             class="textover"
@@ -10842,8 +10235,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/vex3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/vex3.png"
+            alt="Vex 5"
           />
           <div
             class="textover"
@@ -10867,8 +10260,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/vex3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/vex3.png"
+            alt="Vex 6"
           />
           <div
             class="textover"
@@ -10892,8 +10285,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/vex3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/vex3.png"
+            alt="Vex 7"
           />
           <div
             class="textover"
@@ -10917,8 +10310,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FAKEUP.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FAKEUP.png"
+            alt="Fake Update"
           />
           <div
             class="textover"
@@ -10946,8 +10339,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/HOLEIO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/HOLEIO.png"
+            alt="Black Hole.io"
           />
           <div
             class="textover"
@@ -10971,8 +10364,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FLAPPY2048.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FLAPPY2048.png"
+            alt="Flappy 2048"
           />
           <div
             class="textover"
@@ -11000,8 +10393,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GRAVSOCCER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GRAVSOCCER.png"
+            alt="Gravity Soccer"
           />
           <div
             class="textover"
@@ -11025,8 +10418,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/JSTFALL.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/JSTFALL.png"
+            alt="Just Fall"
           />
           <div
             class="textover"
@@ -11054,8 +10447,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/STEALTE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/STEALTE.png"
+            alt="Steal This Election"
           />
           <div
             class="textover"
@@ -11079,8 +10472,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/WEBRETRO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/WEBRETRO.png"
+            alt="Web Retro Emulator"
           />
           <div
             class="textover"
@@ -11108,8 +10501,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/XTRIAL.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/XTRIAL.png"
+            alt="X Trial Racing"
           />
           <div
             class="textover"
@@ -11137,8 +10530,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BTTS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BTTS.png"
+            alt="Big Tower Tiny Square"
           />
           <div
             class="textover"
@@ -11166,8 +10559,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/OFFP.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/OFFP.png"
+            alt="Offline Paradise"
           />
           <div
             class="textover"
@@ -11195,8 +10588,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/VERYNORSH.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/VERYNORSH.png"
+            alt="Very Normal Shooter"
           />
           <div
             class="textover"
@@ -11220,8 +10613,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MINEDUST.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MINEDUST.png"
+            alt="Mindustry"
           />
           <div
             class="textover"
@@ -11245,8 +10638,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/miniputt.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/miniputt.png"
+            alt="Miniputt"
           />
           <div
             class="textover"
@@ -11264,24 +10657,14 @@
         </a>
       </div>
 
-      <!--div class="box"  id="basket bros" style="position: relative; float: left;">
-  <a href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/Games7/basketbros-io">
-    
-    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BASKETBRO.png" alt="game">
- <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Basket Bros</div>
-      
-  </a>
-
-</div-->
-
       <div class="box" id="cubefield" style="position: relative; float: left">
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/Games7/cubefield"
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CUBEF.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CUBEF.png"
+            alt="Cube Field"
           />
           <div
             class="textover"
@@ -11305,8 +10688,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ballhop.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ballhop.png"
+            alt="Ball Hop"
           />
           <div
             class="textover"
@@ -11334,8 +10717,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SKYCARSTUNT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SKYCARSTUNT.png"
+            alt="Sky Car Stunt"
           />
           <div
             class="textover"
@@ -11363,8 +10746,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SLIMERUSH.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SLIMERUSH.png"
+            alt="Slime Rush Tower Defence"
           />
           <div
             class="textover"
@@ -11388,8 +10771,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BLACKJACK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BLACKJACK.png"
+            alt="Blackjack"
           />
           <div
             class="textover"
@@ -11413,8 +10796,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BITERS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BITERS.png"
+            alt="Biters Io"
           />
           <div
             class="textover"
@@ -11442,8 +10825,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MATRIXR.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MATRIXR.png"
+            alt="Matrix Rampage"
           />
           <div
             class="textover"
@@ -11467,8 +10850,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/weavesilk.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/weavesilk.png"
+            alt="Weavesilk"
           />
           <div
             class="textover"
@@ -11492,8 +10875,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/trainride.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/trainride.png"
+            alt="Train Ride"
           />
           <div
             class="textover"
@@ -11521,8 +10904,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/towermaster.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/towermaster.png"
+            alt="Tower Master"
           />
           <div
             class="textover"
@@ -11550,8 +10933,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/stationmelt.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/stationmelt.png"
+            alt="Station Meltdown"
           />
           <div
             class="textover"
@@ -11575,8 +10958,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/stackball.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/stackball.png"
+            alt="Stackball"
           />
           <div
             class="textover"
@@ -11600,8 +10983,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/snowrider.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/snowrider.png"
+            alt="Snow Rider 3D"
           />
           <div
             class="textover"
@@ -11629,8 +11012,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/smallwrld.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/smallwrld.png"
+            alt="Small World Cup"
           />
           <div
             class="textover"
@@ -11654,8 +11037,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/stickpo.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/stickpo.png"
+            alt="Pokey Stick"
           />
           <div
             class="textover"
@@ -11679,8 +11062,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/gunnn.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/gunnn.png"
+            alt="Gun Spinn"
           />
           <div
             class="textover"
@@ -11704,8 +11087,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BREAKLOCK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BREAKLOCK.png"
+            alt="Breaklock"
           />
           <div
             class="textover"
@@ -11729,8 +11112,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/gopherkart.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/gopherkart.png"
+            alt="Gopher Kart"
           />
           <div
             class="textover"
@@ -11758,8 +11141,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MARIOK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MARIOK.png"
+            alt="Mario Combat"
           />
           <div
             class="textover"
@@ -11787,8 +11170,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/COLORCOM.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/COLORCOM.png"
+            alt="Color Combat"
           />
           <div
             class="textover"
@@ -11816,8 +11199,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MS4.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MS4.png"
+            alt="MS Flight Sim 1-4"
           />
           <div
             class="textover"
@@ -11841,8 +11224,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/nightwalk.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/nightwalk.png"
+            alt="Nightwalk"
           />
           <div
             class="textover"
@@ -11866,8 +11249,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/pong.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/pong.png"
+            alt="Pong"
           />
           <div
             class="textover"
@@ -11895,8 +11278,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/dontouch.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/dontouch.png"
+            alt="Dont Touch Anything"
           />
           <div
             class="textover"
@@ -11920,8 +11303,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GUNMASTER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GUNMASTER.png"
+            alt="Gun Master"
           />
           <div
             class="textover"
@@ -11945,8 +11328,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/10103.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/10103.png"
+            alt="10-103"
           />
           <div
             class="textover"
@@ -11974,8 +11357,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FEARTHESPOT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FEARTHESPOT.png"
+            alt="Fear The Spotlight"
           />
           <div
             class="textover"
@@ -11999,8 +11382,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/PANDEM2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/PANDEM2.png"
+            alt="Pandemic 2"
           />
           <div
             class="textover"
@@ -12024,8 +11407,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/THERMO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/THERMO.png"
+            alt="Thermomorph"
           />
           <div
             class="textover"
@@ -12049,8 +11432,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/RAFTWARS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/RAFTWARS.png"
+            alt="Raftwars"
           />
           <div
             class="textover"
@@ -12078,8 +11461,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/gettingoverit.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/gettingoverit.png"
+            alt="Getting Over It Scratch Edition"
           />
           <div
             class="textover"
@@ -12103,8 +11486,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/RADIUSRAID.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/RADIUSRAID.png"
+            alt="Radius Raid"
           />
           <div
             class="textover"
@@ -12128,8 +11511,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ROADBLOCKS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ROADBLOCKS.png"
+            alt="Roadblocks"
           />
           <div
             class="textover"
@@ -12157,8 +11540,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/EDGENOTFOUND.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/EDGENOTFOUND.png"
+            alt="Edge Not Found"
           />
           <div
             class="textover"
@@ -12186,8 +11569,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CYBERCITYD.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CYBERCITYD.png"
+            alt="Cyber City Driver"
           />
           <div
             class="textover"
@@ -12215,8 +11598,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/23CkillC.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/23CkillC.png"
+            alt="Creative Kill Chamber"
           />
           <div
             class="textover"
@@ -12244,8 +11627,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MSIC.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MSIC.png"
+            alt="Make Sure Its Closed"
           />
           <div
             class="textover"
@@ -12273,8 +11656,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/KIDSVSICECREAM.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/KIDSVSICECREAM.png"
+            alt="Kids Vs Icecream"
           />
           <div
             class="textover"
@@ -12302,8 +11685,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BATTLEFORGONDOR.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BATTLEFORGONDOR.png"
+            alt="Battle For Gondor"
           />
           <div
             class="textover"
@@ -12331,8 +11714,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CELLMACHINE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CELLMACHINE.png"
+            alt="Cell Machine"
           />
           <div
             class="textover"
@@ -12356,8 +11739,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DONUTBOY.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DONUTBOY.png"
+            alt="Donut Boy"
           />
           <div
             class="textover"
@@ -12385,8 +11768,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/YOSHIFABR.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/YOSHIFABR.png"
+            alt="Yoshi Fabrication"
           />
           <div
             class="textover"
@@ -12414,8 +11797,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/YOUVSSK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/YOUVSSK.png"
+            alt="You Vs 100 Skibidi Toilets"
           />
           <div
             class="textover"
@@ -12439,8 +11822,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/PAPERFOLD.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/PAPERFOLD.png"
+            alt="Paper Fold"
           />
           <div
             class="textover"
@@ -12468,8 +11851,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/PRESSIM.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/PRESSIM.png"
+            alt="President Simulator"
           />
           <div
             class="textover"
@@ -12497,8 +11880,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ONLYUPCLONE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ONLYUPCLONE.png"
+            alt="Only Up Clone"
           />
           <div
             class="textover"
@@ -12526,8 +11909,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FUNNYBATTLE2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FUNNYBATTLE2.png"
+            alt="Funny Battle 2"
           />
           <div
             class="textover"
@@ -12555,8 +11938,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ZOMBIESHOOTER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ZOMBIESHOOTER.png"
+            alt="Zombie Shooter"
           />
           <div
             class="textover"
@@ -12584,8 +11967,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SNIPERSHOTBT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SNIPERSHOTBT.png"
+            alt="Sniper Shot: Bullet Time"
           />
           <div
             class="textover"
@@ -12613,8 +11996,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/NEOFLYTRON.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/NEOFLYTRON.png"
+            alt="Neon Flytron: Cyberpunk Racer"
           />
           <div
             class="textover"
@@ -12642,8 +12025,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ZOMBIESHOOTERWAVE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ZOMBIESHOOTERWAVE.png"
+            alt="Zombie Shooter: Wave Of Zombies"
           />
           <div
             class="textover"
@@ -12671,8 +12054,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/SQUIDSHOOT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SQUIDSHOOT.png"
+            alt="Squid Shooter"
           />
           <div
             class="textover"
@@ -12700,8 +12083,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MINECRAFTSHOOTER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MINECRAFTSHOOTER.png"
+            alt="Minecraft Shooter"
           />
           <div
             class="textover"
@@ -12729,8 +12112,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/HERO3.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/HERO3.png"
+            alt="Hero: 3 Flying Robot"
           />
           <div
             class="textover"
@@ -12758,8 +12141,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/HERO4CLAWS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/HERO4CLAWS.png"
+            alt="Hero: 4 Claws"
           />
           <div
             class="textover"
@@ -12787,8 +12170,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/HERO5KAT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/HERO5KAT.png"
+            alt="Hero: 5 Katana"
           />
           <div
             class="textover"
@@ -12816,8 +12199,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/FLIPTHEGUNSH.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/FLIPTHEGUNSH.png"
+            alt="Flip The Gun"
           />
           <div
             class="textover"
@@ -12841,8 +12224,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/CITYDRIVER.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/CITYDRIVER.png"
+            alt="City Driver"
           />
           <div
             class="textover"
@@ -12866,8 +12249,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/AIRBATTLE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/AIRBATTLE.png"
+            alt="AirBattle"
           />
           <div
             class="textover"
@@ -12895,8 +12278,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/3DnoobD.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/3DnoobD.png"
+            alt="3D Noob Destroyer"
           />
           <div
             class="textover"
@@ -12920,8 +12303,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GRANNY.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GRANNY.png"
+            alt="Granny Clone"
           />
           <div
             class="textover"
@@ -12945,8 +12328,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BUILDERV.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BUILDERV.png"
+            alt="Builder"
           />
           <div
             class="textover"
@@ -12974,8 +12357,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/ULDSl.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/ULDSl.png"
+            alt="Ultimate Destruction Simulator"
           />
           <div
             class="textover"
@@ -12999,8 +12382,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/GOINGBALLS.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/GOINGBALLS.png"
+            alt="Going Balls"
           />
           <div
             class="textover"
@@ -13028,8 +12411,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BUILDBRIDGES.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BUILDBRIDGES.png"
+            alt="Build Bridges"
           />
           <div
             class="textover"
@@ -13057,8 +12440,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/STICKMANTK.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/STICKMANTK.png"
+            alt="Stickman Tour Kart"
           />
           <div
             class="textover"
@@ -13082,8 +12465,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MONEYRUSH.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MONEYRUSH.png"
+            alt="Money Rush"
           />
           <div
             class="textover"
@@ -13107,8 +12490,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/DRAWDRIVE.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/DRAWDRIVE.png"
+            alt="Draw Drive"
           />
           <div
             class="textover"
@@ -13136,8 +12519,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MVSCAPCOM.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MVSCAPCOM.png"
+            alt="Marvel Vs Capcom"
           />
           <div
             class="textover"
@@ -13165,8 +12548,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/TANUKISUNSET.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/TANUKISUNSET.png"
+            alt="Tanuki Sunset"
           />
           <div
             class="textover"
@@ -13190,8 +12573,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/BANGOCAT.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BANGOCAT.png"
+            alt="Bango Cat"
           />
           <div
             class="textover"
@@ -13215,8 +12598,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/MUSICBALL.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/MUSICBALL.png"
+            alt="Music Ball"
           />
           <div
             class="textover"
@@ -13244,8 +12627,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/tomball.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/tomball.png"
+            alt="Tomb of The Mask"
           />
           <div
             class="textover"
@@ -13267,8 +12650,8 @@
         <a href="https://adfree-sz-games.github.io/roblox.html">
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/roblox.jpeg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/roblox.jpeg"
+            alt="Roblox"
           />
           <div
             class="textover"
@@ -13296,8 +12679,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/cybertun.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/cybertun.png"
+            alt="Cyber Tunnel"
           />
           <div
             class="textover"
@@ -13321,8 +12704,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/EXOOO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/EXOOO.png"
+            alt="EXO"
           />
           <div
             class="textover"
@@ -13350,8 +12733,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/mtd.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/mtd.png"
+            alt="Minecraft Tower Defence"
           />
           <div
             class="textover"
@@ -13378,8 +12761,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/mtd2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/mtd2.png"
+            alt="Minecraft Tower Defence 2"
           />
           <div
             class="textover"
@@ -13407,8 +12790,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/thebowlingclub.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/thebowlingclub.png"
+            alt="The Bowling Club"
           />
           <div
             class="textover"
@@ -13432,8 +12815,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/hardgolf.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/hardgolf.png"
+            alt="Hard Golf"
           />
           <div
             class="textover"
@@ -13457,8 +12840,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/0987N.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/0987N.png"
+            alt="Archer Hero"
           />
           <div
             class="textover"
@@ -13486,8 +12869,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://raw.githubusercontent.com/sz-games/adfree-sz-games.github.io/main/cover/0987Q.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/0987Q.png"
+            alt="Deadly Decent"
           />
           <div
             class="textover"
@@ -13510,8 +12893,8 @@
         <a href="./games/game.html?game=/Games11/bottle-flip/game">
           <img
             class="ImageForGame"
-            data-src="./cover/bottleflip.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/bottleflip.jpg"
+            alt="Bottle Flip"
           />
           <div
             class="textover"
@@ -13537,8 +12920,8 @@
         <a href="./games/game.html?game=/Games11/drift-boss/game">
           <img
             class="ImageForGame"
-            data-src="./cover/driftbosss.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/driftbosss.jpg"
+            alt="Drift Boss FIX"
           />
           <div
             class="textover"
@@ -13560,8 +12943,8 @@
         <a href="./games/game.html?game=/Games11/retro-bowl/game">
           <img
             class="ImageForGame"
-            data-src="./cover/retrobowl.avif"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/retrobowl.avif"
+            alt="Retro Bowl"
           />
           <div
             class="textover"
@@ -13583,8 +12966,8 @@
         <a href="./games/game.html?game=/Games11/crazy-cars/game">
           <img
             class="ImageForGame"
-            data-src="./cover/crazycars.jpg"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/crazycars.jpg"
+            alt="Crazy Cars"
           />
           <div
             class="textover"
@@ -13608,7 +12991,11 @@
         style="position: relative; float: left"
       >
         <a href="./games/game.html?game=/Games11/blumgi-rocket/game">
-          <img class="ImageForGame" data-src="./storage3/NOMG.png" alt="game" />
+          <img
+            class="ImageForGame"
+            src="https://adfree-sz-games.github.io/cover/NOMG.png"
+            alt="Blumgi Rocket"
+          />
           <div
             class="textover"
             style="
@@ -13631,8 +13018,8 @@
         >
           <img
             class="ImageForGame"
-            data-src="https://adfree-sz-games.github.io/cover/donkeykong.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/donkeykong.png"
+            alt="Donkey Kong"
           />
           <div
             class="textover"
@@ -13657,8 +13044,8 @@
         <a href="./games/game.html?game=/RetroGames/smariokart.html">
           <img
             class="ImageForGame"
-            data-src="https://adfree-sz-games.github.io/cover/snesmariokart.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/snesmariokart.png"
+            alt="SNES Mario Kart"
           />
           <div
             class="textover"
@@ -13684,8 +13071,8 @@
         <a href="./games/Flash.html?game=/Games11/super-smash-flash-2.swf">
           <img
             class="ImageForGame"
-            data-src="./cover/SuperSmash2.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/SuperSmash2.png"
+            alt="Super Smash Flash 2"
           />
           <div
             class="textover"
@@ -13709,7 +13096,11 @@
         style="position: relative; float: left"
       >
         <a href="./games/game.html?game=/Games11/StumbleGuysIG.html">
-          <img class="ImageForGame" data-src="./cover/fallg.png" alt="game" />
+          <img
+            class="ImageForGame"
+            src="https://adfree-sz-games.github.io/cover/fallg.png"
+            alt="Fall Guys Remake"
+          />
           <div
             class="textover"
             style="
@@ -13732,7 +13123,11 @@
         style="position: relative; float: left"
       >
         <a href="./games/Flash.html?game=/Games11/the_binding_of_isaac.swf">
-          <img class="ImageForGame" data-src="./cover/isaacb.png" alt="game" />
+          <img
+            class="ImageForGame"
+            src="https://adfree-sz-games.github.io/cover/isaacb.png"
+            alt="The Binding Of Isaac"
+          />
           <div
             class="textover"
             style="
@@ -13753,8 +13148,8 @@
         <a href="./games/game.html?game=/Games11/basketbros">
           <img
             class="ImageForGame"
-            data-src="./cover/BASKETBRO.png"
-            alt="game"
+            src="https://adfree-sz-games.github.io/cover/BASKETBRO.png"
+            alt="BasketBros"
           />
           <div
             class="textover"
@@ -13819,7 +13214,6 @@
 
     <script>
       document.getElementById('TEST3').addEventListener('click', function () {
-        searchHandleLoad();
         window.scroll({
           top: document.body.scrollHeight,
           left: 0,
@@ -13982,46 +13376,6 @@
           console.log('E-1');
         });
 
-        var preloaded = false;
-        function searchHandleLoad() {
-          const hiddenDivs = document.querySelectorAll('.box');
-          const lazyImages = document.querySelectorAll('.ImageForGame');
-          if (preloaded === false) {
-            lazyImages.forEach((image) => {
-              let retries = 0;
-
-              function loadImage() {
-                image.src = image.getAttribute('data-src');
-
-                image.onload = function () {
-                  image.classList.add('showIMG');
-                  retries = 0;
-                };
-
-                image.onerror = function () {
-                  retries++;
-                  if (retries < 3) {
-                    loadImage();
-                  } else {
-                    image.classList.add('showIMG');
-
-                    image.src = './fallback.png';
-                  }
-                };
-              }
-
-              loadImage();
-            });
-            hiddenDivs.forEach((div) => {
-              div.classList.add('show');
-            });
-            console.log('Loaded');
-            preloaded = true;
-          } else if (preloaded === true) {
-            console.log('Already Loaded');
-          }
-        }
-
         window.addEventListener('scroll', handleScroll);
 
         document.addEventListener('DOMContentLoaded', handleScroll);
@@ -14161,6 +13515,5 @@
         }
       </script>
     </section>
-    <script src="confetti.js"></script>
   </body>
 </html>
