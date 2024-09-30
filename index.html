@@ -388,7 +388,7 @@
         border-radius: 15px;
         width: 180px;
         opacity: 90%;
-
+        object-fit: cover;
         height: 180px;
         transition: 0.5s;
         box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.725);
@@ -692,40 +692,6 @@
   </head>
 
   <body>
-    <div
-      id="LOADINGSCREENWEB"
-      style="
-        display: none;
-        z-index: 50;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: #2f2f2f;
-      "
-    >
-      <h1
-        style="
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          position: absolute;
-          color: white;
-        "
-      >
-        Loading Games...
-      </h1>
-    </div>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-P93VS8N5"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <!--QuickMenu-->
     <div id="quickmenucont" class="quickmencont" style="">
       <div
@@ -760,26 +726,7 @@
           close
         </span>
       </div>
-      <script>
-        var isquickdivopen = false;
-        var quickcont = document.getElementById('quickmenucont');
-        function togglequicklinksmen() {
-          if (isquickdivopen === true) {
-            quickcont.style.animation = '';
-            quickcont.style.animation = 'quickmenuout 0.8s';
-            isquickdivopen = false;
-            setTimeout(() => {
-              quickcont.style.animation = '';
 
-              quickcont.style.display = 'none';
-            }, 750);
-          } else {
-            quickcont.style.display = 'block';
-            isquickdivopen = true;
-            quickcont.style.animation = 'quickmenuin 1s';
-          }
-        }
-      </script>
       <div
         style="
           width: 90%;
@@ -1463,164 +1410,7 @@
         Sz Games
       </h1>
 
-      <div
-        style="
-          display: none;
-          left: 50%;
-          position: absolute;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        "
-        id="timecontainercount"
-      >
-        <div
-          style="
-            background-color: #5656563c;
-            border-radius: 15px;
-            width: fit-content;
-            padding: 0px 10px 0px 10px;
-            height: 30px;
-          "
-        >
-          <p
-            id="countdowntxt"
-            style="
-              position: relative;
-              top: 50%;
-              transform: translate(-0%, -50%);
-              color: white;
-              text-align: center;
-            "
-          >
-            Check The Status Page In The Menu For Updates
-          </p>
 
-          <script>
-            // Set the target date and time
-            const targetDate = new Date('June 6, 2024 12:58:00 PDT');
-
-            function updateCountdown() {
-              const currentDate = new Date();
-              const timeDifference = targetDate - currentDate;
-
-              if (timeDifference > 0) {
-                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor(
-                  (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                );
-
-                const minutes = Math.floor(
-                  (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-                );
-                const seconds = Math.floor(
-                  (timeDifference % (1000 * 60)) / 1000
-                );
-
-                //document.getElementById('countdowntxt2').innerHTML = `${days} Days, ${hours} Hours, ${minutes} Minutes And ${seconds} Seconds`;
-
-                // Adjust the message based on the remaining time
-                let message = '';
-                let fixmsg = `${days} Days, ${hours} Hours ${message}`;
-
-                const currentDateRN = new Date();
-
-                let currdate = currentDateRN.getDate() === targetDate.getDate();
-
-                //alert(currdate)
-                if (days === 0 && hours === 0 && minutes === 0) {
-                  message = 'Just seconds left!';
-                  fixmsg = `${seconds} Seconds ${message}`;
-                } else if (days === 0 && hours === 0) {
-                  message = 'Less than a hour left!';
-                  fixmsg = `${minutes} Minutes ${message}`;
-                } else if (days === 0 && currdate) {
-                  message = 'A Few Hours Left!';
-                  fixmsg = `${hours} Hours ${message}`;
-                } else if (days === 1) {
-                  message = 'More Day!';
-                  fixmsg = `${days} ${message}`;
-                } else if (days === 2) {
-                  message = 'Almost There...';
-                  fixmsg = `${days} Days, ${hours} Hours ${message}`;
-                } else {
-                  message = '';
-                  fixmsg = `${days} Days, ${hours} Hours ${message}`;
-                }
-
-                document.getElementById('countdowntxt').innerHTML = fixmsg;
-              } else {
-                document.getElementById('countdowntxt').innerHTML = 'Done';
-              }
-            }
-
-            setInterval(updateCountdown, 1000);
-
-            updateCountdown();
-          </script>
-        </div>
-      </div>
-
-      <span
-        onclick="ToggleMenuBig()"
-        class="material-icons notranslate"
-        style="
-          cursor: pointer;
-          font-size: 22px;
-          top: 50%;
-          transform: translate(-0%, -50%);
-          margin-right: 15px;
-          float: right;
-          color: white;
-          position: relative;
-        "
-      >
-        menu
-      </span>
-      <span
-        onclick="ToggleLang()"
-        class="material-icons notranslate"
-        style="
-          cursor: pointer;
-          font-size: larger;
-          top: 50%;
-          transform: translate(-0%, -50%);
-          margin-right: 15px;
-          float: right;
-          color: white;
-          position: relative;
-        "
-      >
-        translate
-      </span>
-
-      <style>
-        .Discord {
-          transition: 0.5s !important;
-        }
-
-        .Discord:hover {
-          color: rgb(0, 51, 255) !important;
-        }
-      </style>
-      <!--a href="./Chat.html" aria-label="Go To Chat"-->
-
-      <span
-        onclick="chaterror()"
-        class="material-icons notranslate"
-        style="
-          cursor: pointer;
-          font-size: larger;
-          top: 50%;
-          transform: translate(-0%, -50%);
-          margin-right: 15px;
-          float: right;
-          color: rgb(54, 54, 54);
-          position: relative;
-        "
-      >
-        chat
-      </span>
-      <!--/a-->
       <a
         href="https://discord.gg/DzKRSntb87"
         aria-label="Go To Discord Server Invite Page"
@@ -1800,601 +1590,7 @@
       }
     </style>
 
-    <div
-      id="SideMenuBigScreen"
-      style="
-        transition: 0.8s;
-        display: none;
-        position: fixed;
-        z-index: 91;
-        background-color: #1d1d1d7b;
-        width: 100%;
-        height: 100%;
-      "
-    >
-      <div
-        style="
-          display: none;
-          top: 50%;
-          transform: translateY(-50%);
-          box-shadow: 0px 0px 9px rgb(0, 0, 0);
-          position: absolute;
-          animation: menuM 7s infinite;
-          transition: 0.5s;
-          right: 10px;
-          border: solid gray 3px;
-          border-radius: 15px;
-          width: 300px;
-          height: 98%;
-          z-index: 95;
-          background-color: #2f2f2f;
-        "
-        id="MMenuBig"
-      >
-        <span
-          onclick="ToggleMenuBig()"
-          class="material-icons notranslate"
-          style="
-            cursor: pointer;
-            z-index: 96;
-            font-size: x-large;
-            top: 23px;
-            margin-right: 20px;
-            right: 0;
-            color: white;
-            position: absolute;
-          "
-        >
-          close
-        </span>
-        <span
-          id="SETTINGSMENU1v"
-          onclick="window.location = 'https://adfree-sz-games.github.io/settings.html' "
-          class="material-icons notranslate"
-          style="
-            cursor: pointer;
-            z-index: 96;
-            font-size: x-large;
-            top: 23px;
-            margin-right: 55px;
-            right: 0;
-            color: white;
-            position: absolute;
-          "
-        >
-          settings
-        </span>
-        <span
-          id="NOTIF"
-          onclick="toggleSetings1()"
-          class="material-icons notranslate"
-          style="
-            display: none;
-            cursor: pointer;
-            z-index: 96;
-            font-size: x-large;
-            top: 15px;
-            margin-right: 75px;
-            right: 0;
-            color: white;
-            position: absolute;
-          "
-        >
-          notifications
-        </span>
-
-        <script></script>
-
-        <script>
-          const isMobile =
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-              navigator.userAgent
-            );
-
-          if (isMobile) {
-            document.getElementById('SETTINGSMENU1v').style.display = 'none';
-          } else {
-            document.getElementById('SETTINGSMENU1v').style.display = 'block';
-          }
-        </script>
-
-        <div
-          style="
-            border-radius: 15px;
-            box-shadow: 0px 0px 7px rgb(19, 19, 19);
-            background-color: #1d1d1d;
-            width: 95.5%;
-            position: relative;
-            top: 8px;
-            left: 5px;
-            height: 50px;
-          "
-        >
-          <div style="position: relative; top: 15px">
-            <img
-              src="https://adfree-sz-games.github.io/G.png"
-              style="position: absolute; top: -18px; height: 33px; width: 33px"
-            />
-            <h1
-              style="
-                color: white;
-                font-size: larger;
-                top: 1px;
-                position: relative;
-                left: 55px;
-                font-family: Arial, Helvetica, sans-serif;
-              "
-            >
-              Sz Games
-            </h1>
-          </div>
-        </div>
-
-        <div
-          style="
-            overflow-x: hidden;
-            overflow-y: auto;
-            height: 80%;
-            margin-top: 15px;
-          "
-        >
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./index.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Home
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./Privacy-Policy.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Privacy Policy
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./terms-of-service.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Terms Of Service
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./FAQ.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                FAQ
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./MessageUN.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Unblocker
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a
-              style="text-decoration: none"
-              href="https://adfree-sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/MOVIES/"
-            >
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Movies
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a
-              style="text-decoration: none"
-              href="https://forms.gle/6R1E28R33RvK7y486"
-            >
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Game Request
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a
-              style="text-decoration: none"
-              href="https://forms.gle/3eanrSMcAHdf9rTy6"
-            >
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Report A Bug
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a
-              style="text-decoration: none"
-              href="https://forms.gle/1EoD5k5HZSA8yd8ZA"
-            >
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Submit A Review
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a
-              style="text-decoration: none"
-              href="https://adfree-sz-games.github.io/BetaTest.html"
-            >
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Beta Test Portal
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./FNF.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Friday Night Funkin
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./reviews.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Reviews
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a
-              style="text-decoration: none"
-              href="https://szgamesstatus.statuspage.io/"
-            >
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Status (Improved)
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./About.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                About
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./Tools/voiceAI.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Sound identifier AI
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./IMAGEAI.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Image Classification AI
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <a style="text-decoration: none" href="./partners.html">
-              <h1
-                style="
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: medium;
-                  top: 50%;
-                  transform: translate(-0%, -50%);
-                  text-align: center;
-                  color: white;
-                  font-family: Arial, Helvetica, sans-serif;
-                  position: relative;
-                "
-              >
-                Partners
-              </h1>
-            </a>
-          </div>
-
-          <div
-            class="MenuIt"
-            onclick="toggleMENU107()"
-            style="height: 35px; top: 35px; width: 100%; position: relative"
-          >
-            <h1
-              style="
-                cursor: pointer;
-                width: 100%;
-                font-size: medium;
-                top: 50%;
-                transform: translate(-0%, -50%);
-                text-align: center;
-                color: white;
-                font-family: Arial, Helvetica, sans-serif;
-                position: relative;
-              "
-            >
-              IFRAME
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Menus-->
-
-    <!--Settings-->
-
     <style>
-      .notification2LOCK {
-        visibility: hidden;
-        position: fixed;
-        bottom: -100px;
-        left: 50%;
-        width: 40%;
-        border: solid 3px grey;
-        height: 50px;
-        transform: translateX(-50%);
-        background-color: #212121;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 15px;
-        z-index: 50;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        transition: bottom 0.5s ease-in-out;
-      }
-
       * {
         margin: 0;
         padding: 0;
@@ -2914,465 +2110,6 @@
       }
     </script>
 
-    <div id="Vip">
-      <div
-        style="
-          opacity: 0;
-          visibility: hidden;
-          background-color: #1d1d1d6a;
-          z-index: 90;
-          position: fixed;
-          width: 100%;
-          height: 100%;
-        "
-        id="menuVip"
-      >
-        <div
-          style="
-            overflow: auto;
-            overflow-x: hidden;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            border-radius: 15px;
-            height: 100%;
-            background-color: rgb(81, 81, 81);
-            position: absolute;
-          "
-        >
-          <h1
-            style="
-              left: 10px;
-              position: relative;
-              font-size: 25px;
-              color: white;
-            "
-          >
-            VIP Menu
-          </h1>
-          <h1
-            class="notranslate"
-            onclick="closeFade('menuVip')"
-            style="
-              cursor: pointer;
-              right: 10px;
-              top: 5px;
-              position: absolute;
-              font-size: 25px;
-              color: white;
-            "
-          >
-            x
-          </h1>
-          <h2
-            style="
-              text-align: center;
-              left: 10px;
-              position: relative;
-              font-size: 25px;
-              color: white;
-            "
-          >
-            Header
-          </h2>
-          <br />
-          <div id="options" style="">
-            <div
-              style="width: 100%; position: relative; height: 100px"
-              id="headerBg"
-            >
-              <div
-                style="
-                  width: 100%;
-                  overflow-y: hidden;
-                  display: flex;
-                  white-space: nowrap;
-                  overflow-x: scroll;
-                "
-              >
-                <div
-                  id="normal"
-                  onclick="selectHeader('normal')"
-                  style="
-                    margin: 5px;
-                    cursor: pointer;
-                    top: 10px;
-                    left: 10px;
-                    border-radius: 5px;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    height: 70px;
-                  "
-                >
-                  <div
-                    style="
-                      border-radius: 5px;
-                      background: linear-gradient(
-                        to bottom right,
-                        #9a9a9a,
-                        rgb(39, 39, 39)
-                      );
-                      width: 120px;
-                      height: 70px;
-                    "
-                  ></div>
-                </div>
-
-                <div
-                  id="Transperent"
-                  onclick="selectHeader('Tsp')"
-                  style="
-                    margin: 5px;
-                    cursor: pointer;
-                    top: 10px;
-                    left: 10px;
-                    background: linear-gradient(
-                      to bottom right,
-                      #9a9a9a,
-                      rgb(39, 39, 39)
-                    );
-                    border-radius: 5px;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    height: 70px;
-                  "
-                >
-                  <p style="text-align: center; color: white">Transperent</p>
-                  <div style="width: 120px; height: 70px"></div>
-                </div>
-
-                <div
-                  id="waltah"
-                  onclick="selectHeader('waltah')"
-                  style="
-                    margin: 5px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="1"
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Waltah.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-
-                <div
-                  id="east"
-                  onclick="selectHeader('east')"
-                  style="
-                    margin: 5px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="2"
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/KanyeEast.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-
-                <div
-                  id="shock"
-                  onclick="selectHeader('shock')"
-                  style="
-                    margin: 5px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="3"
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Shock.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-
-                <div
-                  id="shock"
-                  onclick="selectHeader('AMeme')"
-                  style="
-                    margin: 5px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="4"
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/AMeme.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-
-                <div
-                  id="chip"
-                  onclick="selectHeader('chip')"
-                  style="
-                    margin: 5px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="5"
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/chip.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-              </div>
-            </div>
-            <br />
-
-            <h1 style="text-align: center; font-size: 25px; color: white">
-              Background:
-            </h1>
-
-            <div style="position: relative; width: 100%; height: 100px" id="BG">
-              <div
-                style="
-                  width: 100%;
-                  overflow-y: hidden;
-                  display: flex;
-                  white-space: nowrap;
-                  overflow-x: scroll;
-                "
-              >
-                <div
-                  id="normal"
-                  onclick="selectHeader2('normal')"
-                  style="
-                    margin: 2px;
-                    cursor: pointer;
-                    top: 10px;
-                    left: 10px;
-                    background: linear-gradient(
-                      to bottom,
-                      #1d1d1d,
-                      #2f2f2f,
-                      rgb(58, 58, 58),
-                      #1d1d1d,
-                      #2f2f2f
-                    );
-                    border-radius: 5px;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    height: 70px;
-                  "
-                ></div>
-
-                <div
-                  id="waltah"
-                  onclick="selectHeader2('waltah')"
-                  style="
-                    margin: 2px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="6"
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Waltah.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-
-                <div
-                  id="east"
-                  onclick="selectHeader2('east')"
-                  style="
-                    margin: 2px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="7"
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/KanyeEast.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-
-                <div
-                  id="shock"
-                  onclick="selectHeader2('shock')"
-                  style="
-                    margin: 2px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="8"
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Shock.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-
-                <div
-                  id="shock"
-                  onclick="selectHeader2('AMeme')"
-                  style="
-                    margin: 2px;
-                    cursor: pointer;
-                    float: left;
-                    position: relative;
-                    width: 120px;
-                    border-radius: 15px !important;
-                    height: 70px;
-                  "
-                >
-                  <img
-                    alt="option"
-                    id="9"
-                    style=""
-                    data-src="https://github.com/sz-games/adfree-sz-games.github.io/blob/main/AMeme.gif?raw=true"
-                    height="70px"
-                    width="120px"
-                  />
-                </div>
-              </div>
-            </div>
-            <br />
-
-            <br />
-            <div style="" id="Opacity">
-              <h2
-                style="
-                  text-align: center;
-                  left: 10px;
-                  font-size: 25px;
-                  color: white;
-                "
-              >
-                Game Icon Styles
-              </h2>
-              <p style="text-align: center; color: white">Opacity</p>
-              <input
-                style="
-                  left: 50%;
-                  position: relative;
-                  transform: translate(-50%, 0%);
-                "
-                type="range"
-                id="opacitySlider"
-                min="0"
-                max="1"
-                step="0.1"
-                value="1"
-              />
-            </div>
-            <h1 style="position: absolute; bottom: 0">
-              <a style="text-decoration: none; color: white" href="./hacks"
-                >School Hacks</a
-              >
-            </h1>
-            <br />
-          </div>
-        </div>
-      </div>
-      <div
-        id="VIPBUTTON"
-        onclick="openFade('menuVip')"
-        style="
-          cursor: pointer;
-          border-radius: 30px;
-          width: 70px;
-          right: 5px;
-          height: 35px;
-          position: fixed;
-          top: 70px;
-          z-index: 5;
-          background-color: #1d1d1db9;
-        "
-      >
-        <h1
-          style="
-            font-size: 25px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-          "
-        >
-          VIP
-        </h1>
-      </div>
-
-      <script>
-        function openFade(element2) {
-          var element = document.getElementById(element2);
-          element.style.transition = '0.5s';
-          element.style.visibility = 'visible';
-
-          element.style.opacity = 1;
-        }
-
-        function closeFade(element2) {
-          var element = document.getElementById(element2);
-          element.style.transition = '0.5s';
-          element.style.opacity = 0;
-          setTimeout(() => {
-            element.style.visibility = 'hidden';
-          }, 500);
-        }
-      </script>
-    </div>
-
     <style>
       .header-waltah {
         position: relative;
@@ -3489,189 +2226,6 @@
     </div>
     <br />
     <br />
-    <script>
-      console.log('eee');
-      // Function to retrieve the value of a cookie
-      function getCookie(cname) {
-        let name = cname + '=';
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return '';
-      }
-
-      function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-        let expires = 'expires=' + d.toUTCString();
-        document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
-      }
-
-      function selectHeader2(item) {
-        document.body.style.backgroundAttachment = 'fixed';
-
-        if (item === 'waltah') {
-          document.body.style.backgroundImage =
-            "url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Waltah.gif?raw=true')";
-
-          setCookie('BG', 'waltah', 365);
-        } else if (item === 'normal') {
-          document.body.style.background =
-            'linear-gradient(to bottom, #1d1d1d, #2f2f2f, rgb(58, 58, 58), #1d1d1d, #2f2f2f)';
-          document.body.style.backgroundAttachment = 'scroll';
-
-          setCookie('BG', 'normal', 365);
-        } else if (item === 'east') {
-          document.body.style.backgroundImage =
-            "url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/KanyeEast.gif?raw=true')";
-          setCookie('BG', 'east', 365);
-        } else if (item === 'shock') {
-          document.body.style.backgroundImage =
-            "url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/Shock.gif?raw=true')";
-
-          setCookie('BG', 'shock', 365);
-        } else if (item === 'AMeme') {
-          document.body.style.backgroundImage =
-            "url('https://github.com/sz-games/adfree-sz-games.github.io/blob/main/AMeme.gif?raw=true')";
-          setCookie('BG', 'AMeme', 365);
-        }
-        document.body.style.backgroundRepeat = 'no-repeat';
-        document.body.style.backgroundSize = 'cover';
-      }
-
-      //HEADER
-
-      function selectHeader(item) {
-        if (item === 'waltah') {
-          document.getElementById('Header').classList.remove('header-east');
-          document.getElementById('Header').classList.remove('header');
-          document.getElementById('Header').classList.remove('header-shock');
-          document.getElementById('Header').classList.remove('header-AMeme');
-          document.getElementById('Header').classList.remove('header-Tsp');
-          document.getElementById('Header').classList.add('header-waltah');
-          document.getElementById('Header').classList.remove('header-chip');
-
-          setCookie('Header', 'waltah', 365);
-        } else if (item === 'normal') {
-          document.getElementById('Header').classList.add('header');
-          document.getElementById('Header').classList.remove('header-east');
-          document.getElementById('Header').classList.remove('header-waltah');
-          document.getElementById('Header').classList.remove('header-AMeme');
-          document.getElementById('Header').classList.remove('header-shock');
-          document.getElementById('Header').classList.remove('header-Tsp');
-          document.getElementById('Header').classList.remove('header-chip');
-
-          setCookie('Header', 'normal', 365);
-        } else if (item === 'east') {
-          document.getElementById('Header').classList.remove('header');
-          document.getElementById('Header').classList.add('header-east');
-          document.getElementById('Header').classList.remove('header-waltah');
-          document.getElementById('Header').classList.remove('header-shock');
-          document.getElementById('Header').classList.remove('header-AMeme');
-          document.getElementById('Header').classList.remove('header-Tsp');
-          document.getElementById('Header').classList.remove('header-chip');
-
-          setCookie('Header', 'east', 365);
-        } else if (item === 'shock') {
-          document.getElementById('Header').classList.remove('header');
-          document.getElementById('Header').classList.remove('header-east');
-          document.getElementById('Header').classList.remove('header-waltah');
-          document.getElementById('Header').classList.add('header-shock');
-          document.getElementById('Header').classList.remove('header-AMeme');
-          document.getElementById('Header').classList.remove('header-Tsp');
-          document.getElementById('Header').classList.remove('header-chip');
-
-          setCookie('Header', 'shock', 365);
-        } else if (item === 'AMeme') {
-          document.getElementById('Header').classList.remove('header');
-          document.getElementById('Header').classList.remove('header-east');
-          document.getElementById('Header').classList.remove('header-waltah');
-          document.getElementById('Header').classList.remove('header-shock');
-          document.getElementById('Header').classList.add('header-AMeme');
-          document.getElementById('Header').classList.remove('header-Tsp');
-          document.getElementById('Header').classList.remove('header-chip');
-
-          setCookie('Header', 'AMeme', 365);
-        } else if (item === 'Tsp') {
-          document.getElementById('Header').classList.remove('header');
-          document.getElementById('Header').classList.remove('header-east');
-          document.getElementById('Header').classList.remove('header-waltah');
-          document.getElementById('Header').classList.remove('header-shock');
-          document.getElementById('Header').classList.remove('header-AMeme');
-          document.getElementById('Header').classList.remove('header-chip');
-          document.getElementById('Header').classList.add('header-Tsp');
-          setCookie('Header', 'Tsp', 365);
-        } else if (item === 'chip') {
-          document.getElementById('Header').classList.remove('header');
-          document.getElementById('Header').classList.remove('header-east');
-          document.getElementById('Header').classList.remove('header-waltah');
-          document.getElementById('Header').classList.remove('header-shock');
-          document.getElementById('Header').classList.remove('header-AMeme');
-          document.getElementById('Header').classList.remove('header-Tsp');
-          document.getElementById('Header').classList.add('header-chip');
-
-          setCookie('Header', 'chip', 365);
-        }
-      }
-
-      const opacitySlider = document.getElementById('opacitySlider');
-      const targetElements = document.getElementsByClassName('show');
-      var loadedStuffVIPO = false;
-
-      function searchHandleLoad2() {
-        const hiddenDivs = document.querySelectorAll('.box');
-        const lazyImages = document.querySelectorAll('.ImageForGame');
-
-        lazyImages.forEach((image) => {
-          image.src = image.getAttribute('data-src');
-          image.onload = function () {
-            image.classList.add('showIMG');
-          };
-        });
-        hiddenDivs.forEach((div) => {
-          div.classList.add('show');
-        });
-      }
-
-      opacitySlider.addEventListener('input', function () {
-        console.log('Yo');
-        if (loadedStuffVIPO === false) {
-          searchHandleLoad2();
-          loadedStuffVIPO = true;
-        }
-
-        for (let i = 0; i < targetElements.length; i++) {
-          targetElements[i].style.cssText +=
-            'opacity: ' + opacitySlider.value + ' !important;';
-        }
-      });
-    </script>
-
-    <script>
-      var dayy = document.getElementById('ec');
-
-      var today = new Date();
-      var curHr = today.getHours();
-
-      if (curHr < 12) {
-        console.log(curHr + '--' + today);
-        //document.getElementById('ec').innerHTML = 'Good Morning!'
-      } else if (curHr < 18) {
-        console.log(curHr + '--' + today);
-        //document.getElementById('ec').innerHTML = 'Good Afternoon!'
-      } else {
-        console.log(curHr + '--' + today);
-        //document.getElementById('ec').innerHTML = 'Good Evening!'
-      }
-    </script>
 
     <style>
       .inputbox {
@@ -3746,7 +2300,6 @@
       }
 
       .box {
-        opacity: 0;
         transition: 0.5s;
       }
 
@@ -4874,12 +3427,8 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/cr/"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/cr.jpeg"
-            alt="Crossy Road"
-          />
-          <div class="textover" style="">Crossy Road</div>
+          <img class="ImageForGame" src="/cr.jpeg" alt="Crossy Road" />
+          <div class="textover">Crossy Road</div>
         </a>
       </div>
 
@@ -4887,12 +3436,8 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/storage3/eelslap/"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/eelslap.png"
-            alt="Eel Slap"
-          />
-          <div class="textover" style="">eel Slap</div>
+          <img class="ImageForGame" src="/eelslap.png" alt="Eel Slap" />
+          <div class="textover">eel Slap</div>
         </a>
       </div>
 
@@ -4906,7 +3451,7 @@
             alt="Minecraft"
           />
 
-          <div class="textover" style="">Minecraft</div>
+          <div class="textover">Minecraft</div>
         </a>
       </div>
 
@@ -4920,10 +3465,10 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/1.png"
+            src="/webgl.png"
             alt="WebGl Fluid Animation"
           />
-          <div class="textover" style="">WebGl Fluid Animation</div>
+          <div class="textover">WebGl Fluid Animation</div>
         </a>
       </div>
 
@@ -4935,23 +3480,8 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/fs"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/fs.jpeg"
-            alt="Funny Shooter"
-          />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 13% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-            "
-          >
-            Funny Shooter
-          </div>
+          <img class="ImageForGame" src="/fs.jpeg" alt="Funny Shooter" />
+          <div class="textover">Funny Shooter</div>
         </a>
       </div>
 
@@ -4998,7 +3528,7 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/adofai.png"
+            src="/adofai.png"
             alt="A Dance Of Fire And Ice"
           />
           <div class="textover" style="color: white !important">
@@ -5400,11 +3930,7 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/sandboxels"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/sandboxels.png"
-            alt="Sandboxels"
-          />
+          <img class="ImageForGame" src="/sandboxels.webp" alt="Sandboxels" />
           <div
             class="textover"
             style="
@@ -5424,11 +3950,7 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://noclip.website/"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/noclip.png"
-            alt="Noclip"
-          />
+          <img class="ImageForGame" src="/noclip.png" alt="Noclip" />
           <div
             class="textover"
             style="
@@ -5452,11 +3974,7 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/games3/fighter2"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/sf2.png"
-            alt="Street Fighter 2"
-          />
+          <img class="ImageForGame" src="/sf2.jpeg" alt="Street Fighter 2" />
 
           <div
             class="textover"
@@ -5507,7 +4025,7 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/combat-online.png"
+            src="/combat-online.jpeg"
             alt="Combat Online"
           />
           <div
@@ -5563,7 +4081,7 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/happy-wheels.png"
+            src="/happy-wheels.jpeg"
             alt="Happy Wheels"
           />
           <div
@@ -5746,7 +4264,7 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/fnaw.png"
+            src="/cover/fnaw.png"
             alt="Five Nights at Winston's"
           />
           <div
@@ -5821,7 +4339,7 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/kitchen-gun-game.png"
+            src="/kitchen-gun-game.png"
             alt="Kitchen Gun"
           />
           <div
@@ -5849,7 +4367,7 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/noob-steve-parkour.png"
+            src="/noob-steve-parkour.jpg"
             alt="Noob Steve Parkour"
           />
           <div
@@ -5876,21 +4394,10 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/popcat-classic.png"
+            src="/popcat-classic.png"
             alt="Popcat Classic"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 13% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-            "
-          >
-            Popcat Classic
-          </div>
+          <div class="textover">Popcat Classic</div>
         </a>
       </div>
 
@@ -5898,23 +4405,8 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/Games10/polybranch/index.html"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/polybranch.png"
-            alt="PolyBranch"
-          />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 13% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-            "
-          >
-            PolyBranch
-          </div>
+          <img class="ImageForGame" src="/polybranch.png" alt="PolyBranch" />
+          <div class="textover">PolyBranch</div>
         </a>
       </div>
 
@@ -5928,7 +4420,7 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/push-your-luck.png"
+            src="/push-your-luck.png"
             alt="Push Your Luck"
           />
           <div
@@ -5956,7 +4448,7 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/papery-planes.png"
+            src="/papery-planes.jpg"
             alt="Papery Planes"
           />
           <div
@@ -5978,11 +4470,7 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/Games10/theheist/index.html"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/theheist.png"
-            alt="The Heist"
-          />
+          <img class="ImageForGame" src="/the-heist.jpg" alt="The Heist" />
           <div
             class="textover"
             style="
@@ -6002,11 +4490,7 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://adfree-sz-games.github.io/incredibox-v9/"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/incredibox.jpeg"
-            alt="Incredibox"
-          />
+          <img class="ImageForGame" src="/incredibox.jpeg" alt="Incredibox" />
           <div
             class="textover"
             style="
@@ -7135,19 +5619,7 @@
             src="https://adfree-sz-games.github.io/cover/wordle.webp"
             alt="Wordle"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Wordle
-          </div>
+          <div class="textover">Wordle</div>
         </a>
       </div>
 
@@ -7155,24 +5627,8 @@
         <a
           href="https://adfree-sz-games.github.io/games/Emulator.html?game=https://adfree-sz-games.github.io/Games2/zelda3d"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/NOMG.png"
-            alt="Zelda 3D"
-          />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Zelda 3D
-          </div>
+          <img class="ImageForGame" src="/zelda-3d.jpeg" alt="Zelda 3D" />
+          <div class="textover">Zelda 3D</div>
         </a>
       </div>
 
@@ -7185,19 +5641,7 @@
             src="https://adfree-sz-games.github.io/cover/DGMINER.png"
             alt="Doge Miner"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Doge Miner
-          </div>
+          <div class="textover">Doge Miner</div>
         </a>
       </div>
 
@@ -7234,11 +5678,7 @@
         <a
           href="https://adfree-sz-games.github.io/games/game.html?game=https://bloxd.io"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/bloxd.io.png"
-            alt="game"
-          />
+          <img class="ImageForGame" src="/bloxd-io.png" alt="game" />
           <div
             class="textover"
             style="
@@ -9005,11 +7445,7 @@
         <a
           href="https://adfree-sz-games.github.io/games/Flash.html?game=/Games6/gun-mayhem.swf"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/GMYHM.png"
-            alt="Gun Mayhem"
-          />
+          <img class="ImageForGame" src="/cover/GMYHM.png" alt="Gun Mayhem" />
           <div
             class="textover"
             style="
@@ -9034,24 +7470,8 @@
         <a
           href="https://adfree-sz-games.github.io/games/Flash.html?game=/Games6/gun-mayhem-2.swf"
         >
-          <img
-            class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/GMYHM2.png"
-            alt="Gun Mayhem 2"
-          />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Gun Mayhem 2
-          </div>
+          <img class="ImageForGame" src="/cover/GMYHM.png" alt="Gun Mayhem 2" />
+          <div class="textover">Gun Mayhem 2</div>
         </a>
       </div>
 
@@ -9155,18 +7575,7 @@
             src="https://adfree-sz-games.github.io/cover/BAFy.jpeg"
             alt="Burger And Frights"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Burger And Frights
+          <div class="textover">Burger And Frights</div>
           </div>
         </a>
       </div>
@@ -9177,21 +7586,10 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/ZOMBOTRON.png"
+            src="https://adfree-sz-games.github.io/cover/zombotron.webp"
             alt="Zombotron"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Zombotron
+          <div class="textover">Zombotron</div>
           </div>
         </a>
       </div>
@@ -9205,18 +7603,7 @@
             src="https://adfree-sz-games.github.io/cover/JELLYTRCK.png"
             alt="Jelly Truck"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Jelly Truck
+          <div class="textover">Jelly Truck</div>
           </div>
         </a>
       </div>
@@ -9227,21 +7614,10 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/WHEELY6.png"
+            src="/cover/wheely6.png"
             alt="Wheely 6"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Wheely 6
+          <div class="textover">Wheely 6</div>
           </div>
         </a>
       </div>
@@ -9256,21 +7632,10 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/GOOGLESOL.png"
+            src="/cover/google-solitaire.png"
             alt="Google Solitaire"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Google Solitaire
+          <div class="textover">Google Solitaire</div>
           </div>
         </a>
       </div>
@@ -9281,21 +7646,10 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/8BALL.png"
+            src="/cover/8ball.png"
             alt="8 Ball"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            8 Ball
+          <div class="textover">8 Ball</div>
           </div>
         </a>
       </div>
@@ -9306,21 +7660,10 @@
         >
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/JACKSMITH.png"
+            src="/jacksmith.png"
             alt="Jacksmith"
           />
-          <div
-            class="textover"
-            style="
-              width: 90%;
-              border-radius: 15px;
-              background-color: #191919db;
-              top: 15% !important;
-              color: rgba(255, 255, 255, 0.827) !important;
-              color: rgb(255, 255, 255) !important;
-            "
-          >
-            Jacksmith
+          <div class="textover">Jacksmith</div>
           </div>
         </a>
       </div>
@@ -12993,7 +11336,7 @@
         <a href="./games/game.html?game=/Games11/blumgi-rocket/game">
           <img
             class="ImageForGame"
-            src="https://adfree-sz-games.github.io/cover/NOMG.png"
+            src="/blumgi-rocket.jpeg"
             alt="Blumgi Rocket"
           />
           <div
@@ -13258,129 +11601,31 @@
         }
       });
     </script>
+    <script>
+      var isquickdivopen = false;
+      var quickcont = document.getElementById('quickmenucont');
+      function togglequicklinksmen() {
+        if (isquickdivopen === true) {
+          quickcont.style.animation = '';
+          quickcont.style.animation = 'quickmenuout 0.8s';
+          isquickdivopen = false;
+          setTimeout(() => {
+            quickcont.style.animation = '';
+
+            quickcont.style.display = 'none';
+          }, 750);
+        } else {
+          quickcont.style.display = 'block';
+          isquickdivopen = true;
+          quickcont.style.animation = 'quickmenuin 1s';
+        }
+      }
+    </script>
 
     <section class="sticky">
       <script>
-        const imageContainer = document.getElementById('games');
-
-        const images = imageContainer.getElementsByTagName('img');
-
-        for (let i = 0; i < images.length; i++) {
-          images[i].addEventListener('error', function () {
-            console.log(`Image ${i + 1} failed to load!`);
-
-            setTimeout(function () {
-              images[i].src = images[i].src;
-            }, 3000);
-          });
-          console.log('code: 9B');
-        }
-
-        const container = document.getElementById('games');
-        const boxes = document.querySelectorAll('.box');
-
-        function isElementInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return (
-            rect.left >= 0 &&
-            rect.bottom <=
-              (window.innerHeight + 400 ||
-                document.documentElement.clientHeight) &&
-            rect.right <=
-              (window.innerWidth || document.documentElement.clientWidth)
-          );
-        }
-
-        function isElementNotInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return (
-            rect.bottom < 0 ||
-            rect.top >
-              (window.innerHeight + 400 ||
-                document.documentElement.clientHeight) ||
-            rect.right < 0 ||
-            rect.left >
-              (window.innerWidth || document.documentElement.clientWidth)
-          );
-        }
-        function errorimgshow() {
-          var errormsgimg = document.getElementById('errorcontmsg');
-          if (errormsgimg.getAttribute('style', 'display') === 'block') {
-          } else {
-            errormsgimg.style.display = 'block';
-            errormsgimg.style.animation = 'showalert 0.8s';
-
-            setTimeout(() => {
-              errormsgimg.style.animation = 'hidealert 0.5s';
-              setTimeout(() => {
-                errormsgimg.style.display = 'none';
-              }, 450);
-            }, 8000);
-          }
-        }
-
-        function handleScroll() {
-          const hiddenDivs = document.querySelectorAll('.box');
-          const lazyImages = document.querySelectorAll('.ImageForGame');
-
-          if ((canLoadImages = true)) {
-            lazyImages.forEach((image) => {
-              let retries = 0;
-
-              function loadImage() {
-                if (isElementInViewport(image) && !image.src) {
-                  image.src = image.getAttribute('data-src');
-
-                  image.onload = function () {
-                    image.classList.add('showIMG');
-                    retries = 0;
-                  };
-
-                  image.onerror = function () {
-                    retries++;
-                    if (retries < 3) {
-                      loadImage();
-                    } else {
-                      image.classList.add('showIMG');
-
-                      image.src = './fallback.png';
-                      errorimgshow();
-                    }
-                  };
-                }
-              }
-
-              loadImage();
-            });
-
-            hiddenDivs.forEach((div) => {
-              if (isElementInViewport(div)) {
-                div.classList.add('show');
-                //console.log('Loaded ' + div.id)
-              } else if (isElementNotInViewport(div)) {
-                //div.classList.remove('show')
-              }
-            });
-          }
-        }
 
         var PageHasLoaded = false;
-
-        window.addEventListener('load', function (event) {
-          if ((PageHasLoaded = false)) {
-            canLoadImages = true;
-            console.log('E-2');
-
-            handleScroll();
-          }
-          console.log('E-1');
-        });
-
-        window.addEventListener('scroll', handleScroll);
-
-        document.addEventListener('DOMContentLoaded', handleScroll);
-
-        handleScroll();
 
         var input = document.getElementById('SearchBox');
         var elements = document
@@ -13390,8 +11635,6 @@
         var noMatches = document.getElementById('nonefound');
 
         function Search() {
-          searchHandleLoad();
-
           input.addEventListener(
             'input',
             debounce(function () {
