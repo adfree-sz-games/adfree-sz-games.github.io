@@ -55,7 +55,7 @@
 
   <iframe id="iframe" height="93%" width="100%"
     style="border-radius: 10px; border: none; bottom: 0; position: absolute;"
-    src="https://adfree-sz-games.github.io/MegaOs/search.html"></iframe>
+    src="/MegaOs/search.html"></iframe>
 
 
 
@@ -84,7 +84,7 @@
     function home() {
 
 
-      iframe.src = 'https://adfree-sz-games.github.io/MegaOs/search.html'
+      iframe.src = '/MegaOs/search.html'
     }
     input.addEventListener('keydown', function (event) {
       if (event.keyCode === 13) {
@@ -94,7 +94,7 @@
           iframe.src = input.value;
           input.innerHTML = iframe.src;
         } else if (input.value.toLowerCase() === 'google.com' || input.value.toLowerCase() === 'https://google.com') {
-          iframe.src = 'https://adfree-sz-games.github.io/MegaOs/search.html';
+          iframe.src = '/MegaOs/search.html';
 
         }
         else {

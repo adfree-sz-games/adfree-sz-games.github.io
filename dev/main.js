@@ -2,7 +2,7 @@
 var blockedPatterns = [];
 
 // Load the text file containing blocked patterns
-fetch('https://adfree-sz-games.github.io/dev/.txt')
+fetch('/dev/.txt')
   .then((response) => response.text())
   .then((data) => {
     // Split the text file content into an array of patterns
