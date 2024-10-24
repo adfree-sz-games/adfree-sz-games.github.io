@@ -71,6 +71,15 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
+
+      .press{
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100px;
+        text-align: center;
+        z-index: 1000;
+      }
       ::-webkit-scrollbar-track-piece {
         border-radius: 15px;
       }
@@ -7047,19 +7056,8 @@
           }
         }
       </script>
-      <footer
-        style="
-          background-color: white;
-          position: fixed;
-          bottom: 0;
-          width: 100px;
-          text-align: center;
-          z-index: 1000;
-        "
-      >
-        <p>
-          <a href="/press.html">Press</a>
-        </p>
+      <footer class="press">
+          <a href="/press.html" >Press</a>
       </footer>
     </section>
   </body>
