@@ -87,6 +87,8 @@
 
 .box {
     transition: 0.5s;
+    position: relative;
+    float: left
 }
 
 .show {
