@@ -37,12 +37,10 @@
     content="sz games, sz games unblocked, games, unblocked games, school, games, games to play, games on the web, html5 games, sz, sz-games, play games online,  online games" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/init.css" />
+  <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
-
-  <div id="overlay" style="pointer-events: none; position: fixed; display: none; width: 100%; height: 100%"></div>
-
   <div id="LOADINGSCREEN11" style="
         display: none;
         opacity: 1;
@@ -101,14 +99,13 @@
     <h1>Sz Games</h1>
     <p style="font-size: 20px">Play Unblocked Games</p>
   </div>
-  <br />
-  <br />
 
 
 
+  <br>
   <button id="TEST3" style="
-        width: 80%;
         height: 40px;
+        padding: 10px;
         font-size: 15px;
         color: white;
         background-color: #2f2f2f;
@@ -123,12 +120,7 @@
   </button>
   <br />
   <br />
-  <div class="inputbox">
-    <input onkeyup="Search()" id="SearchBox" required="required" type="text" />
 
-    <label for="SearchBox" style="color: white">Search</label>
-    <i></i>
-  </div>
 
   <br />
 
@@ -157,36 +149,43 @@
     </span>
   </div>
 
-  <div id="games">
-    <div class="box" id="Spend Elon Musk Money">
+  <div id="games" x-data="games" x-init="fetch('/games.json').then(res => res.json()).then(data => games = data)">
+    <div class="inputbox">
+      <input x-model="searchQuery" id="SearchBox" required="required" type="text" />
+      <label for="SearchBox" style="color: white">Search</label>
+      <i></i>
+    </div>
+    <br />
+    <br />
+    <div class="box" id="Spend Elon Musk Money" x-show="shouldShow('Spend Elon Musk Money')">
       <a href="https://spendelonmoney.org/" target="_blank">
         <img fetchpriority="low" class="ImageForGame" src="https://spendelonmoney.org/images/spend-elon-musk-money.jpg"
           alt="Spend Elon Musk Money" />
         <div class="textover">Spend Elon Musk Money</div>
       </a>
     </div>
-    <div class="box" id="Tunnel Rush">
+    <div class="box" id="Tunnel Rush" x-show="shouldShow('Tunnel Rush')">
       <a href="/games/unity.html?game=/games/tunnel-rush/">
         <img fetchpriority="low" class="ImageForGame" src="/cover/tunnel.webp" alt="Tunnel Rush" />
         <div class="textover">Tunnel Rush</div>
       </a>
     </div>
 
-    <div class="box" id="Space War">
+    <div class="box" id="Space War" x-show="shouldShow('Space War')">
       <a href="/games/game.html?game=/games/spac/">
         <img fetchpriority="low" class="ImageForGame" src="/cover/space.webp" alt="Space War" />
         <div class="textover">Space War</div>
       </a>
     </div>
 
-    <div class="box" id="Slope">
+    <div class="box" id="Slope" x-show="shouldShow('Slope')">
       <a href="/games/game.html?game=/slope">
         <img fetchpriority="low" class="ImageForGame" src="/cover/slope.webp" alt="Slope" />
         <div class="textover">Slope</div>
       </a>
     </div>
 
-    <div class="box" id="Asteroids Belt">
+    <div class="box" id="Asteroids Belt" x-show="shouldShow('Asteroids Belt')">
       <a href="/games/game.html?game=/games/spacesh/">
         <img fetchpriority="low" class="ImageForGame" src="/cover/Astr.webp" alt="Asteroids Belt" />
 
@@ -194,7 +193,7 @@
       </a>
     </div>
 
-    <div class="box" id="Backrooms">
+    <div class="box" id="Backrooms" x-show="shouldShow('Backrooms')">
       <a href="/games/unity.html?game=/games/backrooms">
         <img fetchpriority="low" class="ImageForGame" src="/cover/backroom.webp" alt="Backrooms" />
 
@@ -202,7 +201,7 @@
       </a>
     </div>
 
-    <div class="box" id="Slide In The Woods">
+    <div class="box" id="Slide In The Woods" x-show="shouldShow('Slide In The Woods')">
       <a href="/games/woods">
         <img fetchpriority="low" class="ImageForGame" src="/cover/Slidein.webp" alt="Slide In The Woods" />
 
@@ -210,7 +209,7 @@
       </a>
     </div>
 
-    <div class="box" id="Survivor Mode">
+    <div class="box" id="Survivor Mode" x-show="shouldShow('Survivor Mode')">
       <a href="/games/zombie">
         <img fetchpriority="low" class="ImageForGame" src="/cover/SurMode.webp" alt="Survivor Mode" />
 
@@ -218,7 +217,7 @@
       </a>
     </div>
 
-    <div class="box" id="Stack">
+    <div class="box" id="Stack" x-show="shouldShow('Stack')">
       <a href="/games/game.html?game=/games/stack">
         <img fetchpriority="low" class="ImageForGame" src="/cover/Stack.webp" alt="Stack" />
 
@@ -226,7 +225,7 @@
       </a>
     </div>
 
-    <div class="box" id="Fly Hydra">
+    <div class="box" id="Fly Hydra" x-show="shouldShow('Fly Hydra')">
       <a href="/games/Bin/Game_file/call/hydra">
         <img fetchpriority="low" class="ImageForGame" src="/cover/hydra.webp" alt="Fly Hydra" />
 
@@ -234,14 +233,14 @@
       </a>
     </div>
 
-    <div class="box" id="Iniltrating The Airship">
+    <div class="box" id="Iniltrating The Airship" x-show="shouldShow('Iniltrating The Airship')">
       <a href="/games/Flash.html?game=/games/henry-airship/infiltratingtheairshipgame.swf">
         <img class="ImageForGame" src="/cover/Airship.webp" alt="Iniltrating The Airship" />
         <div class="textover">Iniltrating The Airship</div>
       </a>
     </div>
 
-    <div class="box" id="fleeing the complex">
+    <div class="box" id="fleeing the complex" x-show="shouldShow('fleeing the complex')">
       <a
         href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/Henry%20Stickmin%20-%20Fleeing%20the%20Complex.swf?raw=true">
         <img class="ImageForGame" src="/cover/Complex.webp" alt="Fleeing The Complex" />
@@ -250,7 +249,7 @@
       </a>
     </div>
 
-    <div class="box" id="Escaping The Prison">
+    <div class="box" id="Escaping The Prison" x-show="shouldShow('Escaping The Prison')">
       <a href="/games/Flash.html?game=/Games7/escaping_the_prison.swf?raw=true">
         <img class="ImageForGame" src="/cover/Prison.webp" alt="Escaping The Prison" />
 
@@ -258,7 +257,7 @@
       </a>
     </div>
 
-    <div class="box" id="Breaking The Bank">
+    <div class="box" id="Breaking The Bank" x-show="shouldShow('Breaking The Bank')">
       <a
         href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/Henry%20Stickmin%20-%20Breaking%20the%20Bank.swf?raw=true">
         <img class="ImageForGame" src="/cover/BankH.webp" alt="Breaking The Bank" />
@@ -267,7 +266,7 @@
       </a>
     </div>
 
-    <div class="box" id="Stealing The Diamond">
+    <div class="box" id="Stealing The Diamond" x-show="shouldShow('Stealing The Diamond')">
       <a
         href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/Henry%20Stickmin%20-%20Stealing%20the%20Diamond.swf?raw=true">
         <img class="ImageForGame" src="/cover/StealD.webp" alt="Stealing The Diamond" />
@@ -276,7 +275,7 @@
       </a>
     </div>
 
-    <div class="box" id="PC Breakdown">
+    <div class="box" id="PC Breakdown" x-show="shouldShow('PC Breakdown')">
       <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/PC%20Breakdown.swf?raw=true">
         <img class="ImageForGame" src="/cover/PcB.webp" alt="PC Breakdown" />
 
@@ -284,7 +283,7 @@
       </a>
     </div>
 
-    <div class="box" id="1v1 lol">
+    <div class="box" id="1v1 lol" x-show="shouldShow('1v1 lol')">
       <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games-2/lol/">
         <img class="ImageForGame" src="/cover/lol.webp" alt="1v1 LOL" />
 
@@ -292,7 +291,7 @@
       </a>
     </div>
 
-    <div class="box" id="run 3">
+    <div class="box" id="run 3" x-show="shouldShow('run 3')">
       <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games-2/run3/">
         <img class="ImageForGame" src="/cover/run3s.webp" alt="Run 3" />
 
@@ -300,7 +299,7 @@
       </a>
     </div>
 
-    <div class="box" id="Riddle School">
+    <div class="box" id="Riddle School" x-show="shouldShow('Riddle School')">
       <a href="/games/Flash.html?game=/games/swf/riddd.swf">
         <img class="ImageForGame" src="/cover/rid.webp" alt="Riddle School" />
 
@@ -308,7 +307,7 @@
       </a>
     </div>
 
-    <div class="box" id="Riddle School 2">
+    <div class="box" id="Riddle School 2" x-show="shouldShow('Riddle School 2')">
       <a href="/games/Flash.html?game=/games/swf/riddd2.swf">
         <img class="ImageForGame" src="/cover/rid2.webp" alt="Riddle School 2" />
 
@@ -316,2364 +315,17 @@
       </a>
     </div>
 
-    <div class="box" id="riddle school 3">
-      <a href="/games/Flash.html?game=/games/swf/riddd3.swf">
-        <img class="ImageForGame" src="/cover/rid3.webp" alt="Riddle School 3" />
-
-        <div class="textover">Riddle School 3</div>
-      </a>
-    </div>
-
-    <div class="box" id="riddle school 4">
-      <a href="/games/Flash.html?game=/games/swf/riddd4.swf">
-        <img class="ImageForGame" src="/cover/rid4.webp" alt="Riddle School 4" />
-
-        <div class="textover">Riddle School 4</div>
-      </a>
-    </div>
-
-    <div class="box" id="riddle school 5">
-      <a href="/games/Flash.html?game=/games/swf/riddd5.swf">
-        <img class="ImageForGame" src="/cover/rid5.webp" alt="Riddle School 5" />
-
-        <div class="textover">Riddle School 5</div>
-      </a>
-    </div>
-
-    <div class="box" id="riddle transfer">
-      <a href="/games/Flash.html?game=/games/swf/riddd6.swf">
-        <img class="ImageForGame" src="/cover/rid6.webp" alt="Riddle Transfer" />
-
-        <div class="textover">Riddle Transfer</div>
-      </a>
-    </div>
-
-    <div class="box" id="riddle transfer 2">
-      <a href="/games/Flash.html?game=/games/swf/riddd7.swf">
-        <img class="ImageForGame" src="/cover/rid7.webp" alt="Riddle Transfer 2" />
-
-        <div class="textover">Riddle Transfer 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Subway Surfers">
-      <a href="/games/game.html?game=https://dddavit.github.io/subway/">
-        <img class="ImageForGame" src="/cover/sub.webp" alt="Subway Surfers" />
-
-        <div class="textover">Subway Surfers</div>
-      </a>
-    </div>
-
-    <div class="box" id="Chrome Dino">
-      <a href="/games/game.html?game=/games/dino">
-        <img class="ImageForGame" src="/cover/dino.webp" alt="Chrome Dino" />
-
-        <div class="textover">Chrome Dino</div>
-      </a>
-    </div>
-
-    <div class="box" id="tetris">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games9/Tetris2.swf?raw=true">
-        <img class="ImageForGame" src="/cover/tetris.webp" alt="Tetris" />
-        <div class="textover">Tetris</div>
-      </a>
-    </div>
-
-    <div class="box" id="paper.io">
-      <a href="/games/game.html?game=/Games/paperio2/index.html">
-        <img class="ImageForGame" src="/cover/paperio.webp" alt="Paper.io 2" />
-
-        <div class="textover">Paper.io 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="papas burgeria">
-      <a href="/games/Flash.html?game=/FlashGames/papasburgeria.swf">
-        <img class="ImageForGame" src="/cover/papasbur.webp" alt="Papa's Burgeria" />
-        <div class="textover">Papa's Burgeria</div>
-      </a>
-    </div>
-
-    <div class="box" id="papas scooperia">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games9/papasscooperia.swf">
-        <img class="ImageForGame" src="/cover/scoop.jpeg" alt="Papa's Scooperia" />
-        <div class="textover">Papa's Scooperia</div>
-      </a>
-    </div>
-
-    <div class="box" id="papas sushiria">
-      <a href="/games/Flash.html?game=/FlashGames/papassushiria.swf">
-        <img class="ImageForGame" src="/cover/sushiria.jpg" alt="Papa's Sushiria" />
-        <div class="textover">Papa's Sushiria</div>
-      </a>
-    </div>
-
-    <div class="box" id="papas bakeria">
-      <a href="/games/Flash.html?game=/FlashGames/papasbakeria.swf">
-        <img class="ImageForGame" src="/cover/bakeria.jpg" alt="Papa's Bakeria" />
-        <div class="textover">Papa's Bakeria</div>
-      </a>
-    </div>
-
-    <div class="box" id="papas pastaria">
-      <a href="/games/Flash.html?game=/FlashGames/papaspastaria.swf">
-        <img class="ImageForGame" src="/cover/pastaria.jpg" alt="Papa's Pastaria" />
-        <div class="textover">Papa's Pastaria</div>
-      </a>
-    </div>
-
-    <div class="box" id="papas cupcakeria">
-      <a href="/games/Flash.html?game=/FlashGames/papascupcakeria.swf">
-        <img class="ImageForGame" src="/cover/cupcakeria.jpg" alt="Papa's Cupcakeria" />
-        <div class="textover">Papa's Cupcakeria</div>
-      </a>
-    </div>
-
-    <div class="box" id="papas pizzeria">
-      <a href="/games/Flash.html?game=/FlashGames/papaspizzeria_v2.swf">
-        <img class="ImageForGame" src="/cover/pizzeria.jpg" alt="Papa's Pizzeria" />
-        <div class="textover">Papa's Pizzeria</div>
-      </a>
-    </div>
-
-    <div class="box" id="bloxorz">
-      <a href="/games/bloxx">
-        <img class="ImageForGame" src="/cover/blox.jpeg" alt="Bloxorz" />
-        <div class="textover">Bloxorz</div>
-      </a>
-    </div>
-
-    <div class="box" id="cookie clicker" style="float: left">
-      <a href="https://mr-funkinguy.github.io/cookieclicker/">
-        <img class="ImageForGame" src="/cover/click.png" alt="Cookie Clicker" />
-      </a>
-    </div>
-
-    <div class="box" id="agar.io">
-      <a href="/games/agario">
-        <img class="ImageForGame" src="/cover/agario.jpeg" alt="Agar.io" />
-
-        <div class="textover">Agar.io</div>
-      </a>
-    </div>
-
-
-
-    <div class="box" id="Basketball Stars">
-      <a href="/games/game.html?game=/Games7/basketball-stars">
-        <img class="ImageForGame" src="/cover/bscLeg.avif" alt="Basketball Stars" />
-        <div class="textover">Basketball Stars</div>
-      </a>
-    </div>
-
-    <div class="box" id="crossy road">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/cr/">
-        <img class="ImageForGame" src="/cr.jpeg" alt="Crossy Road" />
-        <div class="textover">Crossy Road</div>
-      </a>
-    </div>
-
-    <div class="box" id="EEL Slap">
-      <a href="/games/game.html?game=/storage3/eelslap/">
-        <img class="ImageForGame" src="/eelslap.png" alt="Eel Slap" />
-        <div class="textover">eel Slap</div>
-      </a>
-    </div>
-
-    <div class="box" id="Minecraft">
-      <a href="/games/game.html?game=/storage3/AWeb">
-        <img class="ImageForGame" src="/cover/Minecraft.png" alt="Minecraft" />
-
-        <div class="textover">Minecraft</div>
-      </a>
-    </div>
-
-    <div class="box" id="WebGL Fluid Animation">
-      <a href="/games/game.html?game=/storage3/1/">
-        <img class="ImageForGame" src="/webgl.png" alt="WebGl Fluid Animation" />
-        <div class="textover">WebGl Fluid Animation</div>
-      </a>
-    </div>
-
-    <div class="box" id="Funny Shooter">
-      <a href="/games/game.html?game=/fs">
-        <img class="ImageForGame" src="/fs.jpeg" alt="Funny Shooter" />
-        <div class="textover">Funny Shooter</div>
-      </a>
-    </div>
-
-    <div class="box" id="Geomerty Dash">
-      <a href="/games/game.html?game=/Games10/geodash/index.html">
-        <img class="ImageForGame" src="/cover/geo.jpeg" alt="Geomerty Dash" />
-        <div class="textover" style="color: #ffffff !important">Geomerty Dash</div>
-      </a>
-    </div>
-
-    <div class="box" id="Bitlife">
-      <a href="/rating.html?game=bitlife&&url=/games/game.html?game=https://adfree-sz-games.github.io/Games9/bitlife">
-        <img class="ImageForGame" src="/cover/Bitlife.png" alt="Bitlife" />
-
-        <div class="textover" style="">Bitlife</div>
-      </a>
-    </div>
-
-    <div class="box" id="A Dance of Fire And Ice">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/a-dance-of-fire-and-ice">
-        <img class="ImageForGame" src="/adofai.png" alt="A Dance Of Fire And Ice" />
-        <div class="textover" style="color: white !important">A Dance Of Fire And Ice</div>
-      </a>
-    </div>
-
-    <div class="box" id="Super Hot">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/superhot/index.html">
-        <img class="ImageForGame" src="/cover/superhot.jpeg" alt="Super Hot" />
-        <div class="textover" style="color: rgb(255, 255, 255) !important">Super Hot</div>
-      </a>
-    </div>
-
-    <div class="box" id="Fnaf 1">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/fnaf-1/index.html">
-        <img class="ImageForGame" src="/cover/fnaf1.jpeg" alt="Fnaf 1" />
-        <div class="textover">FNAF</div>
-      </a>
-    </div>
-
-    <div class="box" id="Fnaf 2">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/fnaf-2/index.html">
-        <img class="ImageForGame" src="/cover/fnaf2.webp" alt="Fnaf 2" />
-        <div class="textover">FNAF 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Fnaf 3">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/fnaf-3/index.html">
-        <img class="ImageForGame" src="/cover/fnaf3.webp" alt="Fnaf 3" />
-        <div class="textover">FNAF 3</div>
-      </a>
-    </div>
-
-    <div class="box" id="Fnaf 4">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/fnaf-4/index.html">
-        <img class="ImageForGame" src="/cover/fnaf4.jpeg" alt="Fnaf 4" />
-        <div class="textover">FNAF 4</div>
-      </a>
-    </div>
-
-    <div class="box" id="fnaf sister location">
-      <a href="/games/game.html?game=/Games5/fnafsl.html">
-        <img class="ImageForGame" src="/cover/SL1109.png" alt="Fnaf Sister Location (Fan Made)" />
-        <div class="textover">FNAF Sister Location (Fan Made)</div>
-      </a>
-    </div>
-
-    <div class="box" id="Fruit Ninja">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/fruitninja/">
-        <img class="ImageForGame" src="/cover/FRUITNINJA.png" alt="Fruit Ninja" />
-        <div class="textover" style="color: rgb(255, 255, 255) !important">Fruit Ninja</div>
-      </a>
-    </div>
-
-    <div class="box" id="Uno">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/uno/index.html">
-        <img class="ImageForGame" src="/cover/uno.png" alt="Uno" />
-        <div class="textover">UNO</div>
-      </a>
-    </div>
-
-    <div class="box" id="We Become What We Behold">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/gfile/wbwwb/index.html">
-        <img class="ImageForGame" src="/cover/67K.avif" alt="We Become What We Behold" />
-
-        <div class="textover">We Become What We Behold</div>
-      </a>
-    </div>
-
-    <div class="box" id="dreader">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/gfile/dreader/index.html">
-        <img class="ImageForGame" src="/cover/Dreader.webp" alt="Dreader" />
-
-        <div class="textover">dreader</div>
-      </a>
-    </div>
-
-    <div class="box" id="snake">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/gfile/snake/index.html">
-        <img class="ImageForGame" src="/cover/SNAKE.png" alt="Snake" />
-
-        <div class="textover">Snake</div>
-      </a>
-    </div>
-
-    <div class="box" id="Flappy Bird">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/gfile/flappy/index.html">
-        <img class="ImageForGame" src="/cover/FlappyBird.png" alt="Flappy Bird" />
-
-        <div class="textover">Flappy Bird</div>
-      </a>
-    </div>
-
-    <div class="box" id="Mario Vs Luigi">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/gfile/mariovsluigi/index.html">
-        <img class="ImageForGame" src="/cover/647K.png" alt="Mario Vs Luigi" />
-
-        <div class="textover">Super Mario Bros. Multiplayer</div>
-      </a>
-    </div>
-
-    <div class="box" id="SketchBook">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/gfile/sketchbook/index.html">
-        <img class="ImageForGame" src="/cover/47K.png" alt="Sketchbook" />
-
-        <div class="textover">Sketchbook</div>
-      </a>
-    </div>
-
-    <div class="box" id="Chess">
-      <a href="/games/game.html?game=/games/chess/index.html">
-        <img class="ImageForGame" src="/cover/chess.png" alt="Chess" />
-        <div class="textover">Chess</div>
-      </a>
-    </div>
-
-    <div class="box" id="george and the printer">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/gfile/georgeandtheprinter/index.html">
-        <img class="ImageForGame" src="/cover/8Jk.png" alt="George And the Printer" />
-
-        <div class="textover">George And the Printer</div>
-      </a>
-    </div>
-
-    <div class="box" id="bloons Tower Defense">
-      <a href="/games/Flash.html?game=/Games7/bloonstd.swf">
-        <img class="ImageForGame" src="/cover/btd.png" alt="Bloons Tower Defense" />
-        <div class="textover">Bloons Tower Defense</div>
-      </a>
-    </div>
-
-    <div class="box" id="bloons Tower Defense 3">
-      <a href="/games/Flash.html?game=/Games7/btd3.swf">
-        <img class="ImageForGame" src="/cover/btd3.png" alt="Bloons Tower Defense 3" />
-        <div class="textover">Bloons Tower Defense 3</div>
-      </a>
-    </div>
-
-    <div class="box" id="bloons Tower Defense 4">
-      <a href="/games/Flash.html?game=/Games7/bloonstd4.swf">
-        <img class="ImageForGame" src="/cover/btd4.png" alt="Bloons Tower Defense 4" />
-        <div class="textover">Bloons Tower Defense 4</div>
-      </a>
-    </div>
-
-    <div class="box" id="bloons Tower Defense 5">
-      <a href="/games/Flash.html?game=/Games7/btd5.swf">
-        <img class="ImageForGame" src="/cover/btd5.png" alt="Bloons Tower Defense 5" />
-        <div class="textover">Bloons Tower Defense 5</div>
-      </a>
-    </div>
-
-    <div class="box" id="Sandboxels">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/sandboxels">
-        <img class="ImageForGame" src="/sandboxels.webp" alt="Sandboxels" />
-        <div class="textover">Sandboxels</div>
-      </a>
-    </div>
-
-    <div class="box" id="Noclip">
-      <a href="/games/game.html?game=https://noclip.website/">
-        <img class="ImageForGame" src="/noclip.png" alt="Noclip" />
-        <div class="textover">Noclip</div>
-      </a>
-    </div>
-
-    <div class="box" id="Street Fighter">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games3/fighter2">
-        <img class="ImageForGame" src="/sf2.jpeg" alt="Street Fighter 2" />
-
-        <div class="textover">Street Fighter 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Smash Karts">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/75/projects/smashkarts/index.html">
-        <img class="ImageForGame" src="/cover/smash-karts.jpg" alt="Smash Karts" />
-        <div class="textover">Smash Karts</div>
-      </a>
-    </div>
-
-    <div class="box" id="Combat Online">
-      <a href="/games/game.html?game=https://unblockeds-games.com/webgl/combat-online/index.html">
-        <img class="ImageForGame" src="/combat-online.jpeg" alt="Combat Online" />
-        <div class="textover">Combat Online</div>
-      </a>
-    </div>
-
-    <div class="box" id="Time Shooter 2">
-      <a href="/games/game.html?game=/Games5/time-shooter-2/index.html">
-        <img class="ImageForGame" src="/cover/time-shooter-2.jpg" alt="Time Shooter 2" />
-        <div class="textover">Time Shooter 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Happy Wheels">
-      <a href="/games/game.html?game=https://mrsnailman.github.io/Happy-Wheels-Source-Code/">
-        <img class="ImageForGame" src="/happy-wheels.jpeg" alt="Happy Wheels" />
-        <div class="textover">Happy Wheels</div>
-      </a>
-    </div>
-
-    <div class="box" id="Rooftop Snipers">
-      <a href="/games/game.html?game=/games/rooftop-snipers/">
-        <img class="ImageForGame" src="/cover/rooftop-snipers.png" alt="Rooftop Snipers" />
-        <div class="textover">Rooftop Snipers</div>
-      </a>
-    </div>
-
-    <div class="box" id="Cube 2">
-      <a href="/games/game.html?game=https://kripken.github.io/BananaBread/cube2/bb.html">
-        <img class="ImageForGame" src="/cover/cube2.png" alt="Cube 2" />
-        <div class="textover">Cube 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Cube Engine">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/Cube-engine/play.html">
-        <img class="ImageForGame" src="/cover/CubeEngine.png" alt="Cube Engine" />
-        <div class="textover">Cube Engine</div>
-      </a>
-    </div>
-
-    <div class="box" id="Super Mario 64">
-      <a href="/Games2/sm64">
-        <img class="ImageForGame" src="/cover/64.jpeg" alt="Super Mario 64" />
-        <div class="textover">Super Mario 64</div>
-      </a>
-    </div>
-
-    <div class="box" id="Doodle Jump">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/gfile/doodle/index.html">
-        <img class="ImageForGame" src="/cover/09ML.avif" alt="Doodle Jump" />
-
-        <div class="textover">Doodle Jump</div>
-      </a>
-    </div>
-
-    <div class="box" id="draw the hill">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/draw-the-hill/index.html">
-        <img class="ImageForGame" src="/cover/drawthehill.jpeg" alt="Draw The Hill" />
-        <div class="textover">Draw The Hill</div>
-      </a>
-    </div>
-
-    <div class="box" id="Five Nights at Winston's">
-      <a href="/games/game.html?game=/Games10/fnaw/index.html">
-        <img class="ImageForGame" src="/cover/fnaw.png" alt="Five Nights at Winston's" />
-        <div class="textover">Five Nights at Winston's</div>
-      </a>
-    </div>
-
-    <div class="box" id="Google Feud">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/83/google-feud/index.html">
-        <img class="ImageForGame" src="/cover/GFEUD.webp" alt="Google Feud" />
-        <div class="textover">Google Feud</div>
-      </a>
-    </div>
-
-    <div class="box" id="Grey Box Testing">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/greybox/index.html">
-        <img class="ImageForGame" src="/cover/greybox.png" alt="Grey Box Testing" />
-        <div class="textover">Grey Box Testing</div>
-      </a>
-    </div>
-
-    <div class="box" id="Kitchen Gun">
-      <a href="/games/game.html?game=/Games10/kitchen-gun-game/index.html">
-        <img class="ImageForGame" src="/kitchen-gun-game.png" alt="Kitchen Gun" />
-        <div class="textover">Kitchen Gun</div>
-      </a>
-    </div>
-
-    <div class="box" id="Noob Steve Parkour">
-      <a href="/games/game.html?game=/Games10/noob-steve-parkour/index.html">
-        <img class="ImageForGame" src="/noob-steve-parkour.jpg" alt="Noob Steve Parkour" />
-        <div class="textover">Noob Steve Parkour</div>
-      </a>
-    </div>
-
-    <div class="box" id="Popcat Classic">
-      <a href="/games/game.html?game=/Games10/popcat-classic/index.html">
-        <img class="ImageForGame" src="/popcat-classic.png" alt="Popcat Classic" />
-        <div class="textover">Popcat Classic</div>
-      </a>
-    </div>
-
-    <div class="box" id="PolyBranch">
-      <a href="/games/game.html?game=/Games10/polybranch/index.html">
-        <img class="ImageForGame" src="/polybranch.png" alt="PolyBranch" />
-        <div class="textover">PolyBranch</div>
-      </a>
-    </div>
-
-    <div class="box" id="Push Your Luck">
-      <a href="/games/game.html?game=/Games2/push-your-luck/index.html">
-        <img class="ImageForGame" src="/push-your-luck.png" alt="Push Your Luck" />
-        <div class="textover">Push Your Luck</div>
-      </a>
-    </div>
-
-    <div class="box" id="Papery Planes">
-      <a href="/games/game.html?game=/Games10/papery-planes/index.html">
-        <img class="ImageForGame" src="/papery-planes.jpg" alt="Papery Planes" />
-        <div class="textover">Papery Planes</div>
-      </a>
-    </div>
-
-    <div class="box" id="The Heist">
-      <a href="/games/game.html?game=/Games10/theheist/index.html">
-        <img class="ImageForGame" src="/the-heist.jpg" alt="The Heist" />
-        <div class="textover">The Heist</div>
-      </a>
-    </div>
-
-    <div class="box" id="Incredibox">
-      <a href="/games/game.html?game=/incredibox-v9/">
-        <img class="ImageForGame" src="/incredibox.jpeg" alt="Incredibox" />
-        <div class="textover">Incredibox</div>
-      </a>
-    </div>
-
-    <div class="box" id="Learn To Fly">
-      <a href="/games/Flash.html?game=/FlashGames/learntofly.swf">
-        <img class="ImageForGame" src="/cover/ltf.png" alt="Learn To Fly" />
-        <div class="textover">Learn To Fly</div>
-      </a>
-    </div>
-
-    <div class="box" id="Learn To Fly 2">
-      <a href="/games/Flash.html?game=/FlashGames/learntofly2.swf">
-        <img class="ImageForGame" src="/cover/ltf2.jpg" alt="Learn To Fly 2" />
-        <div class="textover">Learn To Fly 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Cat Ninja">
-      <a
-        href="/games/game.html?game=https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fcat-ninja.xml">
-        <img class="ImageForGame" src="/cover/catnin.png" alt="Cat Ninja" />
-        <div class="textover">Cat Ninja</div>
-      </a>
-    </div>
-
-    <div class="box" id="moto x3m">
-      <a href="/games/game.html?game=https://tbg95.github.io/moto-x3m/game">
-        <img class="ImageForGame" src="/cover/motox3m.png" alt="Moto X3M" />
-        <div class="textover">Moto X3M</div>
-      </a>
-    </div>
-
-    <div class="box" id="moto x3m 2">
-      <a href="/games/game.html?game=/Games5/motox3m2">
-        <img class="ImageForGame" src="/cover/X3M2.png" alt="Moto X3M 2" />
-        <div class="textover">Moto X3M 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="moto x3m pool party">
-      <a href="/games/game.html?game=/Games5/motox3m-pool">
-        <img class="ImageForGame" src="/cover/X3M3.avif" alt="Moto X3M Pool Party" />
-        <div class="textover">Moto X3M Pool Party</div>
-      </a>
-    </div>
-
-    <div class="box" id="moto x3m spooky land">
-      <a href="/games/game.html?game=/Games5/motox3m-spooky">
-        <img class="ImageForGame" src="/cover/X3M9.png" alt="Moto X3M Spooky Land" />
-        <div class="textover">Moto X3M Spooky Land</div>
-      </a>
-    </div>
-
-    <div class="box" id="moto x3m winter">
-      <a href="/games/game.html?game=/Games5/motox3m-winter">
-        <img class="ImageForGame" src="/cover/X3M5.jpeg" alt="Moto X3M Winter" />
-        <div class="textover">Moto X3M Winter</div>
-      </a>
-    </div>
-
-    <div class="box" id="Fireboy & Watergirl 2">
-      <a href="/games/Flash.html?game=/FlashGames/Game11-FIRE.swf">
-        <img class="ImageForGame" src="/cover/FireW.png" alt="Fireboy & Watergirl 2" />
-        <div class="textover">Fireboy & Watergirl 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Boxing Random">
-      <a href="/games/game.html?game=https://tylerpalko.github.io/gamehub/boxingrandom/">
-        <img class="ImageForGame" src="/cover/NOMGG.png" alt="Boxing Random" />
-        <div class="textover">Boxing Random</div>
-      </a>
-    </div>
-
-    <div class="box" id="CSGO Clicker">
-      <a href="/games/game.html?game=/Games/CSGO-CLICKER">
-        <img class="ImageForGame" src="/cover/CSGO.png" alt="CSGO Clicker" />
-        <div class="textover">CSGO Clicker</div>
-      </a>
-    </div>
-
-    <div class="box" id="Monkey Mart">
-      <a href="/games/game.html?game=/Games/monkey-mart">
-        <img class="ImageForGame" src="/cover/MKMART.avif" alt="Monkey Mart" />
-        <div class="textover">Monkey Mart</div>
-      </a>
-    </div>
-
-    <div class="box" id="Doom">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/wasmStuff/doom/">
-        <img class="ImageForGame" src="/cover/Doom.png" alt="Doom" />
-        <div class="textover">Doom</div>
-      </a>
-    </div>
-
-    <div class="box" id="Bob The Robber 2">
-      <a href="/games/game.html?game=/Games/bobtherobber2">
-        <img class="ImageForGame" src="/cover/bthe.jpeg" alt="Bob The Robber 2" />
-        <div class="textover">Bob The Robber 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="The Hotel">
-      <a href="/games/game.html?game=/Games/the-hotel">
-        <img class="ImageForGame" src="/cover/thehotel.png" alt="The Hotel" />
-        <div class="textover">The Hotel</div>
-      </a>
-    </div>
-
-    <div class="box" id="Sonic">
-      <a href="/games/Flash.html?game=/FlashGames/SONIC.swf">
-        <img class="ImageForGame" src="/cover/UFS.webp" alt="Ultimate Flash Sonic" />
-        <div class="textover">Ultimate Flash Sonic</div>
-      </a>
-    </div>
-
-    <div class="box" id="Hacker Typer">
-      <a href="/games/game.html?game=/Games/Hacker-Typer/">
-        <img class="ImageForGame" src="/cover/Hacker.png" alt="Hacker Typer" />
-        <div class="textover">Hacker Typer</div>
-      </a>
-    </div>
-
-    <div class="box" id="2048">
-      <a href="/games/game.html?game=/Games2/20481">
-        <img class="ImageForGame" src="/cover/2048.png" alt="2048" />
-        <div class="textover">2048</div>
-      </a>
-    </div>
-
-    <div class="box" id="Circles">
-      <a href="/games/game.html?game=/Games2/circle">
-        <img class="ImageForGame" src="/cover/Circles.png" alt="Circles" />
-        <div class="textover">Circles</div>
-      </a>
-    </div>
-
-    <div class="box" id="Align 4">
-      <a href="/games/game.html?game=/Games2/align-4">
-        <img class="ImageForGame" src="/cover/align4.png" alt="Align 4" />
-        <div class="textover">Align 4</div>
-      </a>
-    </div>
-
-    <div class="box" id="Among Us">
-      <a href="/games/game.html?game=/Games2/among-us">
-        <img class="ImageForGame" src="/cover/AmoungUs.jpeg" alt="Among Us (Fan Made)" />
-        <div class="textover">Among Us (Fan Made)</div>
-      </a>
-    </div>
-
-    <div class="box" id="Colorun">
-      <a href="/games/game.html?game=/Games2/colorun">
-        <img class="ImageForGame" src="/cover/Coloron.jpeg" alt="Colorun" />
-        <div class="textover">Colorun</div>
-      </a>
-    </div>
-
-    <div class="box" id="Craftmine">
-      <a href="/games/game.html?game=/Games2/craftmine">
-        <img class="ImageForGame" src="/cover/craftmine.jpeg" alt="Craftmine" />
-        <div class="textover">Craftmine</div>
-      </a>
-    </div>
-
-    <div class="box" id="Deal Or No Deal">
-      <a href="/games/game.html?game=/Games2/deal-or-no-deal">
-        <img class="ImageForGame" src="/cover/DOND.webp" alt="Deal Or No Deal" />
-        <div class="textover">Deal Or No Deal</div>
-      </a>
-    </div>
-
-    <div class="box" id="economical">
-      <a href="/games/game.html?game=/Games2/economical">
-        <img class="ImageForGame" src="/cover/economicle.png" alt="Economical" />
-        <div class="textover">Economical</div>
-      </a>
-    </div>
-
-    <div class="box" id="economical 2">
-      <a href="/games/game.html?game=/Games2/economical2">
-        <img class="ImageForGame" src="/cover/Economical-2.webp" alt="Economical 2" />
-        <div class="textover">Economical 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Factory Balls">
-      <a href="/games/game.html?game=/Games2/factoryballs">
-        <img class="ImageForGame" src="/cover/FCTYBalls.avif" alt="Factory Balls" />
-        <div class="textover">Factory Balls</div>
-      </a>
-    </div>
-
-    <div class="box" id="Gataway Shootout">
-      <a href="/games/game.html?game=/Games2/getaway-shootout">
-        <img class="ImageForGame" src="/cover/GTEWY.avif" alt="Gataway Shootout" />
-        <div class="textover">Gataway Shootout</div>
-      </a>
-    </div>
-
-    <div class="box" id="Grind Craft">
-      <a href="/games/game.html?game=/Games2/grindcraft">
-        <img class="ImageForGame" src="/cover/GrindCraft.jpeg" alt="Grind Craft" />
-        <div class="textover">Grind Craft</div>
-      </a>
-    </div>
-
-    <div class="box" id="madalin stunt cars 2">
-      <a href="/games/game.html?game=/Games2/madalin-stunt-cars-2">
-        <img class="ImageForGame" src="/cover/113347.jpeg" alt="Madalin Stunt Cars 2" />
-        <div class="textover">Madalin Stunt Cars 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="madalin stunt cars 3">
-      <a href="/games/game.html?game=/Games2/madalin-stunt-cars-3">
-        <img class="ImageForGame" src="/cover/11456.webp" alt="Madalin Stunt Cars 3" />
-        <div class="textover">Madalin Stunt Cars 3</div>
-      </a>
-    </div>
-
-    <div class="box" id="q1k3">
-      <a href="/games/game.html?game=/Games2/q1k3">
-        <img class="ImageForGame" src="/cover/q1k3.avif" alt="Q1K3" />
-        <div class="textover">Q1K3</div>
-      </a>
-    </div>
-
-    <div class="box" id="Rolly Vortex">
-      <a href="/games/game.html?game=/Games2/rolly-vortex">
-        <img class="ImageForGame" src="/cover/RVortrex.png" alt="Rolly Vortex" />
-        <div class="textover">Rolly Vortex</div>
-      </a>
-    </div>
-
-    <div class="box" id="Slope 2">
-      <a href="/games/game.html?game=/Games2/slope-2">
-        <img class="ImageForGame" src="/cover/slope2.png" alt="Slope 2" />
-        <div class="textover">Slope 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="Snowbattle">
-      <a href="/games/game.html?game=/Games7/snowbattle">
-        <img class="ImageForGame" src="/cover/snowbattle.jpeg" alt="Snowbattle" />
-        <div class="textover">Snowbattle.io</div>
-      </a>
-    </div>
-    <div class="box" id="Space Company">
-      <a href="/games/game.html?game=/Games2/spaceCompany">
-        <img class="ImageForGame" src="/cover/spacecompany.png" alt="Space Company" />
-        <div class="textover">Space Company</div>
-      </a>
-    </div>
-
-    <div class="box" id="Stack Bump 3D">
-      <a href="/games/game.html?game=/Games2/stack-bump-3d">
-        <img class="ImageForGame" src="/cover/STCKB3.webp" alt="Stack Bump 3D" />
-        <div class="textover">Stack Bump 3D</div>
-      </a>
-    </div>
-
-    <div class="box" id="swerve">
-      <a href="/games/game.html?game=/Games2/swerve">
-        <img class="ImageForGame" src="/cover/swerve.webp" alt="Swerve" />
-        <div class="textover">Swerve</div>
-      </a>
-    </div>
-
-    <div class="box" id="The Cube">
-      <a href="/games/game.html?game=/Games2/the-cube-master">
-        <img class="ImageForGame" src="/cover/TheCube.png" alt="The Cube" />
-        <div class="textover">The Cube</div>
-      </a>
-    </div>
-
-    <div class="box" id="The Lost Ball">
-      <a href="/games/game.html?game=/Games2/the-lost-ball">
-        <img class="ImageForGame" src="/cover/TheLostBall.png" alt="The Lost Ball" />
-        <div class="textover">The Lost Ball</div>
-      </a>
-    </div>
-
-    <div class="box" id="Townscaper">
-      <a href="/games/game.html?game=/Games2/townscaper">
-        <img class="ImageForGame" src="/cover/townscaper.jpeg" alt="Townscaper" />
-        <div class="textover">Townscaper</div>
-      </a>
-    </div>
-
-    <div class="box" id="Wordle">
-      <a href="/games/game.html?game=/Games2/wordle">
-        <img class="ImageForGame" src="/cover/wordle.webp" alt="Wordle" />
-        <div class="textover">Wordle</div>
-      </a>
-    </div>
-
-    <div class="box" id="Zelda 3D">
-      <a href="/games/Emulator.html?game=/Games2/zelda3d">
-        <img class="ImageForGame" src="/zelda-3d.jpeg" alt="Zelda 3D" />
-        <div class="textover">Zelda 3D</div>
-      </a>
-    </div>
-
-    <div class="box" id="Doge Miner">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/DogeMiner">
-        <img class="ImageForGame" src="/cover/DGMINER.png" alt="Doge Miner" />
-        <div class="textover">Doge Miner</div>
-      </a>
-    </div>
-
-    <div class="box" id="Drift Hunters">
-      <a href="/games/game.html?game=https://webglmath.github.io/drift-hunters/">
-        <img class="ImageForGame" src="/cover/drift-hunters.png" alt="Drift Hunters" />
-        <div class="textover">Drift Hunters</div>
-      </a>
-    </div>
-
-    <div class="box" id="bloxd.io">
-      <a href="/games/game.html?game=https://bloxd.io">
-        <img class="ImageForGame" src="/bloxd-io.png" alt="game" />
-        <div class="textover">Bloxd.io</div>
-      </a>
-    </div>
-
-    <div class="box" id="Voxiom.io">
-      <a href="/games/game.html?game=https://voxiom.io">
-        <img class="ImageForGame" src="/cover/VOX.png" alt="Voxiom.io" />
-        <div class="textover">Voxiom.io</div>
-      </a>
-    </div>
-
-    <div class="box" id="tv static">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/tv-static">
-        <img class="ImageForGame" src="/cover/STATIC2.png" alt="TV Static" />
-        <div class="textover">TV Static</div>
-      </a>
-    </div>
-
-    <div class="box" id="tactical weapon pack 2">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/tactical-weapon-pack-2">
-        <img class="ImageForGame" src="/cover/WPNPK2.png" alt="Tactical Weapon Pack 2" />
-        <div class="textover">Tactical Weapon Pack 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="santy is home">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/santy-is-home">
-        <img class="ImageForGame" src="/cover/SANTYISHOME.png" alt="Santy Is Home" />
-        <div class="textover">Santy Is Home</div>
-      </a>
-    </div>
-
-    <div class="box" id="sushi unroll">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/sushi-unroll">
-        <img class="ImageForGame" src="/cover/UNROLL.png" alt="Sushi Unroll" />
-        <div class="textover">Sushi Unroll</div>
-      </a>
-    </div>
-
-    <div class="box" id="super mario construct">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/supermarioconstruct">
-        <img class="ImageForGame" src="/cover/0034.png" alt="Super Mario Construct" />
-        <div class="textover">Super Mario Construct</div>
-      </a>
-    </div>
-
-    <div class="box" id="win the whitehouse">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/win-the-whitehouse">
-        <img class="ImageForGame" src="/cover/0035.png" alt="Win The Whitehouse" />
-        <div class="textover">Win The Whitehouse</div>
-      </a>
-    </div>
-
-    <div class="box" id="rocket league">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/Rocket-League/">
-        <img class="ImageForGame" src="/cover/ROCKETL5.png" alt="Rocket League" />
-        <div class="textover">Rocket League (Clone)</div>
-      </a>
-    </div>
-
-    <div class="box" id="missile game ">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/missiles/">
-        <img class="ImageForGame" src="/cover/1094.png" alt="Missile Game" />
-        <div class="textover">Missile Game</div>
-      </a>
-    </div>
-
-    <div class="box" id="merge round racers">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/merge-round-racers/">
-        <img class="ImageForGame" src="/cover/11940.webp" alt="Merge Round Racers" />
-        <div class="textover">Merge Round Racers</div>
-      </a>
-    </div>
-
-    <div class="box" id="frying nemo">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/frying-nemo/">
-        <img class="ImageForGame" src="/cover/1190a.png" alt="Frying Nemo" />
-        <div class="textover">Frying Nemo</div>
-      </a>
-    </div>
-
-    <div class="box" id="stick duel battle">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/stick-duel-battle/">
-        <img class="ImageForGame" src="/cover/1109g.webp" alt="Stick Duel Battle" />
-        <div class="textover">Stick Duel Battle</div>
-      </a>
-    </div>
-
-    <div class="box" id="super mario bros">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/SuperMario/">
-        <img class="ImageForGame" src="/cover/091h.png" alt="Super Mario Bros" />
-        <div class="textover">Super Mario Bros</div>
-      </a>
-    </div>
-
-    <div class="box" id="cars simulator">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games4/cars-simulator/">
-        <img class="ImageForGame" src="/cover/098BU.png" alt="Cars Simulator" />
-        <div class="textover">Cars Simulator</div>
-      </a>
-    </div>
-
-    <div class="box" id="the worlds hardest game">
-      <a href="/games/Flash.html?game=/Games5/swf/TheWorldsHardestGame.swf">
-        <img class="ImageForGame" src="/cover/5BL.webp" alt="The Worlds Hardest Game" />
-        <div class="textover">The Worlds Hardest Game</div>
-      </a>
-    </div>
-
-    <div class="box" id="the worlds hardest game 2">
-      <a href="/games/Flash.html?game=/Games5/swf/Worlds Hardest Game 2.swf">
-        <img class="ImageForGame" src="/cover/59BJ.jpeg" alt="The Worlds Hardest Game 2" />
-        <div class="textover">The Worlds Hardest Game 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="super smash flash">
-      <a href="/games/Flash.html?game=/Games5/swf/Super Smash Flash.swf">
-        <img class="ImageForGame" src="/cover/YU90.webp" alt="Super Smash Flash" />
-        <div class="textover">Super Smash Flash</div>
-      </a>
-    </div>
-
-    <div class="box" id="little alchemy 2">
-      <a href="/games/game.html?game=https://littlealchemy2.com/">
-        <img class="ImageForGame" src="/cover/LACH2.jpeg" alt="Little Alchemy 2" />
-        <div class="textover">Little Alchemy 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="angry birds">
-      <a href="/games/game.html?game=/Games5/AngryBirds/">
-        <img class="ImageForGame" src="/cover/0991L.webp" alt="Angry Birds" />
-        <div class="textover">Angry Birds: Slingshot Frenzy</div>
-      </a>
-    </div>
-
-    <div class="box" id="hexgl">
-      <a href="/games/game.html?game=/Games5/HexGL-master/">
-        <img class="ImageForGame" src="/cover/HexGl.jpeg" alt="HexGl" />
-        <div class="textover">HexGl</div>
-      </a>
-    </div>
-
-    <div class="box" id="jetpack joyride">
-      <a href="/games/game.html?game=/Games5/jetpack-joyride/">
-        <img class="ImageForGame" src="/cover/jetpackjoyride.webp" alt="Jetpack Joyride" />
-        <div class="textover">Jetpack Joyride</div>
-      </a>
-    </div>
-
-    <div class="box" id="mini shooters">
-      <a href="/games/game.html?game=/Games5/mini-shooters/unblocked.html">
-        <img class="ImageForGame" src="/cover/MINI109.png" alt="Mini Shooters" />
-        <div class="textover">Mini Shooters</div>
-      </a>
-    </div>
-
-    <div class="box" id="pixel gun apocalypse 2">
-      <a href="/games/game.html?game=/Games5/pixelgun/">
-        <img class="ImageForGame" src="/cover/PIXEL901.png" alt="Pixel Gun Apocalypse 2" />
-        <div class="textover">Pixel Gun Apocalypse 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="99balls">
-      <a href="/games/game.html?game=/Games5/99balls/">
-        <img class="ImageForGame" src="/cover/99balls.avif" alt="99 Balls" />
-        <div class="textover">99 Balls</div>
-      </a>
-    </div>
-
-    <div class="box" id="9007199254740992">
-      <a href="/games/game.html?game=/Games5/9007199254740992/">
-        <img class="ImageForGame" src="/cover/9900ER.png" ssalt="9007199254740992" />
-        <div class="textover">9007199254740992</div>
-      </a>
-    </div>
-
-    <div class="box" id="angry sharks">
-      <a href="/games/game.html?game=/Games5/angry-sharks/">
-        <img class="ImageForGame" src="/cover/00LM2.png" alt="Angry Sharks" />
-        <div class="textover">Angry Sharks</div>
-      </a>
-    </div>
-
-    <div class="box" id="station 141">
-      <a href="/games/game.html?game=/Games5/station-141/">
-        <img class="ImageForGame" src="/cover/ST141.png" alt="Station 141" />
-        <div class="textover">Station 141</div>
-      </a>
-    </div>
-
-    <div class="box" id="pipe riders">
-      <a href="/games/game.html?game=/Games5/pipe-riders">
-        <img class="ImageForGame" src="/cover/098B.png" alt="Pipe Riders" />
-        <div class="textover">Pipe Riders</div>
-      </a>
-    </div>
-
-    <div class="box" id="adventure drivers">
-      <a href="/games/game.html?game=/Games5/adventure-drivers">
-        <img class="ImageForGame" src="/cover/0098K.avif" alt="Adventure Drivers" />
-        <div class="textover">Adventure Drivers</div>
-      </a>
-    </div>
-
-    <div class="box" id="amazing rope police">
-      <a href="/games/game.html?game=/Games5/amazing-rope-police">
-        <img class="ImageForGame" src="/cover/098M.png" alt="Amazing Rope Police" />
-        <div class="textover">Amazing Rope Police</div>
-      </a>
-    </div>
-
-    <div class="box" id="10 minutes till dawn">
-      <a href="/games/game.html?game=/Games5/10-minutes-till-dawn">
-        <img class="ImageForGame" src="/cover/10MINB.webp" alt="10 Minutes Till Dawn" />
-        <div class="textover">10 Minutes Till Dawn</div>
-      </a>
-    </div>
-
-    <div class="box" id="cut the rope">
-      <a href="/games/game.html?game=/Games5/ctr">
-        <img class="ImageForGame" src="/cover/ctr.png" alt="Cut The Rope" />
-        <div class="textover">Cut The Rope</div>
-      </a>
-    </div>
-
-    <div class="box" id="cut the rope 2">
-      <a href="/games/game.html?game=/Games5/ctr-holiday">
-        <img class="ImageForGame" src="/cover/ctr2.png" alt="Cut The Rope 2" />
-        <div class="textover">Cut The Rope 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="cut the rope 3">
-      <a href="/games/game.html?game=/Games5/ctr-tr">
-        <img class="ImageForGame" src="/cover/tr3.png" alt="Cut The Rope 3" />
-        <div class="textover">Cut The Rope 3</div>
-      </a>
-    </div>
-
-    <div class="box" id="defend the tank">
-      <a href="/games/game.html?game=/Games5/defend-the-tank">
-        <img class="ImageForGame" src="/cover/098MN.jpeg" alt="Defend The Tank" />
-        <div class="textover">Defend The Tank</div>
-      </a>
-    </div>
-
-    <div class="box" id="bad ice cream">
-      <a href="/games/game.html?game=/Games5/bad-ice-cream">
-        <img class="ImageForGame" src="/cover/BICEC.png" alt="Bad Ice Cream" />
-        <div class="textover">Bad Ice Cream</div>
-      </a>
-    </div>
-
-    <div class="box" id="bad ice cream 2">
-      <a href="/games/game.html?game=/Games5/bad-ice-cream-2">
-        <img class="ImageForGame" src="/cover/BICEC2.webp" alt="Bad Ice Cream 2" />
-        <div class="textover">Bad Ice Cream 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="bad ice cream 3">
-      <a href="/games/game.html?game=/Games5/bad-ice-cream-3">
-        <img class="ImageForGame" src="/cover/BICEC3.png" alt="Bad Ice Cream 3" />
-        <div class="textover">Bad Ice Cream 3</div>
-      </a>
-    </div>
-
-    <div class="box" id="storm the house 2">
-      <a href="/games/Flash.html?game=/Games5/stormthehouse2/StormtheHouse2.swf">
-        <img class="ImageForGame" src="/cover/stormthehouse2.jpg" alt="Storm The House 2" />
-        <div class="textover">Storm The House 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="highway justice">
-      <a href="/games/Flash.html?game=/Games5/highway-justice.swf">
-        <img class="ImageForGame" src="/cover/09KL.jpeg" alt="Highway Justice" />
-        <div class="textover">Highway Justice</div>
-      </a>
-    </div>
-
-    <div class="box" id="drive mad">
-      <a href="/games/game.html?game=/Games5/drive-mad">
-        <img class="ImageForGame" src="/cover/drive-mad.jpg" alt="Drive Mad" />
-        <div class="textover">Drive Mad</div>
-      </a>
-    </div>
-
-    <div class="box" id="connect 3">
-      <a href="/games/game.html?game=/Games5/connect3">
-        <img class="ImageForGame" src="/cover/connect3.png" alt="Connect 3" />
-        <div class="textover">Connect 3</div>
-      </a>
-    </div>
-
-    <div class="box" id="stickman hook">
-      <a href="/games/game.html?game=/Games5/stickman-hook">
-        <img class="ImageForGame" src="/cover/890P.jpeg" alt="Stickman Hook" />
-        <div class="textover">Stickman Hook</div>
-      </a>
-    </div>
-
-    <div class="box" id="champion island">
-      <a href="/games/game.html?game=/Games5/champion-island">
-        <img class="ImageForGame" src="/cover/0091GH.jpeg" alt="Champion Island" />
-        <div class="textover">Champion Island</div>
-      </a>
-    </div>
-
-    <div class="box" id="wordle">
-      <a href="/games/game.html?game=/Games5/wordle">
-        <img class="ImageForGame" src="/cover/WORDLEE.jpeg" alt="Wordle" />
-        <div class="textover">Wordle</div>
-      </a>
-    </div>
-
-    <div class="box" id="ovo">
-      <a href="/games/game.html?game=/Games5/ovo">
-        <img class="ImageForGame" src="/cover/OVO.png" alt="OvO" />
-        <div class="textover">OvO</div>
-      </a>
-    </div>
-
-    <div class="box" id="The Battle">
-      <a href="/games/Flash.html?game=/Games5/thebattle.swf">
-        <img class="ImageForGame" src="/cover/eer6.png" alt="The Battle" />
-        <div class="textover">The Battle</div>
-      </a>
-    </div>
-
-    <div class="box" id="Highway Racer">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/hwy-rcer">
-        <img class="ImageForGame" src="/cover/hwy-rcer.png" alt="Highway Racer" />
-        <div class="textover">Highway Racer</div>
-      </a>
-    </div>
-
-    <div class="box" id="roommate">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/roommate/31">
-        <img class="ImageForGame" src="/cover/PO09.png" alt="Roommate" />
-        <div class="textover">Roommate</div>
-      </a>
-    </div>
-
-    <div class="box" id="1v1 space">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/1v1space">
-        <img class="ImageForGame" src="/cover/CLOUDS.png" alt="1v1 Space" />
-        <div class="textover">1v1 Space</div>
-      </a>
-    </div>
-    <div class="box" id="untitled zombie game">
-      <a href="/games/game.html?game=https://v6p9d9t4.ssl.hwcdn.net/html/8805247/UZG/index.html">
-        <img class="ImageForGame" src="/cover/UZG.png" alt="Untitled Zombie Game" />
-        <div class="textover">Untitled Zombie Game</div>
-      </a>
-    </div>
-
-    <div class="box" id="cupcake 2048">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/cupcake2048">
-        <img class="ImageForGame" src="/cover/2048CC.png" alt="Cupcake 2048" />
-        <div class="textover">Cupcake 2048</div>
-      </a>
-    </div>
-
-    <div class="box" id="evil glitch">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/evil-glitch">
-        <img class="ImageForGame" src="/cover/EVILG.jpeg" alt="Evil Glitch" />
-        <div class="textover">Evil Glitch</div>
-      </a>
-    </div>
-
-    <div class="box" id="cannon basketball 4">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/cannon-basketball-4">
-        <img class="ImageForGame" src="/cover/CANNONBSKT.png" alt="Cannon Basketball 4" />
-        <div class="textover">Cannon Basketball 4</div>
-      </a>
-    </div>
-
-    <div class="box" id="dragon vs bricks">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/dragon-vs-bricks">
-        <img class="ImageForGame" src="/cover/67OPY.webp" alt="Dragon Vs Bricks" />
-        <div class="textover">Dragon Vs Bricks</div>
-      </a>
-    </div>
-
-    <div class="box" id="drift boss">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/drift-boss">
-        <img class="ImageForGame" src="/cover/DRIFTBOSS.jpeg" alt="Drift Boss" />
-        <div class="textover">Drift Boss</div>
-      </a>
-    </div>
-
-    <div class="box" id="eggy car">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/eggycar">
-        <img class="ImageForGame" src="/cover/EGGYCAR.webp" alt="Eggycar" />
-        <div class="textover">Eggycar</div>
-      </a>
-    </div>
-
-    <div class="box" id="blockpost">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/blockpost">
-        <img class="ImageForGame" src="/cover/BLOCKPOST.avif" alt="Blockpost" />
-        <div class="textover">Blockpost</div>
-      </a>
-    </div>
-
-    <div class="box" id="portal flash">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/portal.swf">
-        <img class="ImageForGame" src="/cover/PORTALF.png" alt="Portal Flash" />
-        <div class="textover">Portal Flash</div>
-      </a>
-    </div>
-
-    <div class="box" id="ice age baby">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games6/iceagebaby">
-        <img class="ImageForGame" src="/cover/ICEAGEBABY.png" alt="Ice Age Baby" />
-        <div class="textover">Ice Age Baby</div>
-      </a>
-    </div>
-
-    <div class="box" id="black hole square">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/blacholesquare">
-        <img class="ImageForGame" src="/cover/BLACKHOLESQ.png" alt="Black Hole Square" />
-        <div class="textover">Black Hole Square</div>
-      </a>
-    </div>
-
-    <div class="box" id="virtual os">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/vmlinux">
-        <img class="ImageForGame" src="/cover/VM78.png" alt="Virtual OS" />
-        <div class="textover">Virtual OS</div>
-      </a>
-    </div>
-
-    <div class="box" id="30 dollar website">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/30dollarwebsite">
-        <img class="ImageForGame" src="/cover/30dollarwebsite.png" alt="30 Dollar Website" />
-        <div class="textover">30 Dollar Website</div>
-      </a>
-    </div>
-
-    <div class="box" id="gun mayhem">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/gun-mayhem.swf">
-        <img class="ImageForGame" src="/cover/GMYHM.png" alt="Gun Mayhem" />
-        <div class="textover">Gun Mayhem</div>
-      </a>
-    </div>
-
-    <div class="box" id="gun mayhem 2">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/gun-mayhem-2.swf">
-        <img class="ImageForGame" src="/cover/GMYHM.png" alt="Gun Mayhem 2" />
-        <div class="textover">Gun Mayhem 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="animator vs animation">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/animatorvsanimation.swf">
-        <img class="ImageForGame" src="/cover/ANMVS.png" alt="Animator Vs Animation" />
-        <div class="textover">Animator Vs Animation</div>
-      </a>
-    </div>
-
-    <div class="box" id="ballistic chickens">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/ballistic-chickens">
-        <img class="ImageForGame" src="/cover/BCHK.png" alt="Ballistic Chickens" />
-        <div class="textover">Ballistic Chickens</div>
-      </a>
-    </div>
-
-    <div class="box" id="big red button">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/bigredbutton">
-        <img class="ImageForGame" src="/cover/BRB5.png" alt="Big Red Button" />
-        <div class="textover">Big Red Button</div>
-      </a>
-    </div>
-
-    <div class="box" id="burger and frights">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/burger-and-frights">
-        <img class="ImageForGame" src="/cover/BAFy.jpeg" alt="Burger And Frights" />
-        <div class="textover">Burger And Frights</div>
-      </a>
-    </div>
-
-    <div class="box" id="zombotron">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/zombotron">
-        <img class="ImageForGame" src="/cover/zombotron.webp" alt="Zombotron" />
-        <div class="textover">Zombotron</div>
-      </a>
-    </div>
-
-    <div class="box" id="jelly truck">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/jellytruck">
-        <img class="ImageForGame" src="/cover/JELLYTRCK.png" alt="Jelly Truck" />
-        <div class="textover">Jelly Truck</div>
-      </a>
-    </div>
-
-    <div class="box" id="wheely 6">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/wheely6">
-        <img class="ImageForGame" src="/cover/wheely6.png" alt="Wheely 6" />
-        <div class="textover">Wheely 6</div>
-      </a>
-    </div>
-
-    <div class="box" id="google solitaire">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/google-solitaire">
-        <img class="ImageForGame" src="/cover/google-solitaire.png" alt="Google Solitaire" />
-        <div class="textover">Google Solitaire</div>
-      </a>
-    </div>
-
-    <div class="box" id="8 ball">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/8ball">
-        <img class="ImageForGame" src="/cover/8ball.png" alt="8 Ball" />
-        <div class="textover">8 Ball</div>
-      </a>
-    </div>
-
-    <div class="box" id="jacksmith">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/jacksmith.swf">
-        <img class="ImageForGame" src="/jacksmith.png" alt="Jacksmith" />
-        <div class="textover">Jacksmith</div>
-      </a>
-    </div>
-
-    <div class="box" id="dont fall io">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/dont-fall-io">
-        <img class="ImageForGame" src="/cover/DNTFLL.png" alt="Dont Fall .io" />
-        <div class="textover">Dont Fall .io</div>
-      </a>
-    </div>
-
-    <div class="box" id="space cadet pinball">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/space-cadet-pinball/">
-        <img class="ImageForGame" src="/cover/SPACECADET.png" alt="Space Cadet Pinball" />
-        <div class="textover">Space Cadet Pinball</div>
-      </a>
-    </div>
-
-    <div class="box" id="the maze">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/themazev1.1.swf">
-        <img class="ImageForGame" src="/cover/MAZE3.png" alt="The Maze" />
-        <div class="textover">The Maze</div>
-      </a>
-    </div>
-
-    <div class="box" id="rolling sky">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/webgl-rollingsky/">
-        <img class="ImageForGame" src="/cover/SKYRO.png" alt="Rolling Sky" />
-        <div class="textover">Rolling Sky</div>
-      </a>
-    </div>
-
-    <div class="box" id="time shooter 3">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/timeshoot3/">
-        <img class="ImageForGame" src="/cover/SWATSH.png" alt="Time Shooter 3 S.W.A.T" />
-        <div class="textover">Time Shooter 3 S.W.A.T</div>
-      </a>
-    </div>
-
-    <div class="box" id="fancy pants adventure">
-      <a
-        href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games6/fancypantsadventures/fancypantsadventure.swf">
-        <img class="ImageForGame" src="/cover/FANCYADV.png" alt="Fancy Pants Adventure" />
-        <div class="textover">Fancy Pants Adventure</div>
-      </a>
-    </div>
-
-    <div class="box" id="basket and ball">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/basketandball">
-        <img class="ImageForGame" src="/cover/BASKETAND.png" alt="Basket And Ball" />
-        <div class="textover">Basket And Ball</div>
-      </a>
-    </div>
-
-    <div class="box" id="parking fury 3">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/parking-fury-3">
-        <img class="ImageForGame" src="/cover/PARKINGFUR.png" alt="Parking Fury 3" />
-        <div class="textover">Parking And Fury 3</div>
-      </a>
-    </div>
-
-    <div class="box" id="snake.io">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/snakeio">
-        <img class="ImageForGame" src="/cover/SNAKEIO.png" alt="Snake.io" />
-        <div class="textover">Snake.io</div>
-      </a>
-    </div>
-
-    <div class="box" id="stickman epic battle">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games6/stickman-epic-battle">
-        <img class="ImageForGame" src="/cover/STICKMANEPIC.png" alt="Stickman Epic Battle" />
-        <div class="textover">Stickman Epic Battle</div>
-      </a>
-    </div>
-
-    <div class="box" id="sort the court">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games6/sort-the-court">
-        <img class="ImageForGame" src="/cover/SORTTHECOURT.png" alt="Sort The Court" />
-        <div class="textover">Sort The Court</div>
-      </a>
-    </div>
-
-    <div class="box" id="shuttle deck">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/shuttledeck">
-        <img class="ImageForGame" src="/cover/SHUTTLEDECK.png" alt="Shuttle Deck" />
-        <div class="textover">Shuttle Deck</div>
-      </a>
-    </div>
-
-    <div class="box" id="sans fight">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/sansfight">
-        <img class="ImageForGame" src="/cover/SANSFIGHT.png" alt="Sans Fight" />
-        <div class="textover">Sans Fight</div>
-      </a>
-    </div>
-
-    <div class="box" id="sand game">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/sand-game">
-        <img class="ImageForGame" src="/cover/SANDGAME.png" alt="Sand Game" />
-        <div class="textover">Sand Game</div>
-      </a>
-    </div>
-
-    <div class="box" id="oregon trail game">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/oregon-trail-game-master/">
-        <img class="ImageForGame" src="/cover/OREGONB.png" alt="Oregon Trail Game" />
-        <div class="textover">Oregon Trail Game</div>
-      </a>
-    </div>
-
-    <div class="box" id="death run 3d">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/death-run-3d/">
-        <img class="ImageForGame" src="/cover/DEATHRUN.png" alt="Death Run 3D" />
-        <div class="textover">Death Run 3D</div>
-      </a>
-    </div>
-
-    <div class="box" id="clean up io">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games6/clean-up-io/">
-        <img class="ImageForGame" src="/cover/CLEANUP.png" alt="Clean Up.io" />
-        <div class="textover">Clean Up.io</div>
-      </a>
-    </div>
-
-    <div class="box" id="online racing game">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/cars-master/">
-        <img class="ImageForGame" src="/cover/CARSMASTER.png" alt="Online Racing Game" />
-        <div class="textover">Online Racing Game</div>
-      </a>
-    </div>
-
-    <div class="box" id="baldis basics">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/baldis-basics/">
-        <img class="ImageForGame" src="/cover/BALDIS.png" alt="Baldis Basics" />
-        <div class="textover">Baldis Basics</div>
-      </a>
-    </div>
-
-    <div class="box" id="starwars movie">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/StarWarsMovie.html">
-        <img class="ImageForGame" src="/cover/STARWARS.png" alt="Starwars Movie" />
-        <div class="textover">Starwars Movie</div>
-      </a>
-    </div>
-
-    <div class="box" id="drift city">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games6/drift-city">
-        <img class="ImageForGame" src="/cover/DRIFTCITY.png" alt="Drift City" />
-        <div class="textover">Drift City</div>
-      </a>
-    </div>
-
-    <div class="box" id="google baseball">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/google-baseball">
-        <img class="ImageForGame" src="/cover/BASEBALLG.png" alt="Google Baseball" />
-        <div class="textover">Google Baseball</div>
-      </a>
-    </div>
-
-    <div class="box" id="horde killer">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games6/horde-killer">
-        <img class="ImageForGame" src="/cover/HORDEKILLER.png" alt="Horde Killer" />
-        <div class="textover">Horde Killer</div>
-      </a>
-    </div>
-
-    <div class="box" id="timothys race">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games6/timothy's-race">
-        <img class="ImageForGame" src="/cover/TIMRACE.png" alt="Timothys Race" />
-        <div class="textover">Timothys Race</div>
-      </a>
-    </div>
-
-    <div class="box" id="slowroads">
-      <a href="/games/game.html?game=/Games7/slowroads">
-        <img class="ImageForGame" src="/cover/SLOWROADS.png" alt="Slowroads" />
-        <div class="textover">Slowroads</div>
-      </a>
-    </div>
-
-    <div class="box" id="Tactical Assasin 2">
-      <a href="/games/Flash.html?game=/Games7/tacticalassasin2.swf">
-        <img class="ImageForGame" src="/cover/TACASSASIN.png" alt="Tactical Assasin 2" />
-        <div class="textover">Tactical Assasin 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="web osu">
-      <a href="/games/game.html?game=/Games7/osu">
-        <img class="ImageForGame" src="/cover/OSU.webp" alt="Web OSU" />
-        <div class="textover">Web OSU</div>
-      </a>
-    </div>
-
-    <div class="box" id="very very plane">
-      <a href="/games/unity.html?game=/Games7/vvplane">
-        <img class="ImageForGame" src="/cover/VVPLANE.png" alt="Very Very Plane" />
-        <div class="textover">Very Very Plane</div>
-      </a>
-    </div>
-
-    <div class="box" id="tiny fishing">
-      <a href="/games/game.html?game=/Games7/tiny-fishing">
-        <img class="ImageForGame" src="/cover/TINYFISH.png" alt="Tiny Fishing" />
-        <div class="textover">Tiny Fishing</div>
-      </a>
-    </div>
-
-    <div class="box" id="waterworks">
-      <a href="/games/game.html?game=/Games7/waterworks">
-        <img class="ImageForGame" src="/cover/WWH.png" alt="Waterworks" />
-        <div class="textover">Waterworks</div>
-      </a>
-    </div>
-
-    <div class="box" id="vex3">
-      <a href="/games/game.html?game=/Games7/vex3">
-        <img class="ImageForGame" src="/cover/vex3.png" alt="Vex 3" />
-        <div class="textover">Vex 3</div>
-      </a>
-    </div>
-    <div class="box" id="vex4">
-      <a href="/games/game.html?game=/Games7/vex4">
-        <img class="ImageForGame" src="/cover/vex3.png" alt="Vex 4" />
-        <div class="textover">Vex 4</div>
-      </a>
-    </div>
-
-    <div class="box" id="vex5">
-      <a href="/games/game.html?game=/Games7/vex5">
-        <img class="ImageForGame" src="/cover/vex3.png" alt="Vex 5" />
-        <div class="textover">Vex 5</div>
-      </a>
-    </div>
-
-    <div class="box" id="vex6">
-      <a href="/games/game.html?game=/Games7/vex6">
-        <img class="ImageForGame" src="/cover/vex3.png" alt="Vex 6" />
-        <div class="textover">Vex 6</div>
-      </a>
-    </div>
-
-    <div class="box" id="vex7">
-      <a href="/games/game.html?game=/Games7/vex3">
-        <img class="ImageForGame" src="/cover/vex3.png" alt="Vex 7" />
-        <div class="textover">Vex 7</div>
-      </a>
-    </div>
-
-    <div class="box" id="fake update">
-      <a href="/games/game.html?game=https://mr-funkinguy.github.io/MENU">
-        <img class="ImageForGame" src="/cover/FAKEUP.png" alt="Fake Update" />
-        <div class="textover">Fake Update</div>
-      </a>
-    </div>
-
-    <div class="box" id="black hole io">
-      <a href="/games/game.html?game=/Games7/eatio">
-        <img class="ImageForGame" src="/cover/HOLEIO.png" alt="Black Hole.io" />
-        <div class="textover">BlackHole.io</div>
-      </a>
-    </div>
-
-    <div class="box" id="flappy 2048">
-      <a href="/games/game.html?game=/Games7/flappy-2048">
-        <img class="ImageForGame" src="/cover/FLAPPY2048.png" alt="Flappy 2048" />
-        <div class="textover">Flappy 2048</div>
-      </a>
-    </div>
-
-    <div class="box" id="gravity soccer">
-      <a href="/games/game.html?game=/Games7/gravity-soccer">
-        <img class="ImageForGame" src="/cover/GRAVSOCCER.png" alt="Gravity Soccer" />
-        <div class="textover">Gravity Soccer</div>
-      </a>
-    </div>
-
-    <div class="box" id="just fall">
-      <a href="/games/game.html?game=/Games7/just-fall">
-        <img class="ImageForGame" src="/cover/JSTFALL.png" alt="Just Fall" />
-        <div class="textover">Just Fall</div>
-      </a>
-    </div>
-
-    <div class="box" id="steal this election">
-      <a href="/games/game.html?game=/Games7/steal-this-election">
-        <img class="ImageForGame" src="/cover/STEALTE.png" alt="Steal This Election" />
-        <div class="textover">Steal This Election</div>
-      </a>
-    </div>
-
-    <div class="box" id="webretro">
-      <a href="/games/game.html?game=/Games7/webretro">
-        <img class="ImageForGame" src="/cover/WEBRETRO.png" alt="Web Retro Emulator" />
-        <div class="textover">Web Retro Emulator</div>
-      </a>
-    </div>
-
-    <div class="box" id="x trial racing">
-      <a href="/games/game.html?game=/Games7/x-trial-racing">
-        <img class="ImageForGame" src="/cover/XTRIAL.png" alt="X Trial Racing" />
-        <div class="textover">X Trial Racing</div>
-      </a>
-    </div>
-
-    <div class="box" id="big tower tiny square">
-      <a href="/games/game.html?game=/Games7/btts">
-        <img class="ImageForGame" src="/cover/BTTS.png" alt="Big Tower Tiny Square" />
-        <div class="textover">Big Tower Tiny Square</div>
-      </a>
-    </div>
-
-    <div class="box" id="offline Paradise">
-      <a href="/games/game.html?game=/Games7/OfflineParadise">
-        <img class="ImageForGame" src="/cover/OFFP.png" alt="Offline Paradise" />
-        <div class="textover">Offline Paradise</div>
-      </a>
-    </div>
-
-    <div class="box" id="very normal shooter">
-      <a href="/games/game.html?game=/Games7/verynormalshooter">
-        <img class="ImageForGame" src="/cover/VERYNORSH.png" alt="Very Normal Shooter" />
-        <div class="textover">Very Normal Shooter</div>
-      </a>
-    </div>
-
-    <div class="box" id="mindustry">
-      <a href="/games/game.html?game=/Games7/mindustry">
-        <img class="ImageForGame" src="/cover/MINEDUST.png" alt="Mindustry" />
-        <div class="textover">Mindustry</div>
-      </a>
-    </div>
-
-    <div class="box" id="miniputt">
-      <a href="/games/Flash.html?game=/Games7/miniputt.swf">
-        <img class="ImageForGame" src="/cover/miniputt.png" alt="Miniputt" />
-        <div class="textover">Miniputt</div>
-      </a>
-    </div>
-
-    <div class="box" id="cubefield">
-      <a href="/games/game.html?game=/Games7/cubefield">
-        <img class="ImageForGame" src="/cover/CUBEF.png" alt="Cube Field" />
-        <div class="textover">Cube Field</div>
-      </a>
-    </div>
-
-    <div class="box" id="ball hop">
-      <a href="/games/game.html?game=/Games7/ball-hop">
-        <img class="ImageForGame" src="/cover/ballhop.png" alt="Ball Hop" />
-        <div class="textover">Ball Hop</div>
-      </a>
-    </div>
-
-    <div class="box" id="sky car stunt">
-      <a href="/games/game.html?game=/Games7/sky-car-stunt">
-        <img class="ImageForGame" src="/cover/SKYCARSTUNT.png" alt="Sky Car Stunt" />
-        <div class="textover">Sky Car Stunt</div>
-      </a>
-    </div>
-
-    <div class="box" id="slime rush tower defence">
-      <a href="/games/game.html?game=/Games7/slime-rush-td">
-        <img class="ImageForGame" src="/cover/SLIMERUSH.png" alt="Slime Rush Tower Defence" />
-        <div class="textover">Slime Rush Tower Defence</div>
-      </a>
-    </div>
-
-    <div class="box" id="blackjack">
-      <a href="/games/game.html?game=/Games7/blackjack">
-        <img class="ImageForGame" src="/cover/BLACKJACK.png" alt="Blackjack" />
-        <div class="textover">Blackjack</div>
-      </a>
-    </div>
-
-    <div class="box" id="biters io">
-      <a href="/games/game.html?game=/Games7/biters-io">
-        <img class="ImageForGame" src="/cover/BITERS.png" alt="Biters Io" />
-        <div class="textover">Biters Io</div>
-      </a>
-    </div>
-
-    <div class="box" id="matrix rampage">
-      <a href="/games/Flash.html?game=/Games7/matrixrampage.swf">
-        <img class="ImageForGame" src="/cover/MATRIXR.png" alt="Matrix Rampage" />
-        <div class="textover">Matrix Rampage</div>
-      </a>
-    </div>
-
-    <div class="box" id="weavesilk">
-      <a href="/games/game.html?game=/Games7/weavesilk/">
-        <img class="ImageForGame" src="/cover/weavesilk.png" alt="Weavesilk" />
-        <div class="textover">Weavesilk</div>
-      </a>
-    </div>
-
-    <div class="box" id="train ride">
-      <a href="/games/game.html?game=/Games7/trainride/">
-        <img class="ImageForGame" src="/cover/trainride.png" alt="Train Ride" />
-        <div class="textover">Train Ride</div>
-      </a>
-    </div>
-
-    <div class="box" id="tower master">
-      <a href="/games/game.html?game=/Games7/towermaster/">
-        <img class="ImageForGame" src="/cover/towermaster.png" alt="Tower Master" />
-        <div class="textover">Tower Master</div>
-      </a>
-    </div>
-
-    <div class="box" id="station meltdown">
-      <a href="/games/game.html?game=/Games7/station-meltdown/">
-        <img class="ImageForGame" src="/cover/stationmelt.png" alt="Station Meltdown" />
-        <div class="textover">Station Meltdown</div>
-      </a>
-    </div>
-
-    <div class="box" id="stackball">
-      <a href="/games/game.html?game=/Games7/stackball/">
-        <img class="ImageForGame" src="/cover/stackball.png" alt="Stackball" />
-        <div class="textover">Stackball</div>
-      </a>
-    </div>
-
-    <div class="box" id="snow rider">
-      <a href="/games/game.html?game=/Games7/snow-rider3d/">
-        <img class="ImageForGame" src="/cover/snowrider.png" alt="Snow Rider 3D" />
-        <div class="textover">Snow Rider 3D</div>
-      </a>
-    </div>
-
-    <div class="box" id="small world cup">
-      <a href="/games/game.html?game=/Games7/smallworldcup/">
-        <img class="ImageForGame" src="/cover/smallwrld.png" alt="Small World Cup" />
-        <div class="textover">Small World Cup</div>
-      </a>
-    </div>
-
-    <div class="box" id="pokey stick">
-      <a href="/games/game.html?game=/Games7/pokey-stick/">
-        <img class="ImageForGame" src="/cover/stickpo.png" alt="Pokey Stick" />
-        <div class="textover">Pokey Stick</div>
-      </a>
-    </div>
-
-    <div class="box" id="gun spinn">
-      <a href="/games/game.html?game=/Games7/gunspinn/">
-        <img class="ImageForGame" src="/cover/gunnn.png" alt="Gun Spinn" />
-        <div class="textover">Gun Spinn</div>
-      </a>
-    </div>
-
-    <div class="box" id="breaklock">
-      <a href="/games/game.html?game=/Games7/breaklock/">
-        <img class="ImageForGame" src="/cover/BREAKLOCK.png" alt="Breaklock" />
-        <div class="textover">Breaklock</div>
-      </a>
-    </div>
-
-    <div class="box" id="gopher kart">
-      <a href="/games/game.html?game=/Games7/gopher-kart">
-        <img class="ImageForGame" src="/cover/gopherkart.png" alt="Gopher Kart" />
-        <div class="textover">Gopher Kart</div>
-      </a>
-    </div>
-
-    <div class="box" id="mario combat">
-      <a href="/games/Flash.html?game=/Games7/Mario_Combat.swf">
-        <img class="ImageForGame" src="/cover/MARIOK.png" alt="Mario Combat" />
-        <div class="textover">Mario Combat</div>
-      </a>
-    </div>
-
-    <div class="box" id="color combat">
-      <a href="/games/Flash.html?game=/Games7/color_combat.swf">
-        <img class="ImageForGame" src="/cover/COLORCOM.png" alt="Color Combat" />
-        <div class="textover">Color Combat</div>
-      </a>
-    </div>
-
-    <div class="box" id="microsoft flight simulator">
-      <a href="/games/game.html?game=/Games7/msflight/">
-        <img class="ImageForGame" src="/cover/MS4.png" alt="MS Flight Sim 1-4" />
-        <div class="textover">MS Flight Sim 1-4</div>
-      </a>
-    </div>
-
-    <div class="box" id="nightwalk">
-      <a href="/games/game.html?game=/Games7/nightwalk/">
-        <img class="ImageForGame" src="/cover/nightwalk.png" alt="Nightwalk" />
-        <div class="textover">Nightwalk</div>
-      </a>
-    </div>
-
-    <div class="box" id="pong">
-      <a href="/games/Flash.html?game=/Games7/pong.swf">
-        <img class="ImageForGame" src="/cover/pong.png" alt="Pong" />
-        <div class="textover">Pong</div>
-      </a>
-    </div>
-
-    <div class="box" id="dont touch anything">
-      <a href="/games/game.html?game=/Games7/touch/">
-        <img class="ImageForGame" src="/cover/dontouch.png" alt="Dont Touch Anything" />
-        <div class="textover">Dont Touch Anything</div>
-      </a>
-    </div>
-
-    <div class="box" id="gun master">
-      <a href="/games/game.html?game=/Games7/gun-master/">
-        <img class="ImageForGame" src="/cover/GUNMASTER.png" alt="Gun Master" />
-        <div class="textover">Gun Master</div>
-      </a>
-    </div>
-
-    <div class="box" id="10-103">
-      <a href="/games/unity.html?game=/Games7/10-103/">
-        <img class="ImageForGame" src="/cover/10103.png" alt="10-103" />
-        <div class="textover">10-103</div>
-      </a>
-    </div>
-
-    <div class="box" id="fear the spotlight">
-      <a href="/games/game.html?game=/Games7/fearthespotlight/">
-        <img class="ImageForGame" src="/cover/FEARTHESPOT.png" alt="Fear The Spotlight" />
-        <div class="textover">Fear The Spotlight</div>
-      </a>
-    </div>
-
-    <div class="box" id="pandemic 2">
-      <a href="/games/Flash.html?game=/Games7/pandemic2.swf">
-        <img class="ImageForGame" src="/cover/PANDEM2.png" alt="Pandemic 2" />
-        <div class="textover">Pandemic 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="thermomorph">
-      <a href="/games/game.html?game=/Games7/thermomorph/">
-        <img class="ImageForGame" src="/cover/THERMO.png" alt="Thermomorph" />
-        <div class="textover">Thermomorph</div>
-      </a>
-    </div>
-
-    <div class="box" id="raftwars">
-      <a href="/games/Flash.html?game=/Games7/raftwars.swf">
-        <img class="ImageForGame" src="/cover/RAFTWARS.png" alt="Raftwars" />
-        <div class="textover">Raftwars</div>
-      </a>
-    </div>
-
-    <div class="box" id="getting over it">
-      <a href="/games/game.html?game=/Games7/getting-over-it">
-        <img class="ImageForGame" src="/cover/gettingoverit.png" alt="Getting Over It Scratch Edition" />
-        <div class="textover">Getting Over It Scratch Edition</div>
-      </a>
-    </div>
-
-    <div class="box" id="radius raid">
-      <a href="/games/game.html?game=/Games7/radius-raid">
-        <img class="ImageForGame" src="/cover/RADIUSRAID.png" alt="Radius Raid" />
-        <div class="textover">Radius Raid</div>
-      </a>
-    </div>
-
-    <div class="box" id="roadblocks">
-      <a href="/games/game.html?game=/Games7/roadblocks">
-        <img class="ImageForGame" src="/cover/ROADBLOCKS.png" alt="Roadblocks" />
-        <div class="textover">Roadblocks</div>
-      </a>
-    </div>
-
-    <div class="box" id="edge not found">
-      <a href="/games/game.html?game=/Games7/edgenotfound">
-        <img class="ImageForGame" src="/cover/EDGENOTFOUND.png" alt="Edge Not Found" />
-        <div class="textover">Edge Not Found</div>
-      </a>
-    </div>
-
-    <div class="box" id="cyber city driver">
-      <a href="/games/game.html?game=/Games7/cyber-city-driver">
-        <img class="ImageForGame" src="/cover/CYBERCITYD.png" alt="Cyber City Driver" />
-        <div class="textover">Cyber City Driver</div>
-      </a>
-    </div>
-
-    <div class="box" id="creative kill chamber">
-      <a href="/games/Flash.html?game=/Games7/creativekillchamber.swf">
-        <img class="ImageForGame" src="/cover/23CkillC.png" alt="Creative Kill Chamber" />
-        <div class="textover">Creative Kill Chamber</div>
-      </a>
-    </div>
-
-    <div class="box" id="make sure its closed">
-      <a href="/games/game.html?game=/Games7/makesureitsclosed">
-        <img class="ImageForGame" src="/cover/MSIC.png" alt="Make Sure Its Closed" />
-        <div class="textover">Make Sure Its Closed</div>
-      </a>
-    </div>
-
-    <div class="box" id="kids vs icecream">
-      <a href="/games/Flash.html?game=/Games8/kids_vs_icecream.swf">
-        <img class="ImageForGame" src="/cover/KIDSVSICECREAM.png" alt="Kids Vs Icecream" />
-        <div class="textover">Kids Vs Icecream</div>
-      </a>
-    </div>
-
-    <div class="box" id="battle for gondor">
-      <a href="/games/Flash.html?game=/Games8/battle-for-gondor.swf">
-        <img class="ImageForGame" src="/cover/BATTLEFORGONDOR.png" alt="Battle For Gondor" />
-        <div class="textover">Battle For Gondor</div>
-      </a>
-    </div>
-
-    <div class="box" id="cell machine">
-      <a href="/games/game.html?game=/Games8/cell-machine">
-        <img class="ImageForGame" src="/cover/CELLMACHINE.png" alt="Cell Machine" />
-        <div class="textover">Cell Machine</div>
-      </a>
-    </div>
-
-    <div class="box" id="donut boy">
-      <a href="/games/game.html?game=/Games8/donut-boy">
-        <img class="ImageForGame" src="/cover/DONUTBOY.png" alt="Donut Boy" />
-        <div class="textover">Donut Boy</div>
-      </a>
-    </div>
-
-    <div class="box" id="yoshi fabrication">
-      <a href="/games/game.html?game=/Games8/yoshifabrication">
-        <img class="ImageForGame" src="/cover/YOSHIFABR.png" alt="Yoshi Fabrication" />
-        <div class="textover">Yoshi Fabrication</div>
-      </a>
-    </div>
-
-    <div class="box" id="you vs 100 skibidi toilets">
-      <a href="/games/unity.html?game=/Games8/youvs100SK">
-        <img class="ImageForGame" src="/cover/YOUVSSK.png" alt="You Vs 100 Skibidi Toilets" />
-        <div class="textover">You Vs 100 Skibidi Toilets</div>
-      </a>
-    </div>
-
-    <div class="box" id="paper fold">
-      <a href="/games/game.html?game=/Games8/paper-fold">
-        <img class="ImageForGame" src="/cover/PAPERFOLD.png" alt="Paper Fold" />
-        <div class="textover">Paper Fold</div>
-      </a>
-    </div>
-
-    <div class="box" id="president simulator">
-      <a href="/games/game.html?game=/Games8/president-simulator">
-        <img class="ImageForGame" src="/cover/PRESSIM.png" alt="President Simulator" />
-        <div class="textover">President Simulator</div>
-      </a>
-    </div>
-
-    <div class="box" id="only up clone">
-      <a href="/games/game.html?game=/Games8/only-up">
-        <img class="ImageForGame" src="/cover/ONLYUPCLONE.png" alt="Only Up Clone" />
-        <div class="textover">Only Up Clone</div>
-      </a>
-    </div>
-
-    <div class="box" id="funny battle 2">
-      <a href="/games/game.html?game=/Games8/FUNNYBATTLE2">
-        <img class="ImageForGame" src="/cover/FUNNYBATTLE2.png" alt="Funny Battle 2" />
-        <div class="textover">Funny Battle 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="zombie shooter">
-      <a href="/games/game.html?game=/Games8/ZOMBIESHOOTER">
-        <img class="ImageForGame" src="/cover/ZOMBIESHOOTER.png" alt="Zombie Shooter" />
-        <div class="textover">Zombie Shooter</div>
-      </a>
-    </div>
-
-    <div class="box" id="sniper shot bullet time">
-      <a href="/games/game.html?game=/Games8/SNIPERFIXED">
-        <img class="ImageForGame" src="/cover/SNIPERSHOTBT.png" alt="Sniper Shot: Bullet Time" />
-        <div class="textover">Sniper Shot: Bullet Time</div>
-      </a>
-    </div>
-
-    <div class="box" id="neon flytron">
-      <a href="/games/game.html?game=/Games8/NEONFLYTRON">
-        <img class="ImageForGame" src="/cover/NEOFLYTRON.png" alt="Neon Flytron: Cyberpunk Racer" />
-        <div class="textover">Neon Flytron: Cyberpunk Racer</div>
-      </a>
-    </div>
-
-    <div class="box" id="zombie shooter">
-      <a href="/games/game.html?game=/Games8/ZOMBIESHOOTERWAVEOFZOMS">
-        <img class="ImageForGame" src="/cover/ZOMBIESHOOTERWAVE.png" alt="Zombie Shooter: Wave Of Zombies" />
-        <div class="textover">Zombie Shooter: Wave Of Zombies</div>
-      </a>
-    </div>
-
-    <div class="box" id="squid shooter">
-      <a href="/games/game.html?game=/Games8/SQUIDSHOOTER">
-        <img class="ImageForGame" src="/cover/SQUIDSHOOT.png" alt="Squid Shooter" />
-        <div class="textover">Squid Shooter</div>
-      </a>
-    </div>
-
-    <div class="box" id="minecraft shooter">
-      <a href="/games/game.html?game=/Games8/MINECRAFTSHOOTER">
-        <img class="ImageForGame" src="/cover/MINECRAFTSHOOTER.png" alt="Minecraft Shooter" />
-        <div class="textover">Minecraft Shooter</div>
-      </a>
-    </div>
-
-    <div class="box" id="hero 3 flying robot">
-      <a href="/games/game.html?game=/Games8/HERO3-FLYROBOT">
-        <img class="ImageForGame" src="/cover/HERO3.png" alt="Hero: 3 Flying Robot" />
-        <div class="textover">Hero: 3 Flying Robot</div>
-      </a>
-    </div>
-
-    <div class="box" id="hero 4 claws">
-      <a href="/games/game.html?game=/Games8/HERO4-CLAWS">
-        <img class="ImageForGame" src="/cover/HERO4CLAWS.png" alt="Hero: 4 Claws" />
-        <div class="textover">Hero: 4 Claws</div>
-      </a>
-    </div>
-
-    <div class="box" id="hero 5 katana">
-      <a href="/games/game.html?game=/Games8/HERO5-KATANA">
-        <img class="ImageForGame" src="/cover/HERO5KAT.png" alt="Hero: 5 Katana" />
-        <div class="textover">Hero: 5 Katana</div>
-      </a>
-    </div>
-
-    <div class="box" id="flip the gun">
-      <a href="/games/game.html?game=/Games8/FLIPTHEGUN">
-        <img class="ImageForGame" src="/cover/FLIPTHEGUNSH.png" alt="Flip The Gun" />
-        <div class="textover">Flip The Gun</div>
-      </a>
-    </div>
-
-    <div class="box" id="city driver">
-      <a href="/games/game.html?game=/Games8/CITYDRIVER">
-        <img class="ImageForGame" src="/cover/CITYDRIVER.png" alt="City Driver" />
-        <div class="textover">City Driver</div>
-      </a>
-    </div>
-
-    <div class="box" id="airbattle">
-      <a href="/games/game.html?game=/Games8/AIRBATTLE">
-        <img class="ImageForGame" src="/cover/AIRBATTLE.png" alt="AirBattle" />
-        <div class="textover">AirBattle</div>
-      </a>
-    </div>
-
-    <div class="box" id="3d noob destroyer">
-      <a href="/games/game.html?game=/Games8/3DNOOBDESTROYER">
-        <img class="ImageForGame" src="/cover/3DnoobD.png" alt="3D Noob Destroyer" />
-        <div class="textover">3D Noob Destroyer</div>
-      </a>
-    </div>
-
-    <div class="box" id="granny">
-      <a href="/games/game.html?game=/Games8/GRANNY">
-        <img class="ImageForGame" src="/cover/GRANNY.png" alt="Granny Clone" />
-        <div class="textover">Granny Clone</div>
-      </a>
-    </div>
-
-    <div class="box" id="builder">
-      <a href="/games/game.html?game=/Games8/BUILDER">
-        <img class="ImageForGame" src="/cover/BUILDERV.png" alt="Builder" />
-        <div class="textover">Builder</div>
-      </a>
-    </div>
-
-    <div class="box" id="ultimate destruction simulator">
-      <a href="/games/game.html?game=/Games8/ULTIMATEDS">
-        <img class="ImageForGame" src="/cover/ULDSl.png" alt="Ultimate Destruction Simulator" />
-        <div class="textover">Ultimate Destruction Simulator</div>
-      </a>
-    </div>
-
-    <div class="box" id="going balls">
-      <a href="/games/game.html?game=/Games8/goingballs">
-        <img class="ImageForGame" src="/cover/GOINGBALLS.png" alt="Going Balls" />
-        <div class="textover">Going Balls</div>
-      </a>
-    </div>
-
-    <div class="box" id="build bridges">
-      <a href="/games/game.html?game=/Games8/BUILDBRIDGES">
-        <img class="ImageForGame" src="/cover/BUILDBRIDGES.png" alt="Build Bridges" />
-        <div class="textover">Build Bridges</div>
-      </a>
-    </div>
-
-    <div class="box" id="stickman tour kart">
-      <a href="/games/game.html?game=/Games8/STICKMANTOURKART">
-        <img class="ImageForGame" src="/cover/STICKMANTK.png" alt="Stickman Tour Kart" />
-        <div class="textover">Stickman Tour Kart</div>
-      </a>
-    </div>
-
-    <div class="box" id="money rush">
-      <a href="/games/game.html?game=/Games8/MONEYRUSH">
-        <img class="ImageForGame" src="/cover/MONEYRUSH.png" alt="Money Rush" />
-        <div class="textover">Money Rush</div>
-      </a>
-    </div>
-
-    <div class="box" id="draw drive">
-      <a href="/games/game.html?game=/Games8/DRAWDRIVE">
-        <img class="ImageForGame" src="/cover/DRAWDRIVE.png" alt="Draw Drive" />
-        <div class="textover">Draw Drive</div>
-      </a>
-    </div>
-
-    <div class="box" id="marvel vs capcom">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/MARVELVSCAPCOM">
-        <img class="ImageForGame" src="/cover/MVSCAPCOM.png" alt="Marvel Vs Capcom" />
-        <div class="textover">Marvel Vs Capcom</div>
-      </a>
-    </div>
-
-    <div class="box" id="tanuki sunset">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games9/TANUKISUNSET">
-        <img class="ImageForGame" src="/cover/TANUKISUNSET.png" alt="Tanuki Sunset" />
-        <div class="textover">Tanuki Sunset</div>
-      </a>
-    </div>
-
-    <div class="box" id="bango cat">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/BANGOCAT">
-        <img class="ImageForGame" src="/cover/BANGOCAT.png" alt="Bango Cat" />
-        <div class="textover">Bango Cat</div>
-      </a>
-    </div>
-
-    <div class="box" id="music ball">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games9/MUSICBALL">
-        <img class="ImageForGame" src="/cover/MUSICBALL.png" alt="Music Ball" />
-        <div class="textover">Music Ball</div>
-      </a>
-    </div>
-
-    <div class="box" id="tomb of the mask">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games9/tomb">
-        <img class="ImageForGame" src="/cover/tomball.png" alt="Tomb of The Mask" />
-        <div class="textover">Tomb of The Mask</div>
-      </a>
-    </div>
-
-    <div class="box" id="roblox">
-      <a href="/roblox.html">
-        <img class="ImageForGame" src="/cover/roblox.jpeg" alt="Roblox" />
-        <div class="textover">Roblox</div>
-      </a>
-    </div>
-
-    <div class="box" id="cyber tunnel">
-      <a href="/games/unity.html?game=https://adfree-sz-games.github.io/Games9/CYBERTUNNEL">
-        <img class="ImageForGame" src="/cover/cybertun.png" alt="Cyber Tunnel" />
-        <div class="textover">Cyber Tunnel</div>
-      </a>
-    </div>
-
-    <div class="box" id="exo">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/EXO">
-        <img class="ImageForGame" src="/cover/EXOOO.png" alt="EXO" />
-        <div class="textover">EXO</div>
-      </a>
-    </div>
-
-    <div class="box" id="minecraft tower defence">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games9/mftd.swf">
-        <img class="ImageForGame" src="/cover/mtd.png" alt="Minecraft Tower Defence" />
-        <div class="textover">Minecraft Tower Defence</div>
-      </a>
-    </div>
-    <div class="box" id="minecraft tower defence 2">
-      <a href="/games/Flash.html?game=https://adfree-sz-games.github.io/Games9/mftd2.swf">
-        <img class="ImageForGame" src="/cover/mtd2.png" alt="Minecraft Tower Defence 2" />
-        <div class="textover">Minecraft Tower Defence 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="the bowling club">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/thebowlingclub/">
-        <img class="ImageForGame" src="/cover/thebowlingclub.png" alt="The Bowling Club" />
-        <div class="textover">The Bowling Club</div>
-      </a>
-    </div>
-
-    <div class="box" id="hard golf">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/HARDGOLF/">
-        <img class="ImageForGame" src="/cover/hardgolf.png" alt="Hard Golf" />
-        <div class="textover">Hard Golf</div>
-      </a>
-    </div>
-
-    <div class="box" id="archer hero">
-      <a href="/games/game.html?game=https://adfree-sz-games.github.io/Games9/archer-hero/unblocked">
-        <img class="ImageForGame" src="/cover/0987N.png" alt="Archer Hero" />
-        <div class="textover">Archer Hero</div>
-      </a>
-    </div>
-
-    <div class="box" id="deadly decent">
-      <a href="/games/unity.html?game=/Games10/deadlydecent/">
-        <img class="ImageForGame" src="/cover/0987Q.png" alt="Deadly Decent" />
-        <div class="textover">Deadly Decent</div>
-      </a>
-    </div>
-    <!--NEW-->
-
-    <div class="box" id="bottle flip">
-      <a href="./games/game.html?game=/Games11/bottle-flip/game">
-        <img class="ImageForGame" src="/cover/bottleflip.jpg" alt="Bottle Flip" />
-        <div class="textover">Bottle Flip</div>
-      </a>
-    </div>
-
-    <div class="box" id="drift boss fix">
-      <a href="./games/game.html?game=/Games11/drift-boss/game">
-        <img class="ImageForGame" src="/cover/driftbosss.jpg" alt="Drift Boss FIX" />
-        <div class="textover">Drift Boss FIX</div>
-      </a>
-    </div>
-
-    <div class="box" id="retro bowl">
-      <a href="./games/game.html?game=/Games11/retro-bowl/game">
-        <img class="ImageForGame" src="/cover/retrobowl.avif" alt="Retro Bowl" />
-        <div class="textover">Retro Bowl</div>
-      </a>
-    </div>
-
-    <div class="box" id="crazy cars">
-      <a href="./games/game.html?game=/Games11/crazy-cars/game">
-        <img class="ImageForGame" src="/cover/crazycars.jpg" alt="Crazy Cars" />
-        <div class="textover">Crazy Cars</div>
-      </a>
-    </div>
-
-    <div class="box" id="blumgi rocket">
-      <a href="./games/game.html?game=/Games11/blumgi-rocket/game">
-        <img class="ImageForGame" src="/blumgi-rocket.jpeg" alt="Blumgi Rocket" />
-        <div class="textover">Blumgi Rocket</div>
-      </a>
-    </div>
-
-    <div class="box" id="donkey kong">
-      <a href="./games/game.html?game=/RetroGames/Classic%20NES%20Donkey%20Kong.html">
-        <img class="ImageForGame" src="/cover/donkeykong.png" alt="Donkey Kong" />
-        <div class="textover">Donkey Kong GBA</div>
-      </a>
-    </div>
-    <div class="box" id="snes mario kart">
-      <a href="./games/game.html?game=/RetroGames/smariokart.html">
-        <img class="ImageForGame" src="/cover/snesmariokart.png" alt="SNES Mario Kart" />
-        <div class="textover">SNES Mario Kart</div>
-      </a>
-    </div>
-
-    <div class="box" id="super smash flash 2">
-      <a href="./games/Flash.html?game=/Games11/super-smash-flash-2.swf">
-        <img class="ImageForGame" src="/cover/SuperSmash2.png" alt="Super Smash Flash 2" />
-        <div class="textover">Super Smash Flash 2</div>
-      </a>
-    </div>
-
-    <div class="box" id="fall guys remake">
-      <a href="./games/game.html?game=/Games11/StumbleGuysIG.html">
-        <img class="ImageForGame" src="/cover/fallg.png" alt="Fall Guys Remake" />
-        <div class="textover">Fall Guys Remake</div>
-      </a>
-    </div>
-
-    <div class="box" id="the binding of isaac">
-      <a href="./games/Flash.html?game=/Games11/the_binding_of_isaac.swf">
-        <img class="ImageForGame" src="/cover/isaacb.png" alt="The Binding Of Isaac" />
-        <div class="textover">The Binding Of Isaac</div>
-      </a>
-    </div>
-
-    <div class="box" id="basketbros">
-      <a href="./games/game.html?game=/Games11/basketbros">
-        <img class="ImageForGame" src="/cover/BASKETBRO.png" alt="BasketBros" />
-        <div class="textover">BasketBros</div>
-      </a>
-    </div>
-
-    <div id="nonefound" style="display: none; height: 400px; width: 100%">
+    <template x-for="game in filteredGames">
+      <div class="box" :id="game.id">
+        <a :href="game.url">
+          <img fetchpriority="low" class="ImageForGame" :src="game.image" :alt="game.name" loading="lazy" />
+          <div class="textover" x-text="game.name"></div>
+        </a>
+      </div>
+    </template>
+
+
+    <div id="nonefound" x-show="searchQuery && filteredGames.length === 0" style="height: 400px; width: 100%">
       <div style="
             width: max-content;
             height: max-content;
@@ -2743,138 +395,70 @@
   </script>
 
   <section class="sticky">
-    <script>
-      var PageHasLoaded = false
 
-      var input = document.getElementById('SearchBox')
-      var elements = document.getElementById('games').getElementsByTagName('div')
-
-      var noMatches = document.getElementById('nonefound')
-
-      function Search() {
-        input.addEventListener(
-          'input',
-          debounce(function () {
-            var filter = input.value.trim().toUpperCase()
-            var found = false
-            if (input.value.toLowerCase() === 'hawk tuah') {
-              const hiddenDivs = document.querySelectorAll('.box')
-              const lazyImages = document.querySelectorAll('.ImageForGame')
-              lazyImages.forEach((image) => {
-                image.src = './hawkt.gif'
-
-                image.onload = function () {
-                  image.classList.add('showIMG')
-                }
-
-                image.onerror = function () {
-                  image.classList.add('showIMG')
-
-                  image.src = './fallback.png'
-                }
-              })
-            }
-
-            if (filter.length > 0) {
-              for (var i = 0, len = elements.length; i < len; i++) {
-                var element = elements[i]
-                var id = element.getAttribute('id')
-
-                if (id) {
-                  var idUpper = id.toUpperCase()
-                  var shouldExclude = element.classList.contains('textover')
-
-                  if (!shouldExclude) {
-                    if (
-                      isExactMatch(idUpper, filter) ||
-                      isPartialMatch(idUpper, filter) ||
-                      isSimilar(idUpper, filter)
-                    ) {
-                      element.style.display = ''
-                      found = true
-                    } else {
-                      element.style.display = 'none'
-                    }
-                  }
-                }
-              }
-            } else {
-              //empty
-              for (var i = 0, len = elements.length; i < len; i++) {
-                if (!elements[i].classList.contains('textover')) {
-                  elements[i].style.display = 'block'
-                }
-              }
-              found = true
-            }
-
-            if (!found) {
-              noMatches.style.display = 'block'
-            } else {
-              noMatches.style.display = 'none'
-            }
-          }, 300)
-        )
-      }
-
-      function isExactMatch(idUpper, filter) {
-        return idUpper === filter || idUpper.startsWith(filter)
-      }
-
-      function isPartialMatch(idUpper, filter) {
-        return idUpper.includes(filter)
-      }
-
-      function isSimilar(idUpper, filter) {
-        return levenshteinDistance(idUpper, filter) <= 1
-      }
-
-      function levenshteinDistance(a, b) {
-        var matrix = []
-        var i, j
-
-        for (i = 0; i <= b.length; i++) {
-          matrix[i] = [i]
-        }
-
-        for (j = 0; j <= a.length; j++) {
-          matrix[0][j] = j
-        }
-
-        for (i = 1; i <= b.length; i++) {
-          for (j = 1; j <= a.length; j++) {
-            if (b.charAt(i - 1) == a.charAt(j - 1)) {
-              matrix[i][j] = matrix[i - 1][j - 1]
-            } else {
-              matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1))
-            }
-          }
-        }
-
-        return matrix[b.length][a.length]
-      }
-
-      function debounce(func, delay) {
-        let debounceTimer
-        return function () {
-          const context = this
-          const args = arguments
-          clearTimeout(debounceTimer)
-          debounceTimer = setTimeout(() => func.apply(context, args), delay)
-        }
-      }
-
-      var usingLoad = false
-
-      function loadGame() {
-        if (usingLoad === true) {
-        }
-      }
-    </script>
     <footer class="press">
       <a href="/press.html">Press</a>
     </footer>
   </section>
+  <script>
+    document.addEventListener('alpine:init', () => {
+
+      Alpine.data('games', () => ({
+        games: [],
+        searchQuery: '',
+        get filteredGames() {
+          if (!this.searchQuery) return this.games.slice(21);
+
+          const filter = this.searchQuery.trim().toUpperCase();
+          return this.games.slice(21).filter(game => {
+            const gameTitle = game.name.toUpperCase();
+            return this.isExactMatch(gameTitle, filter) ||
+              this.isPartialMatch(gameTitle, filter) ||
+              this.isSimilar(gameTitle, filter);
+          });
+        },
+        shouldShow(title) {
+          if (!this.searchQuery) return true;
+          const filter = this.searchQuery.trim().toUpperCase();
+          const upperTitle = title.toUpperCase();
+          return this.isExactMatch(upperTitle, filter) ||
+            this.isPartialMatch(upperTitle, filter) ||
+            this.isSimilar(upperTitle, filter);
+        },
+        isExactMatch(idUpper, filter) {
+          return idUpper === filter || idUpper.startsWith(filter);
+        },
+        isPartialMatch(idUpper, filter) {
+          return idUpper.includes(filter);
+        },
+        isSimilar(idUpper, filter) {
+          return this.levenshteinDistance(idUpper, filter) <= 1;
+        },
+        levenshteinDistance(a, b) {
+          const matrix = [];
+          for (let i = 0; i <= b.length; i++) {
+            matrix[i] = [i];
+          }
+          for (let j = 0; j <= a.length; j++) {
+            matrix[0][j] = j;
+          }
+          for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+              if (b.charAt(i - 1) == a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+              } else {
+                matrix[i][j] = Math.min(
+                  matrix[i - 1][j - 1] + 1,
+                  Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1)
+                );
+              }
+            }
+          }
+          return matrix[b.length][a.length];
+        }
+      }));
+    });
+  </script>
 </body>
 
 </html>
