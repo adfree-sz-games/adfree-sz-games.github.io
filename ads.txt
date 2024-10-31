@@ -1,5 +1,5 @@
 google.com, pub-3723218062742398, DIRECT, f08c47fec0942fa0
-
+OWNERDOMAIN=adfree-sz-games.github.io
 # Setupad 
 MANAGERDOMAIN=setupad.com  
 CONTACT=contact@setupad.com 
