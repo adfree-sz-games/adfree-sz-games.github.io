@@ -49,9 +49,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/init.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
+
+    <script src="https://stpd.cloud/assets/libraries/inview.min.js"></script>
+    <script>
+      inView.offset(-200)
+    </script>
+
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {}
+      googletag.cmd = googletag.cmd || []
+
+      googletag.cmd.push(function () {
+        if (window.innerWidth >= 1024) {
+          googletag
+            .defineSlot(
+              '/147246189,22921845643/adfree-sz-games.github.io_1000x100_desktop_anchor_top',
+              [
+                [1000, 100],
+                [970, 90],
+                [728, 90],
+                [990, 90],
+                [970, 50],
+                [960, 90],
+                [950, 90],
+                [980, 90],
+              ],
+              'adfree_sz_games_github_io_anchor_top_responsive'
+            )
+            .addService(googletag.pubads())
+          googletag
+            .defineSlot(
+              '/147246189,22921845643/adfree-sz-games.github.io_1000x100_desktop_anchor_bottom',
+              [
+                [1000, 100],
+                [970, 90],
+                [728, 90],
+                [990, 90],
+                [970, 50],
+                [960, 90],
+                [950, 90],
+                [980, 90],
+              ],
+              'adfree_sz_games_github_io_anchor_bottom_responsive'
+            )
+            .addService(googletag.pubads())
+        }
+        var interstitialSlot = googletag.defineOutOfPageSlot(
+          '/147246189,22921845643/adfree-sz-games.github.io_interstitial',
+          googletag.enums.OutOfPageFormat.INTERSTITIAL
+        )
+        if (interstitialSlot) interstitialSlot.addService(googletag.pubads())
+
+        googletag.pubads().enableSingleRequest()
+        googletag.pubads().disableInitialLoad()
+        googletag.pubads().collapseEmptyDivs()
+        googletag.enableServices()
+        googletag.display(interstitialSlot)
+      })
+    </script>
+    <script async src="https://stpd.cloud/saas/8934"></script>
+    <style>
+      .ads {
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body>
+    <div id="adfree_sz_games_github_io_anchor_top_responsive" class="ads">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display('adfree_sz_games_github_io_anchor_top_responsive')
+        })
+      </script>
+    </div>
+
+    <div id="adfree_sz_games_github_io_anchor_bottom_responsive" class="ads">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display('adfree_sz_games_github_io_anchor_bottom_responsive')
+        })
+      </script>
+    </div>
     <div
       id="LOADINGSCREEN11"
       style="
