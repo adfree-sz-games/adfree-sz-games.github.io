@@ -5,79 +5,24 @@
     <link rel="icon" href="https://adfree-sz-games.github.io/G.png" />
     <title>Sz Games - Flash Player</title>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <script
-      defer
-      data-domain="adfree-sz-games.github.io"
-      src="https://stats.senty.com.au/js/script.js"
-    ></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script defer data-domain="adfree-sz-games.github.io" src="https://stats.senty.com.au/js/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="manifest"
-      href="https://adfree-sz-games.github.io/manifest.json"
-    />
+    <link rel="manifest" href="https://adfree-sz-games.github.io/manifest.json" />
     <style>
       body {
         margin: 0;
         overflow: hidden;
         font-family: Arial, Helvetica, sans-serif;
         background-color: rgb(117, 117, 117);
-      }
-
-      .btn-group button {
-        background-color: black;
-        /* Green background */
-
-        color: white;
-        /* White text */
-        padding: 10px 24px;
-        /* Some padding */
-        cursor: pointer;
-        /* Pointer/hand icon */
-        float: left;
-        /* Float the buttons side by side */
-      }
-
-      /* Clear floats (clearfix hack) */
-      .btn-group:after {
-        content: '';
-        clear: both;
-        display: table;
-      }
-
-      .btn-group button:not(:last-child) {
-        border-right: none;
-        /* Prevent double borders */
-      }
-
-      /* Add a background color on hover */
-      .btn-group button:hover {
-        background-color: grey;
-      }
-
-      /* Header/Logo Title */
-      .header {
-        padding: 60px;
-        text-align: center;
-        background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39));
-        color: white;
-        width: auto;
-        font-size: 30px;
-
-        font-family: Arial, Helvetica, sans-serif;
-        border-radius: 15px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       /* Page Content */
-    </style>
-  </head>
-
-  <body onresize="resize()">
-    <style>
       .game {
         position: absolute;
         color: white;
@@ -86,36 +31,138 @@
         z-index: 3;
         font-family: Arial, Helvetica, sans-serif;
       }
-
-      .fade {
-        position: absolute;
-        background: linear-gradient(
-          to bottom,
-          #1d1d1d,
-          #1d1d1d5d,
-          rgba(39, 39, 39, 0)
-        );
-        width: 300px;
-        height: 150px;
-        border-radius: 15px;
-      }
-
       .buttonForMenu {
-        transition: 0.5s;
+        color: white;
+        text-decoration: none;
       }
-
-      .buttonForMenu:hover {
-        color: #9a9a9a;
+      #game {
+        margin-left: 300px;
+        margin-right: 300px;
+        text-align: center;
+        align-items: center;
+        overflow: hidden;
+        width: calc(100% - 600px);
+        height: calc(100% - 222px);
       }
-
+      .ads {
+        text-align: center;
+      }
       .em {
         margin: 0 auto;
       }
     </style>
 
-    <div id="hello">
-      <embed class="em" id="game" width=" 100%;" height="550px" src="" />
+    <script src="https://stpd.cloud/assets/libraries/inview.min.js"></script>
+    <script>
+      inView.offset(-200)
+    </script>
+
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {}
+      googletag.cmd = googletag.cmd || []
+
+      function giveReward() {
+        googletag.pubads().removeEventListener('rewardedSlotClosed', dismissReward)
+        loadGame()
+      }
+
+      function dismissReward(evt) {
+        googletag.destroySlots([evt.rewardedSlot])
+      }
+
+      function showAd() {
+        console.log('showAd')
+        googletag.cmd.push(function () {
+          var rewardedSlot = googletag.defineOutOfPageSlot(
+            '/147246189,22921845643/adfree-sz-games.github.io_rewarded',
+            googletag.enums.OutOfPageFormat.REWARDED
+          )
+          if (rewardedSlot) {
+            rewardedSlot.addService(googletag.pubads())
+          }
+          googletag.pubads().addEventListener('rewardedSlotReady', function (evt) {
+            evt.makeRewardedVisible()
+          })
+          googletag.pubads().addEventListener('rewardedSlotClosed', dismissReward)
+          googletag.pubads().addEventListener('rewardedSlotGranted', function () {
+            giveReward()
+          })
+
+          googletag.display(rewardedSlot)
+          googletag.pubads().refresh([rewardedSlot])
+        })
+      }
+
+      googletag.cmd.push(function () {
+        if (window.innerWidth >= 1024) {
+          googletag
+            .defineSlot(
+              '/147246189,22921845643/adfree-sz-games.github.io_1000x100_desktop_anchor_top',
+              [
+                [1000, 100],
+                [970, 90],
+                [728, 90],
+                [990, 90],
+                [970, 50],
+                [960, 90],
+                [950, 90],
+                [980, 90],
+              ],
+              'adfree_sz_games_github_io_anchor_top_responsive'
+            )
+            .addService(googletag.pubads())
+          googletag
+            .defineSlot(
+              '/147246189,22921845643/adfree-sz-games.github.io_1000x100_desktop_anchor_bottom',
+              [
+                [1000, 100],
+                [970, 90],
+                [728, 90],
+                [990, 90],
+                [970, 50],
+                [960, 90],
+                [950, 90],
+                [980, 90],
+              ],
+              'adfree_sz_games_github_io_anchor_bottom_responsive'
+            )
+            .addService(googletag.pubads())
+        }
+        var interstitialSlot = googletag.defineOutOfPageSlot(
+          '/147246189,22921845643/adfree-sz-games.github.io_interstitial',
+          googletag.enums.OutOfPageFormat.INTERSTITIAL
+        )
+        if (interstitialSlot) interstitialSlot.addService(googletag.pubads())
+
+        googletag.pubads().enableSingleRequest()
+        googletag.pubads().disableInitialLoad()
+        googletag.pubads().collapseEmptyDivs()
+        googletag.enableServices()
+        googletag.display(interstitialSlot)
+      })
+    </script>
+    <script async src="https://stpd.cloud/saas/8934"></script>
+  </head>
+
+  <body>
+    <div id="adfree_sz_games_github_io_anchor_top_responsive" class="ads">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display('adfree_sz_games_github_io_anchor_top_responsive')
+        })
+      </script>
     </div>
+
+    <div id="adfree_sz_games_github_io_anchor_bottom_responsive" class="ads">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display('adfree_sz_games_github_io_anchor_bottom_responsive')
+        })
+      </script>
+    </div>
+
+    <embed class="em" id="game" width=" 100%;" height="550px" src="" />
 
     <div
       style="
@@ -125,22 +172,16 @@
         color: rgb(224, 224, 224);
         background-color: #1d1d1dc0;
         left: 0;
-        bottom: 0px;
+        bottom: 104px;
         margin: 10px;
       "
       id="Menu"
     >
+      <a href="/" class="material-icons buttonForMenu" style="margin: 5px"> arrow_back </a>
       <span
         class="material-icons buttonForMenu"
         style="margin: 5px"
-        onclick="window.location = '/'"
-      >
-        arrow_back
-      </span>
-      <span
-        class="material-icons buttonForMenu"
-        style="margin: 5px"
-        onclick="makeFullScreen()"
+        onclick="document.getElementById('game').contentWindow.gameInstance.SetFullscreen(1)"
       >
         fullscreen
       </span>
@@ -148,7 +189,22 @@
   </body>
 
   <script>
-    var isFUll = false;
+    var isFUll = false
+    var canvas = document.getElementById('game')
+    let hh = window.innerHeight
+    let game = ''
+
+    // Get the text element
+    var textElement = document.getElementById('game')
+    textElement.height = hh
+
+    // Get the current URL
+    var currentUrl = new URL(window.location.href)
+    console.log(currentUrl)
+
+    if (currentUrl.searchParams.has('game')) {
+      game = currentUrl.searchParams.get('game')
+    }
 
     function requestFullScreen(element) {
       // Supports most browsers and their versions.
@@ -156,48 +212,34 @@
         element.requestFullScreen ||
         element.webkitRequestFullScreen ||
         element.mozRequestFullScreen ||
-        element.msRequestFullscreen;
+        element.msRequestFullscreen
 
       if (requestMethod) {
         // Native full screen.
-        requestMethod.call(element);
-        let hh = window.innerHeight;
+        requestMethod.call(element)
+        let hh = window.innerHeight
 
-        document.getElementById('game').height = hh;
+        document.getElementById('game').height = hh
       } else if (typeof window.ActiveXObject !== 'undefined') {
         // Older IE.
-        var wscript = new ActiveXObject('WScript.Shell');
+        var wscript = new ActiveXObject('WScript.Shell')
         if (wscript !== null) {
-          wscript.SendKeys('{F11}');
+          wscript.SendKeys('{F11}')
         }
       }
     }
-    var canvas = document.getElementById('hello');
 
     function makeFullScreen() {
-      isFUll = true;
-      requestFullScreen(canvas);
+      isFUll = true
+      requestFullScreen(canvas)
     }
 
-    let hh = window.innerHeight;
-
-    document.getElementById('game').height = hh;
-
-    document.getElementById('game').height = hh;
-    window.onresize = function (event) {
-      let hh = window.innerHeight;
-
-      document.getElementById('game').height = hh;
-    };
-    var textElement = document.getElementById('game');
-
-    // Get the current URL
-    var currentUrl = new URL(window.location.href);
-
-    // Check for the presence of the "text" parameter in the URL
-    if (currentUrl.searchParams.has('game')) {
-      // Set the text of the element to the value of the "text" parameter
-      textElement.src = currentUrl.searchParams.get('game');
+    function loadGame() {
+      if (game) {
+        textElement.src = game
+      }
     }
+
+    loadGame()
   </script>
 </html>
