@@ -257,14 +257,18 @@
       </span>
     </div>
 
-    <div id="games" x-data="games" x-init="fetch('/games.json').then(res => res.json()).then(data => games = data)">
+    <div
+      class="games"
+      id="games"
+      x-data="games"
+      x-init="fetch('/games.json').then(res => res.json()).then(data => games = data)"
+    >
       <div class="inputbox">
         <input x-model="searchQuery" id="SearchBox" required="required" type="text" />
         <label for="SearchBox" style="color: white">Search</label>
         <i></i>
       </div>
-      <br />
-      <br />
+
       <div class="box" id="Spend Elon Musk Money" x-show="shouldShow('Spend Elon Musk Money')">
         <a href="https://spendelonmoney.org/" target="_blank">
           <img

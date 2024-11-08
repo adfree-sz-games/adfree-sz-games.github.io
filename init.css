@@ -100,6 +100,11 @@
   opacity: 1 !important;
 }
 
+.games {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .press {
   background-color: white;
   position: fixed;
