@@ -91,6 +91,9 @@
   float: left;
 }
 
+.box span {
+  display: none;
+}
 .show {
   animation: show 0.5s;
   opacity: 1 !important;
