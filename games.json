@@ -130,11 +130,6 @@
     "image": "/cover/sub.webp"
   },
   {
-    "name": "Chrome Dino",
-    "url": "/games/game.html?game=/games/dino",
-    "image": "/cover/dino.webp"
-  },
-  {
     "name": "tetris",
     "url": "/games/Flash.html?game=https://adfree-sz-games.github.io/Games9/Tetris2.swf?raw=true",
     "image": "/cover/tetris.webp"
