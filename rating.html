@@ -5,10 +5,12 @@
     <link rel="icon" href="https://adfree-sz-games.github.io/G.png" />
     <title>Yo!</title>
 
+    <script defer data-domain="adfree-sz-games.github.io" src="https://stats.senty.com.au/js/script.js"></script>
+
     <script
-      defer
-      data-domain="adfree-sz-games.github.io"
-      src="https://stats.senty.com.au/js/script.js"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
+      crossorigin="anonymous"
     ></script>
 
     <meta charset="UTF-8" />
@@ -17,14 +19,7 @@
 
   <style>
     body {
-      background: linear-gradient(
-        to bottom,
-        #1d1d1d,
-        #2f2f2f,
-        rgb(58, 58, 58),
-        #1d1d1d,
-        #2f2f2f
-      );
+      background: linear-gradient(to bottom, #1d1d1d, #2f2f2f, rgb(58, 58, 58), #1d1d1d, #2f2f2f);
       font-family: Arial, Helvetica, sans-serif;
       background-repeat: none;
       background-size: cover;
@@ -71,12 +66,7 @@
     .header-halloween {
       padding: 60px;
       text-align: center;
-      background: linear-gradient(
-        to bottom right,
-        #ff7d31,
-        rgb(39, 39, 39),
-        rgb(39, 39, 39)
-      );
+      background: linear-gradient(to bottom right, #ff7d31, rgb(39, 39, 39), rgb(39, 39, 39));
       color: white;
       width: auto;
       font-size: 30px;
@@ -106,7 +96,7 @@
   <body>
     <script
       async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927"
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
       crossorigin="anonymous"
     ></script>
 
@@ -122,12 +112,7 @@
 
       .fade {
         position: absolute;
-        background: linear-gradient(
-          to bottom,
-          #1d1d1d,
-          #1d1d1d5d,
-          rgba(39, 39, 39, 0)
-        );
+        background: linear-gradient(to bottom, #1d1d1d, #1d1d1d5d, rgba(39, 39, 39, 0));
         width: 300px;
         height: 150px;
         border-radius: 15px;
@@ -349,11 +334,7 @@
     </style>
 
     <div class="header">
-      <img
-        src="/G.png"
-        style="position: relative; width: 150px; height: 150px"
-        alt="SZ Games"
-      />
+      <img src="/G.png" style="position: relative; width: 150px; height: 150px" alt="SZ Games" />
       <h1>Hey!</h1>
     </div>
     <br />
@@ -362,32 +343,17 @@
 
     <h4
       id="reason1"
-      style="
-        text-align: center;
-        color: #f2f2f2;
-        font-family: Arial, Helvetica, sans-serif;
-        z-index: 60;
-      "
+      style="text-align: center; color: #f2f2f2; font-family: Arial, Helvetica, sans-serif; z-index: 60"
     ></h4>
     <br />
     <h3
       id="reason2"
-      style="
-        text-align: center;
-        color: #f2f2f2;
-        font-family: Arial, Helvetica, sans-serif;
-        z-index: 60;
-      "
+      style="text-align: center; color: #f2f2f2; font-family: Arial, Helvetica, sans-serif; z-index: 60"
     ></h3>
     <br />
     <h3
       id="reason3"
-      style="
-        text-align: center;
-        color: #f2f2f2;
-        font-family: Arial, Helvetica, sans-serif;
-        z-index: 60;
-      "
+      style="text-align: center; color: #f2f2f2; font-family: Arial, Helvetica, sans-serif; z-index: 60"
     ></h3>
     <br />
     <br />
@@ -398,25 +364,23 @@
     <br />
     <button onclick="back()" class="button">Nah</button>
     <script>
-      var currentUrl = new URL(window.location.href);
-      var game = currentUrl.searchParams.get('game');
-      var url = currentUrl.searchParams.get('url');
+      var currentUrl = new URL(window.location.href)
+      var game = currentUrl.searchParams.get('game')
+      var url = currentUrl.searchParams.get('url')
 
       // Check for the presence of the "text" parameter in the URL
       if (game === 'bitlife') {
         // Set the text of the element to the value of the "text" parameter
-        document.getElementById('reason1').innerHTML = 'This Game Contains:';
-        document.getElementById('reason2').innerHTML =
-          'violence, sexual content, drugs, and alcohol';
-        document.getElementById('reason3').innerHTML =
-          'Do you want to continue?';
+        document.getElementById('reason1').innerHTML = 'This Game Contains:'
+        document.getElementById('reason2').innerHTML = 'violence, sexual content, drugs, and alcohol'
+        document.getElementById('reason3').innerHTML = 'Do you want to continue?'
       }
       function opena() {
-        window.location = url;
-        console.log(url);
+        window.location = url
+        console.log(url)
       }
       function back() {
-        window.location = '/';
+        window.location = '/'
       }
     </script>
   </body>

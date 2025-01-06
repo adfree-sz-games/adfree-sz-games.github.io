@@ -4,14 +4,13 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="https://adfree-sz-games.github.io/G.png" />
     <title>Beta Test On Sz Games</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script defer data-domain="adfree-sz-games.github.io" src="https://stats.senty.com.au/js/script.js"></script>
+
     <script
-      defer
-      data-domain="adfree-sz-games.github.io"
-      src="https://stats.senty.com.au/js/script.js"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
+      crossorigin="anonymous"
     ></script>
 
     <meta charset="UTF-8" />
@@ -67,12 +66,7 @@
     .header-halloween {
       padding: 60px;
       text-align: center;
-      background: linear-gradient(
-        to bottom right,
-        #ff7d31,
-        rgb(39, 39, 39),
-        rgb(39, 39, 39)
-      );
+      background: linear-gradient(to bottom right, #ff7d31, rgb(39, 39, 39), rgb(39, 39, 39));
       color: white;
       width: auto;
       font-size: 30px;
@@ -111,12 +105,7 @@
 
       .fade {
         position: absolute;
-        background: linear-gradient(
-          to bottom,
-          #1d1d1d,
-          #1d1d1d5d,
-          rgba(39, 39, 39, 0)
-        );
+        background: linear-gradient(to bottom, #1d1d1d, #1d1d1d5d, rgba(39, 39, 39, 0));
         width: 300px;
         height: 150px;
         border-radius: 15px;
@@ -349,19 +338,11 @@
       }
     </style>
 
-    <div
-      id="GAMEC"
-      style="z-index: 90; width: 100%; display: none; position: fixed"
-    >
+    <div id="GAMEC" style="z-index: 90; width: 100%; display: none; position: fixed">
       <iframe
         frameborder="0"
         id="game"
-        style="
-          text-align: center;
-          align-items: center;
-          overflow: hidden;
-          width: 100%;
-        "
+        style="text-align: center; align-items: center; overflow: hidden; width: 100%"
         src=""
         allowfullscreen
       ></iframe>
@@ -380,34 +361,22 @@
         "
         id="Menu"
       >
-        <span
-          class="material-icons buttonForMenu"
-          style="margin: 5px"
-          onclick="Close()"
-        >
-          arrow_back
-        </span>
+        <span class="material-icons buttonForMenu" style="margin: 5px" onclick="Close()"> arrow_back </span>
 
-        <span
-          class="material-icons buttonForMenu"
-          style="margin: 5px"
-          onclick="makeFullScreen()"
-        >
-          fullscreen
-        </span>
+        <span class="material-icons buttonForMenu" style="margin: 5px" onclick="makeFullScreen()"> fullscreen </span>
       </div>
     </div>
     <script>
       setInterval(() => {
-        let hh = window.innerHeight;
+        let hh = window.innerHeight
 
-        document.getElementById('game').height = hh;
+        document.getElementById('game').height = hh
         window.onresize = function (event) {
-          let hh = window.innerHeight;
+          let hh = window.innerHeight
 
-          document.getElementById('game').height = hh;
-        };
-      }, 500);
+          document.getElementById('game').height = hh
+        }
+      }, 500)
     </script>
 
     <a href="./index.html">
@@ -462,33 +431,33 @@
         B2: '/Games5/backrooms-2d/',
         TANK2: '/Games5/tank-trouble-2/',
         M3: '/Games5/monster-tracks/',
-      };
+      }
 
-      const codeInput = document.getElementById('codeInput');
-      const submitButton = document.getElementById('submitButton');
+      const codeInput = document.getElementById('codeInput')
+      const submitButton = document.getElementById('submitButton')
 
       submitButton.addEventListener('click', () => {
-        const enteredCode = codeInput.value.toUpperCase();
+        const enteredCode = codeInput.value.toUpperCase()
         if (enteredCode in codeToUrlMap) {
-          const targetUrl = codeToUrlMap[enteredCode];
-          document.getElementById('GAMEC').style.display = 'block';
+          const targetUrl = codeToUrlMap[enteredCode]
+          document.getElementById('GAMEC').style.display = 'block'
 
-          document.getElementById('game').src = targetUrl;
+          document.getElementById('game').src = targetUrl
         } else {
-          alert('Invalid code');
+          alert('Invalid code')
         }
-      });
+      })
 
       function Close() {
-        document.getElementById('GAMEC').style.display = 'none';
-        document.getElementById('game').src = '';
+        document.getElementById('GAMEC').style.display = 'none'
+        document.getElementById('game').src = ''
       }
     </script>
   </body>
 
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js');
+      navigator.serviceWorker.register('service-worker.js')
     }
   </script>
 </html>

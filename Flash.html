@@ -5,20 +5,16 @@
     <link rel="icon" href="https://adfree-sz-games.github.io/G.png" />
     <title>Sz Games - Flash Player</title>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="manifest"
-      href="https://adfree-sz-games.github.io/manifest.json"
-    />
+    <link rel="manifest" href="https://adfree-sz-games.github.io/manifest.json" />
+
+    <script defer data-domain="adfree-sz-games.github.io" src="https://stats.senty.com.au/js/script.js"></script>
 
     <script
-      defer
-      data-domain="adfree-sz-games.github.io"
-      src="https://stats.senty.com.au/js/script.js"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
+      crossorigin="anonymous"
     ></script>
 
     <style>
@@ -87,12 +83,7 @@
 
       .fade {
         position: absolute;
-        background: linear-gradient(
-          to bottom,
-          #1d1d1d,
-          #1d1d1d5d,
-          rgba(39, 39, 39, 0)
-        );
+        background: linear-gradient(to bottom, #1d1d1d, #1d1d1d5d, rgba(39, 39, 39, 0));
         width: 300px;
         height: 150px;
         border-radius: 15px;
@@ -130,23 +121,11 @@
       "
       id="Menu"
     >
-      <span
-        class="material-icons buttonForMenu"
-        style="margin: 5px"
-        onclick="window.location = '/'"
-      >
-        arrow_back
-      </span>
-      <span
-        class="material-icons buttonForMenu"
-        style="margin: 5px"
-        onclick="makeFullScreen()"
-      >
-        fullscreen
-      </span>
+      <span class="material-icons buttonForMenu" style="margin: 5px" onclick="window.location = '/'"> arrow_back </span>
+      <span class="material-icons buttonForMenu" style="margin: 5px" onclick="makeFullScreen()"> fullscreen </span>
     </div>
     <script>
-      var isFUll = false;
+      var isFUll = false
 
       function requestFullScreen(element) {
         // Supports most browsers and their versions.
@@ -154,48 +133,48 @@
           element.requestFullScreen ||
           element.webkitRequestFullScreen ||
           element.mozRequestFullScreen ||
-          element.msRequestFullscreen;
+          element.msRequestFullscreen
 
         if (requestMethod) {
           // Native full screen.
-          requestMethod.call(element);
-          let hh = window.innerHeight;
+          requestMethod.call(element)
+          let hh = window.innerHeight
 
-          document.getElementById('game').height = hh;
+          document.getElementById('game').height = hh
         } else if (typeof window.ActiveXObject !== 'undefined') {
           // Older IE.
-          var wscript = new ActiveXObject('WScript.Shell');
+          var wscript = new ActiveXObject('WScript.Shell')
           if (wscript !== null) {
-            wscript.SendKeys('{F11}');
+            wscript.SendKeys('{F11}')
           }
         }
       }
-      var canvas = document.getElementById('hello');
+      var canvas = document.getElementById('hello')
 
       function makeFullScreen() {
-        isFUll = true;
-        requestFullScreen(canvas);
+        isFUll = true
+        requestFullScreen(canvas)
       }
 
-      let hh = window.innerHeight;
+      let hh = window.innerHeight
 
-      document.getElementById('game').height = hh;
+      document.getElementById('game').height = hh
 
-      document.getElementById('game').height = hh;
+      document.getElementById('game').height = hh
       window.onresize = function (event) {
-        let hh = window.innerHeight;
+        let hh = window.innerHeight
 
-        document.getElementById('game').height = hh;
-      };
-      var textElement = document.getElementById('game');
+        document.getElementById('game').height = hh
+      }
+      var textElement = document.getElementById('game')
 
       // Get the current URL
-      var currentUrl = new URL(window.location.href);
+      var currentUrl = new URL(window.location.href)
 
       // Check for the presence of the "text" parameter in the URL
       if (currentUrl.searchParams.has('game')) {
         // Set the text of the element to the value of the "text" parameter
-        textElement.src = currentUrl.searchParams.get('game');
+        textElement.src = currentUrl.searchParams.get('game')
       }
     </script>
   </body>

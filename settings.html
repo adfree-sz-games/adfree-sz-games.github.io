@@ -5,15 +5,14 @@
     <link rel="icon" href="https://adfree-sz-games.github.io/G.png" />
     <title>Settings - Sz Games</title>
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script></script>
+    <script defer data-domain="adfree-sz-games.github.io" src="https://stats.senty.com.au/js/script.js"></script>
+
     <script
-      defer
-      data-domain="adfree-sz-games.github.io"
-      src="https://stats.senty.com.au/js/script.js"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
+      crossorigin="anonymous"
     ></script>
 
     <style>
@@ -30,33 +29,33 @@
       fetch('./cloak.json')
         .then((response) => response.json())
         .then((data) => {
-          const container = document.getElementById('buttons-container');
+          const container = document.getElementById('buttons-container')
 
           data.forEach((link) => {
-            const img = document.createElement('img');
-            img.className = 'presets';
-            img.style.width = '50px';
-            img.style.height = '50px';
-            img.style.borderRadius = '50%';
-            img.classList.add('Preset');
-            img.style.objectFit = 'cover';
-            img.style.borderColor = 'black';
+            const img = document.createElement('img')
+            img.className = 'presets'
+            img.style.width = '50px'
+            img.style.height = '50px'
+            img.style.borderRadius = '50%'
+            img.classList.add('Preset')
+            img.style.objectFit = 'cover'
+            img.style.borderColor = 'black'
 
-            const faviconUrl = `https://www.google.com/s2/favicons?sz=64&domain=${link.favicon}`;
-            img.src = link.favicon;
+            const faviconUrl = `https://www.google.com/s2/favicons?sz=64&domain=${link.favicon}`
+            img.src = link.favicon
 
             // Check if the image failed to load, and fallback to link.favicon if it did
             img.onerror = () => {
-              img.src = faviconUrl;
-            };
+              img.src = faviconUrl
+            }
 
             img.addEventListener('click', function () {
-              setTitle(link.title);
-              setFavicon(link.favicon);
-            });
-            container.appendChild(img);
-          });
-        });
+              setTitle(link.title)
+              setFavicon(link.favicon)
+            })
+            container.appendChild(img)
+          })
+        })
     </script>
 
     <meta charset="UTF-8" />
@@ -65,42 +64,39 @@
     <!--PageScript1-->
     <script id="CHECK">
       function getCookie2(name) {
-        const cookieName = name + '=';
-        const cookies = document.cookie.split(';');
+        const cookieName = name + '='
+        const cookies = document.cookie.split(';')
         for (let i = 0; i < cookies.length; i++) {
-          let cookie = cookies[i];
+          let cookie = cookies[i]
           while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1);
+            cookie = cookie.substring(1)
           }
           if (cookie.indexOf(cookieName) === 0) {
-            return cookie.substring(cookieName.length, cookie.length);
+            return cookie.substring(cookieName.length, cookie.length)
           }
         }
-        return '';
+        return ''
       }
 
-      let Setting14bu = getCookie2('PagePrevent');
+      let Setting14bu = getCookie2('PagePrevent')
 
       function checkPageClose(event) {
-        event.returnValue =
-          'Prevent Page Close Is Active, You Can Click Off Of This';
+        event.returnValue = 'Prevent Page Close Is Active, You Can Click Off Of This'
       }
       function checkPageClose2() {
         if (Setting14bu === 'true') {
           window.onbeforeunload = function (event) {
             // return a string to prevent the page from closing
-            event.preventDefault();
-            return 'Prevent Page Close Is Active, You Can Click Off Of This';
-          };
-          window.addEventListener('beforeunload', checkPageClose);
+            event.preventDefault()
+            return 'Prevent Page Close Is Active, You Can Click Off Of This'
+          }
+          window.addEventListener('beforeunload', checkPageClose)
         }
         if (Setting14bu === 'false') {
         }
       }
-      console.log(
-        'CookiePAGE Value: ' + Setting14bu + 'SzGames-Scripts Loaded'
-      );
-      checkPageClose2();
+      console.log('CookiePAGE Value: ' + Setting14bu + 'SzGames-Scripts Loaded')
+      checkPageClose2()
     </script>
     <!--PageScript1-->
 
@@ -153,12 +149,7 @@
       .header-halloween {
         padding: 60px;
         text-align: center;
-        background: linear-gradient(
-          to bottom right,
-          #ff7d31,
-          rgb(39, 39, 39),
-          rgb(39, 39, 39)
-        );
+        background: linear-gradient(to bottom right, #ff7d31, rgb(39, 39, 39), rgb(39, 39, 39));
         color: white;
         width: auto;
         font-size: 30px;
@@ -195,12 +186,7 @@
 
       .fade {
         position: absolute;
-        background: linear-gradient(
-          to bottom,
-          #1d1d1d,
-          #1d1d1d5d,
-          rgba(39, 39, 39, 0)
-        );
+        background: linear-gradient(to bottom, #1d1d1d, #1d1d1d5d, rgba(39, 39, 39, 0));
         width: 300px;
         height: 150px;
         border-radius: 15px;
@@ -426,54 +412,44 @@
 
     <script>
       function back(PG, To) {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'
 
-        document.getElementById(PG).style.animation = 'none';
-        document.getElementById(PG).style.animation = 'OUT 0.8s';
+        document.getElementById(PG).style.animation = 'none'
+        document.getElementById(PG).style.animation = 'OUT 0.8s'
         setTimeout(() => {
-          document.getElementById(To).style.animation = 'none';
-          document.getElementById(To).style.display = 'block';
+          document.getElementById(To).style.animation = 'none'
+          document.getElementById(To).style.display = 'block'
 
-          document.getElementById(To).style.animation = 'IN 0.8s';
-        }, 300);
+          document.getElementById(To).style.animation = 'IN 0.8s'
+        }, 300)
 
         setTimeout(() => {
-          document.getElementById(PG).style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }, 800);
+          document.getElementById(PG).style.display = 'none'
+          document.body.style.overflow = 'auto'
+        }, 800)
       }
       function to(PG, To) {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'
 
-        document.getElementById(PG).style.animation = 'none';
-        document.getElementById(PG).style.animation = 'OUT2 0.8s';
+        document.getElementById(PG).style.animation = 'none'
+        document.getElementById(PG).style.animation = 'OUT2 0.8s'
         setTimeout(() => {
-          document.getElementById(To).style.animation = 'none';
-          document.getElementById(To).style.display = 'block';
+          document.getElementById(To).style.animation = 'none'
+          document.getElementById(To).style.display = 'block'
 
-          document.getElementById(To).style.animation = 'IN2 0.8s';
-        }, 200);
+          document.getElementById(To).style.animation = 'IN2 0.8s'
+        }, 200)
 
         setTimeout(() => {
-          document.getElementById(PG).style.display = 'none';
-        }, 800);
+          document.getElementById(PG).style.display = 'none'
+        }, 800)
         setTimeout(() => {
-          document.body.style.overflow = 'auto';
-        }, 1000);
+          document.body.style.overflow = 'auto'
+        }, 1000)
       }
     </script>
 
-    <div
-      id="PG1"
-      style="
-        display: block;
-        height: 100%;
-        bottom: 0;
-        width: 100%;
-        position: absolute;
-        overflow-y: auto;
-      "
-    >
+    <div id="PG1" style="display: block; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto">
       <div style="width: 100%; height: 45px; background-color: #333">
         <span
           onclick=""
@@ -503,9 +479,7 @@
             transform: translate(-0%, -50%);
           "
         >
-          <a style="text-decoration: none; color: white" href="./index.html">
-            close
-          </a>
+          <a style="text-decoration: none; color: white" href="./index.html"> close </a>
         </span>
         <h1
           style="
@@ -542,10 +516,7 @@
           color: white;
         "
       >
-        <span
-          class="material-icons"
-          style="top: 50%; position: relative; transform: translate(-0%, -85%)"
-        >
+        <span class="material-icons" style="top: 50%; position: relative; transform: translate(-0%, -85%)">
           settings
         </span>
         Main Settings
@@ -571,10 +542,7 @@
           color: white;
         "
       >
-        <span
-          class="material-icons"
-          style="top: 50%; position: relative; transform: translate(-0%, -85%)"
-        >
+        <span class="material-icons" style="top: 50%; position: relative; transform: translate(-0%, -85%)">
           error
         </span>
         Panic Button
@@ -601,27 +569,14 @@
           color: white;
         "
       >
-        <span
-          class="material-icons"
-          style="top: 50%; position: relative; transform: translate(-0%, -85%)"
-        >
+        <span class="material-icons" style="top: 50%; position: relative; transform: translate(-0%, -85%)">
           article
         </span>
         About:blank Page Maker
       </button>
     </div>
 
-    <div
-      id="PG2"
-      style="
-        display: none;
-        height: 100%;
-        bottom: 0;
-        width: 100%;
-        position: absolute;
-        overflow-y: auto;
-      "
-    >
+    <div id="PG2" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto">
       <div style="width: 100%; height: 45px; background-color: #333">
         <span
           onclick="back('PG2', 'PG1')"
@@ -651,9 +606,7 @@
             transform: translate(-0%, -50%);
           "
         >
-          <a style="text-decoration: none; color: white" href="./index.html">
-            close
-          </a>
+          <a style="text-decoration: none; color: white" href="./index.html"> close </a>
         </span>
         <h1
           style="
@@ -672,16 +625,8 @@
       </div>
 
       <br />
-      <p
-        style="
-          text-decoration: none;
-          color: white;
-          font-size: 20px;
-          text-align: center;
-        "
-      >
-        A About:Blank Page Will Show Up As a blank page in your tabs, Enter a
-        url below and create a page.
+      <p style="text-decoration: none; color: white; font-size: 20px; text-align: center">
+        A About:Blank Page Will Show Up As a blank page in your tabs, Enter a url below and create a page.
       </p>
       <br />
       <input
@@ -727,53 +672,40 @@
     </div>
 
     <script>
-      const urlInput2 = document.getElementById('url-target');
-      const urlObject2 = new URL(window.location.href);
+      const urlInput2 = document.getElementById('url-target')
+      const urlObject2 = new URL(window.location.href)
 
       document.getElementById('create').onclick = function () {
-        let url2 = urlInput2.value;
+        let url2 = urlInput2.value
 
-        if (
-          url2.substring(0, 8) !== 'https://' &&
-          url2.substring(0, 7) !== 'http://'
-        ) {
-          url2 = 'https://' + url2.split('https://').pop();
+        if (url2.substring(0, 8) !== 'https://' && url2.substring(0, 7) !== 'http://') {
+          url2 = 'https://' + url2.split('https://').pop()
         } else if (url.substring(0, 7) === 'http://') {
-          url2 = 'https://' + url2.split('http://').pop();
+          url2 = 'https://' + url2.split('http://').pop()
         }
 
-        const newWindow = window.open();
-        newWindow.document.body.style.margin = '0';
-        newWindow.document.body.style.height = '100vh';
+        const newWindow = window.open()
+        newWindow.document.body.style.margin = '0'
+        newWindow.document.body.style.height = '100vh'
 
-        const iframe = newWindow.document.createElement('iframe');
-        iframe.style.border = 'none';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.margin = '0';
-        iframe.referrerpolicy = 'no-referrer';
-        iframe.allow = 'fullscreen';
-        iframe.src = url;
+        const iframe = newWindow.document.createElement('iframe')
+        iframe.style.border = 'none'
+        iframe.style.width = '100%'
+        iframe.style.height = '100%'
+        iframe.style.margin = '0'
+        iframe.referrerpolicy = 'no-referrer'
+        iframe.allow = 'fullscreen'
+        iframe.src = url
 
-        newWindow.document.body.appendChild(iframe);
-      };
+        newWindow.document.body.appendChild(iframe)
+      }
     </script>
 
     <!--PG 2 END-->
 
     <!--Content PG 4-->
 
-    <div
-      id="PG3"
-      style="
-        display: none;
-        height: 100%;
-        bottom: 0;
-        width: 100%;
-        position: absolute;
-        overflow-y: auto;
-      "
-    >
+    <div id="PG3" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto">
       <div style="width: 100%; height: 45px; background-color: #333">
         <span
           onclick="back('PG3', 'PG1')"
@@ -803,9 +735,7 @@
             transform: translate(-0%, -50%);
           "
         >
-          <a style="text-decoration: none; color: white" href="./index.html">
-            close
-          </a>
+          <a style="text-decoration: none; color: white" href="./index.html"> close </a>
         </span>
         <h1
           style="
@@ -846,16 +776,7 @@
       <br />
 
       <div style="" onclick="toggleOptionSet('PageClose')" class="OptionSet">
-        <p
-          style="
-            color: white;
-            word-wrap: break-word;
-            width: 55%;
-            top: 50%;
-            left: 15px;
-            position: relative;
-          "
-        >
+        <p style="color: white; word-wrap: break-word; width: 55%; top: 50%; left: 15px; position: relative">
           Prevent Page Close
         </p>
         <p
@@ -879,12 +800,7 @@
       <h1 style="text-align: center; color: white">Tab Cloak Presets</h1>
 
       <div
-        style="
-          left: 50%;
-          position: relative;
-          transform: translate(-50%, -0%);
-          cursor: pointer;
-        "
+        style="left: 50%; position: relative; transform: translate(-50%, -0%); cursor: pointer"
         id="buttons-container"
       ></div>
       <br />
@@ -910,78 +826,75 @@
       <!--PageScript1-->
       <script id="CHECK">
         function getCookie2(name) {
-          const cookieName = name + '=';
-          const cookies = document.cookie.split(';');
+          const cookieName = name + '='
+          const cookies = document.cookie.split(';')
           for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i];
+            let cookie = cookies[i]
             while (cookie.charAt(0) === ' ') {
-              cookie = cookie.substring(1);
+              cookie = cookie.substring(1)
             }
             if (cookie.indexOf(cookieName) === 0) {
-              return cookie.substring(cookieName.length, cookie.length);
+              return cookie.substring(cookieName.length, cookie.length)
             }
           }
-          return '';
+          return ''
         }
 
-        let Setting1e4bu = getCookie2('PagePrevent');
+        let Setting1e4bu = getCookie2('PagePrevent')
 
         function checkPageClose(event) {
-          event.returnValue =
-            'Prevent Page Close Is Active, You Can Click Off Of This';
+          event.returnValue = 'Prevent Page Close Is Active, You Can Click Off Of This'
         }
         function checkPageClose2() {
           if (Setting1e4bu === 'true') {
             window.onbeforeunload = function (event) {
               // return a string to prevent the page from closing
-              event.preventDefault();
-              return 'Prevent Page Close Is Active, You Can Click Off Of This';
-            };
-            window.addEventListener('beforeunload', checkPageClose);
+              event.preventDefault()
+              return 'Prevent Page Close Is Active, You Can Click Off Of This'
+            }
+            window.addEventListener('beforeunload', checkPageClose)
           }
           if (Setting1e4bu === 'false') {
           }
         }
-        console.log(
-          'CookiePAGE Value: ' + Setting1e4bu + 'SzGames-Scripts Loaded'
-        );
-        checkPageClose2();
+        console.log('CookiePAGE Value: ' + Setting1e4bu + 'SzGames-Scripts Loaded')
+        checkPageClose2()
       </script>
 
       <script>
         function getCookie(name) {
-          const cookieName = name + '=';
-          const cookies = document.cookie.split(';');
+          const cookieName = name + '='
+          const cookies = document.cookie.split(';')
           for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i];
+            let cookie = cookies[i]
             while (cookie.charAt(0) === ' ') {
-              cookie = cookie.substring(1);
+              cookie = cookie.substring(1)
             }
             if (cookie.indexOf(cookieName) === 0) {
-              return cookie.substring(cookieName.length, cookie.length);
+              return cookie.substring(cookieName.length, cookie.length)
             }
           }
-          return '';
+          return ''
         }
 
         // Usage
 
         function setCookie(name, value, years) {
-          const expirationDate = new Date();
-          expirationDate.setFullYear(expirationDate.getFullYear() + years);
-          const expires = 'expires=' + expirationDate.toUTCString();
-          document.cookie = name + '=' + value + ';' + expires + ';path=/';
+          const expirationDate = new Date()
+          expirationDate.setFullYear(expirationDate.getFullYear() + years)
+          const expires = 'expires=' + expirationDate.toUTCString()
+          document.cookie = name + '=' + value + ';' + expires + ';path=/'
         }
 
-        var option1bx = document.getElementById('Op1-Stat');
-        var option2bx = document.getElementById('Op2-Stat');
-        let Setting1e4b = getCookie('PagePrevent');
+        var option1bx = document.getElementById('Op1-Stat')
+        var option2bx = document.getElementById('Op2-Stat')
+        let Setting1e4b = getCookie('PagePrevent')
 
         function toggleOptionSet(name) {
           if (name === 'PageClose') {
             if (Setting1e4b === 'false' || Setting1e4b === '') {
-              Setting1e4b = getCookie('PagePrevent');
-              setCookie('PagePrevent', 'true', 10); // Set the cookie to expire in 10 years
+              Setting1e4b = getCookie('PagePrevent')
+              setCookie('PagePrevent', 'true', 10) // Set the cookie to expire in 10 years
 
               //console.log('PagePrevent True')
 
@@ -989,9 +902,9 @@
               // console.log(cookieValue45); // Print the cookie value to the console
             }
             if (Setting1e4b === 'true') {
-              Setting1e4b = getCookie('PagePrevent');
+              Setting1e4b = getCookie('PagePrevent')
 
-              setCookie('PagePrevent', 'false', 10); // Set the cookie to expire in 10 years
+              setCookie('PagePrevent', 'false', 10) // Set the cookie to expire in 10 years
               //console.log('PagePrevent False')
               //const cookieValue45 = getCookie("PagePrevent");
 
@@ -999,43 +912,33 @@
             }
           }
           // console.log('Code: 89B')
-          CheckSettngs1B();
+          CheckSettngs1B()
         }
         function CheckSettngs1B() {
-          Setting1e4b = getCookie('PagePrevent');
+          Setting1e4b = getCookie('PagePrevent')
           if (Setting1e4b === 'true') {
-            option1bx.style.opacity = 0;
+            option1bx.style.opacity = 0
             setTimeout(() => {
-              option1bx.innerHTML = 'Active';
-              option1bx.style.opacity = 1;
-            }, 500);
+              option1bx.innerHTML = 'Active'
+              option1bx.style.opacity = 1
+            }, 500)
             //NoteLOCK()
           }
           if (Setting1e4b === 'false') {
-            option1bx.style.opacity = 0;
+            option1bx.style.opacity = 0
             setTimeout(() => {
-              option1bx.innerHTML = 'Not Active';
-              option1bx.style.opacity = 1;
-            }, 500);
+              option1bx.innerHTML = 'Not Active'
+              option1bx.style.opacity = 1
+            }, 500)
           }
-          console.log('CookiePAGE Value: ' + Setting1e4b);
+          console.log('CookiePAGE Value: ' + Setting1e4b)
         }
 
-        CheckSettngs1B();
+        CheckSettngs1B()
       </script>
     </div>
 
-    <div
-      id="PG4"
-      style="
-        display: none;
-        height: 100%;
-        bottom: 0;
-        width: 100%;
-        position: absolute;
-        overflow-y: auto;
-      "
-    >
+    <div id="PG4" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto">
       <div style="width: 100%; height: 45px; background-color: #333">
         <span
           onclick="back('PG4', 'PG1')"
@@ -1065,9 +968,7 @@
             transform: translate(-0%, -50%);
           "
         >
-          <a style="text-decoration: none; color: white" href="./index.html">
-            close
-          </a>
+          <a style="text-decoration: none; color: white" href="./index.html"> close </a>
         </span>
         <h1
           style="
@@ -1086,16 +987,8 @@
       </div>
 
       <br />
-      <p
-        style="
-          text-decoration: none;
-          color: white;
-          font-size: 20px;
-          text-align: center;
-        "
-      >
-        Press the key "\" on your keyboard and it will change the page to the
-        set URL."
+      <p style="text-decoration: none; color: white; font-size: 20px; text-align: center">
+        Press the key "\" on your keyboard and it will change the page to the set URL."
       </p>
       <br />
       <input
@@ -1164,36 +1057,33 @@
     </div>
 
     <script>
-      const urlInput = document.getElementById('url-target');
-      const urlObject = new URL(window.location.href);
+      const urlInput = document.getElementById('url-target')
+      const urlObject = new URL(window.location.href)
 
       document.getElementById('create').onclick = function () {
-        let url = urlInput.value;
+        let url = urlInput.value
 
-        if (
-          url.substring(0, 8) !== 'https://' &&
-          url.substring(0, 7) !== 'http://'
-        ) {
-          url = 'https://' + url.split('https://').pop();
+        if (url.substring(0, 8) !== 'https://' && url.substring(0, 7) !== 'http://') {
+          url = 'https://' + url.split('https://').pop()
         } else if (url.substring(0, 7) === 'http://') {
-          url = 'https://' + url.split('http://').pop();
+          url = 'https://' + url.split('http://').pop()
         }
 
-        const newWindow = window.open();
-        newWindow.document.body.style.margin = '0';
-        newWindow.document.body.style.height = '100vh';
+        const newWindow = window.open()
+        newWindow.document.body.style.margin = '0'
+        newWindow.document.body.style.height = '100vh'
 
-        const iframe = newWindow.document.createElement('iframe');
-        iframe.style.border = 'none';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.margin = '0';
-        iframe.referrerpolicy = 'no-referrer';
-        iframe.allow = 'fullscreen';
-        iframe.src = url;
+        const iframe = newWindow.document.createElement('iframe')
+        iframe.style.border = 'none'
+        iframe.style.width = '100%'
+        iframe.style.height = '100%'
+        iframe.style.margin = '0'
+        iframe.referrerpolicy = 'no-referrer'
+        iframe.allow = 'fullscreen'
+        iframe.src = url
 
-        newWindow.document.body.appendChild(iframe);
-      };
+        newWindow.document.body.appendChild(iframe)
+      }
     </script>
 
     <!--PG 4 END-->

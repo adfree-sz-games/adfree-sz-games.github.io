@@ -6,15 +6,14 @@
     <title>Sz Games - Friday Night Funkin</title>
 
     <meta property="og:site_name" content="Sz Games - Friday Night Funkin" />
-    <meta
-      name="description"
-      property="og:description"
-      content="Come play some friday night funkin on sz games!"
-    />
-    <meta
-      name="description"
-      content="Come play some friday night funkin on sz games!"
-    />
+    <meta name="description" property="og:description" content="Come play some friday night funkin on sz games!" />
+    <meta name="description" content="Come play some friday night funkin on sz games!" />
+    <script defer data-domain="adfree-sz-games.github.io" src="https://stats.senty.com.au/js/script.js"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
+      crossorigin="anonymous"
+    ></script>
 
     <script type="application/ld+json">
       {
@@ -26,11 +25,7 @@
     </script>
 
     <meta content="website" property="og:type" />
-    <meta
-      name="description"
-      property="twitter:description"
-      content="Come play some friday night funkin on sz games!"
-    />
+    <meta name="description" property="twitter:description" content="Come play some friday night funkin on sz games!" />
 
     <link rel="manifest" href="manifest.json" />
 
@@ -42,10 +37,7 @@
     <link rel="canonical" href="https://adfree-sz-games.github.io/FNF.html" />
 
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
@@ -115,12 +107,7 @@
 
       .fade {
         position: absolute;
-        background: linear-gradient(
-          to bottom,
-          #1d1d1d,
-          #1d1d1d5d,
-          rgba(39, 39, 39, 0)
-        );
+        background: linear-gradient(to bottom, #1d1d1d, #1d1d1d5d, rgba(39, 39, 39, 0));
         width: 300px;
         height: 150px;
         border-radius: 15px;
@@ -256,24 +243,9 @@
           z-index: 90;
         "
       >
-        <p
-          onclick="toggle()"
-          style="cursor: pointer; margin: 10px; color: white"
-        >
-          Close Menu
-        </p>
+        <p onclick="toggle()" style="cursor: pointer; margin: 10px; color: white">Close Menu</p>
 
-        <p
-          id="CS"
-          style="
-            word-wrap: break-word;
-            transition: 0.3s;
-            margin: 10px;
-            color: white;
-          "
-        >
-          Currently Selected:
-        </p>
+        <p id="CS" style="word-wrap: break-word; transition: 0.3s; margin: 10px; color: white">Currently Selected:</p>
       </div>
       <br />
       <br />
@@ -510,13 +482,7 @@
     <iframe
       frameborder="0"
       id="game"
-      style="
-        transition: 0.5s;
-        text-align: center;
-        align-items: center;
-        overflow: hidden;
-        width: 100%;
-      "
+      style="transition: 0.5s; text-align: center; align-items: center; overflow: hidden; width: 100%"
       src="https://adfree-sz-games.github.io/StartFNF.html"
       allowfullscreen
     ></iframe>
@@ -535,215 +501,194 @@
       "
       id="Menu"
     >
-      <span
-        class="material-icons buttonForMenu"
-        style="margin: 5px"
-        onclick="window.location = '/'"
-      >
-        arrow_back
-      </span>
-      <span
-        class="material-icons buttonForMenu"
-        style="margin: 5px"
-        onclick="makeFullScreen()"
-      >
-        fullscreen
-      </span>
-      <span
-        class="material-icons buttonForMenu"
-        style="margin: 5px"
-        onclick="toggle()"
-      >
-        sports_esports
-      </span>
+      <span class="material-icons buttonForMenu" style="margin: 5px" onclick="window.location = '/'"> arrow_back </span>
+      <span class="material-icons buttonForMenu" style="margin: 5px" onclick="makeFullScreen()"> fullscreen </span>
+      <span class="material-icons buttonForMenu" style="margin: 5px" onclick="toggle()"> sports_esports </span>
     </div>
   </body>
 
   <script>
-    var toggleMenu = false;
+    var toggleMenu = false
 
     function toggle() {
-      var menu = document.getElementById('Menu');
+      var menu = document.getElementById('Menu')
 
       if (toggleMenu === false) {
-        menu.style.visibility = 'visible';
-        menu.style.opacity = 1;
-        toggleMenu = true;
+        menu.style.visibility = 'visible'
+        menu.style.opacity = 1
+        toggleMenu = true
       } else if (toggleMenu === true) {
-        toggleMenu = false;
-        menu.style.opacity = 0;
+        toggleMenu = false
+        menu.style.opacity = 0
         setTimeout(() => {
-          menu.style.visibility = 'hidden';
-        }, 800);
+          menu.style.visibility = 'hidden'
+        }, 800)
       }
     }
 
-    var stuffForMod;
+    var stuffForMod
     function Change(Mod) {
       if (Mod === 'FNF') {
-        stuffForMod = '/FNFSTUFF/FNF';
+        stuffForMod = '/FNFSTUFF/FNF'
       }
       if (Mod === 'SM') {
-        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/shaggymatt/';
+        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/shaggymatt/'
       }
       if (Mod === 'Miku') {
-        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/Miku/';
+        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/Miku/'
       }
       if (Mod === 'Week7') {
-        stuffForMod = '/FNFSTUFF/SHADOWENGINE';
+        stuffForMod = '/FNFSTUFF/SHADOWENGINE'
       }
       if (Mod === 'ann') {
-        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/ann/';
+        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/ann/'
       }
       if (Mod === 'bsides') {
-        stuffForMod = 'https://mr-funkinguy.github.io/bb/';
+        stuffForMod = 'https://mr-funkinguy.github.io/bb/'
       }
       if (Mod === 'henry') {
-        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/henry/';
+        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/henry/'
       }
       if (Mod === 'Neo') {
-        stuffForMod = 'https://mr-funkinguy.github.io/FNF-NEO-HTML5-BY-ME/';
+        stuffForMod = 'https://mr-funkinguy.github.io/FNF-NEO-HTML5-BY-ME/'
       }
       if (Mod === 'SNS') {
-        stuffForMod = 'https://mr-funkinguy.github.io/Suicidemouse-cutscenes/';
+        stuffForMod = 'https://mr-funkinguy.github.io/Suicidemouse-cutscenes/'
         document.getElementById('AlertText').innerHTML =
-          'WARNING: This mod contains screen shaking, and other unsettling things.';
-        document.getElementById('AlertU').style.animation =
-          'ShowWifiAlert 10.5s';
+          'WARNING: This mod contains screen shaking, and other unsettling things.'
+        document.getElementById('AlertU').style.animation = 'ShowWifiAlert 10.5s'
 
-        document.getElementById('Alertt').style.visibility = 'visible';
+        document.getElementById('Alertt').style.visibility = 'visible'
 
         setTimeout(() => {
-          document.getElementById('Alertt').style.visibility = 'hidden';
-        }, 10500);
+          document.getElementById('Alertt').style.visibility = 'hidden'
+        }, 10500)
       }
       if (Mod === 'Sky') {
-        stuffForMod = 'https://mr-funkinguy.github.io/syk/';
+        stuffForMod = 'https://mr-funkinguy.github.io/syk/'
       }
       if (Mod === 'Whitty') {
-        stuffForMod = 'https://mr-funkinguy.github.io/whi/';
+        stuffForMod = 'https://mr-funkinguy.github.io/whi/'
       }
       if (Mod === 'Wiik3') {
-        stuffForMod = 'https://mr-funkinguy.github.io/wiik3/';
+        stuffForMod = 'https://mr-funkinguy.github.io/wiik3/'
       }
       if (Mod === 'Tko') {
-        stuffForMod = 'https://mr-funkinguy.github.io/TKO-B-M-G-A-O/';
+        stuffForMod = 'https://mr-funkinguy.github.io/TKO-B-M-G-A-O/'
       }
       if (Mod === 'Ca') {
-        stuffForMod = 'https://ggl22.github.io/camellia/';
+        stuffForMod = 'https://ggl22.github.io/camellia/'
       }
       if (Mod === 'IMP') {
-        stuffForMod = 'https://ggl22.github.io/impostor-v3/';
+        stuffForMod = 'https://ggl22.github.io/impostor-v3/'
       }
       if (Mod === 'Rtrn') {
-        stuffForMod = 'https://mr-funkinguy.github.io/RETURN-OF-GAR/';
-        alertt('This Mod Only Supports W, A, S, D Keys');
+        stuffForMod = 'https://mr-funkinguy.github.io/RETURN-OF-GAR/'
+        alertt('This Mod Only Supports W, A, S, D Keys')
       }
       if (Mod === 'idol') {
-        stuffForMod = 'https://mr-funkinguy.github.io/Super-Idol/';
+        stuffForMod = 'https://mr-funkinguy.github.io/Super-Idol/'
       }
       if (Mod === 'huggy') {
-        stuffForMod = 'https://mr-funkinguy.github.io/huggyyy/';
+        stuffForMod = 'https://mr-funkinguy.github.io/huggyyy/'
       }
       if (Mod === 'date') {
-        stuffForMod = 'https://mr-funkinguy.github.io/dw/';
+        stuffForMod = 'https://mr-funkinguy.github.io/dw/'
       }
 
       if (Mod === 'golf') {
-        stuffForMod = 'https://mr-funkinguy.github.io/GOLFFFFF/';
+        stuffForMod = 'https://mr-funkinguy.github.io/GOLFFFFF/'
       }
 
       if (Mod === 'EXE') {
-        stuffForMod = 'https://mr-funkinguy.github.io/SANIC/';
+        stuffForMod = 'https://mr-funkinguy.github.io/SANIC/'
       }
 
       if (Mod === 'Tabi') {
-        stuffForMod = 'https://mr-funkinguy.github.io/FNF-Tabi/';
+        stuffForMod = 'https://mr-funkinguy.github.io/FNF-Tabi/'
         alertt(
           'If you have epilepsy check setting and turn on photosensitive mode, because game contains flashes and other stuff that can trigger.'
-        );
+        )
       }
       if (Mod === 'zardy') {
-        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/zardy/';
+        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/zardy/'
       }
 
       if (Mod === 'sunday') {
-        stuffForMod = 'https://mr-funkinguy.github.io/sun.---dayyyy/';
-        alertt('This Mod Only Supports W, A, S, D Keys');
+        stuffForMod = 'https://mr-funkinguy.github.io/sun.---dayyyy/'
+        alertt('This Mod Only Supports W, A, S, D Keys')
       }
 
       if (Mod === 'dSides') {
-        stuffForMod = 'https://mr-funkinguy.github.io/noice/';
+        stuffForMod = 'https://mr-funkinguy.github.io/noice/'
       }
 
       if (Mod === 'CG5') {
-        stuffForMod = 'https://mr-funkinguy.github.io/FNF-CG5-Better-Ver/';
+        stuffForMod = 'https://mr-funkinguy.github.io/FNF-CG5-Better-Ver/'
       }
 
       if (Mod === 'tord') {
-        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/tord/';
+        stuffForMod = 'https://mr-funkinguy.github.io/funkymods/tord/'
       }
 
-      textElement.style.opacity = 0;
+      textElement.style.opacity = 0
 
       setTimeout(() => {
-        textElement.src = stuffForMod;
-        textElement.style.opacity = 1;
-      }, 500);
+        textElement.src = stuffForMod
+        textElement.style.opacity = 1
+      }, 500)
     }
 
     function alertt(msg) {
-      document.getElementById('AlertText').innerHTML = msg;
-      document.getElementById('AlertU').classList.add('showAlert');
+      document.getElementById('AlertText').innerHTML = msg
+      document.getElementById('AlertU').classList.add('showAlert')
 
-      document.getElementById('Alertt').style.visibility = 'visible';
+      document.getElementById('Alertt').style.visibility = 'visible'
       setTimeout(() => {
-        document.getElementById('Alertt').style.visibility = 'hidden';
-        document.getElementById('AlertU').classList.remove('showAlert');
-      }, 9900);
+        document.getElementById('Alertt').style.visibility = 'hidden'
+        document.getElementById('AlertU').classList.remove('showAlert')
+      }, 9900)
     }
 
-    var nothing = false;
-    var b = document.getElementById('Menu');
+    var nothing = false
+    var b = document.getElementById('Menu')
 
     b.addEventListener('mouseover', function (event) {
-      var hoveredElement = event.target;
-      var id = hoveredElement.id;
+      var hoveredElement = event.target
+      var id = hoveredElement.id
 
       //console.log("Hovered element ID: " + id);
       if (id === 'Menu' || id === 'CS') {
         if (nothing === true) {
-          document.getElementById('CS').innerHTML =
-            'Currently Selected: Nothing';
+          document.getElementById('CS').innerHTML = 'Currently Selected: Nothing'
         } else {
-          document.getElementById('CS').style.opacity = 0;
+          document.getElementById('CS').style.opacity = 0
 
           setTimeout(() => {
-            document.getElementById('CS').innerHTML =
-              'Currently Selected: Nothing';
+            document.getElementById('CS').innerHTML = 'Currently Selected: Nothing'
 
-            document.getElementById('CS').style.opacity = 1;
-          }, 300);
-          nothing = true;
+            document.getElementById('CS').style.opacity = 1
+          }, 300)
+          nothing = true
         }
       } else {
-        nothing = false;
+        nothing = false
 
-        document.getElementById('CS').style.opacity = 0;
+        document.getElementById('CS').style.opacity = 0
 
         setTimeout(() => {
-          document.getElementById('CS').innerHTML = 'Currently Selected: ' + id;
+          document.getElementById('CS').innerHTML = 'Currently Selected: ' + id
 
-          document.getElementById('CS').style.opacity = 1;
-        }, 300);
+          document.getElementById('CS').style.opacity = 1
+        }, 300)
       }
-    });
+    })
 
     document.body.onkeyup = function (e) {
       if (e.keyCode == 27) {
-        document.getElementById('game').style.width = '800px';
+        document.getElementById('game').style.width = '800px'
       }
-    };
+    }
 
     function requestFullScreen(element) {
       // Supports most browsers and their versions.
@@ -751,59 +696,55 @@
         element.requestFullScreen ||
         element.webkitRequestFullScreen ||
         element.mozRequestFullScreen ||
-        element.msRequestFullscreen;
+        element.msRequestFullscreen
 
       if (requestMethod) {
         // Native full screen.
-        requestMethod.call(element);
-        let hh = window.innerHeight - 10;
+        requestMethod.call(element)
+        let hh = window.innerHeight - 10
 
-        document.getElementById('game').height = hh;
+        document.getElementById('game').height = hh
       } else if (typeof window.ActiveXObject !== 'undefined') {
         // Older IE.
-        var wscript = new ActiveXObject('WScript.Shell');
+        var wscript = new ActiveXObject('WScript.Shell')
         if (wscript !== null) {
-          wscript.SendKeys('{F11}');
+          wscript.SendKeys('{F11}')
         }
       }
     }
-    var canvas = document.getElementById('game');
+    var canvas = document.getElementById('game')
 
     function makeFullScreen() {
-      requestFullScreen(canvas);
+      requestFullScreen(canvas)
     }
 
-    let hh = window.innerHeight - 0;
+    let hh = window.innerHeight - 0
 
-    document.getElementById('game').height = hh;
+    document.getElementById('game').height = hh
     window.onresize = function (event) {
-      let hh = window.innerHeight - 0;
+      let hh = window.innerHeight - 0
 
-      document.getElementById('game').height = hh;
-    };
+      document.getElementById('game').height = hh
+    }
     // Get the text element
-    var textElement = document.getElementById('game');
+    var textElement = document.getElementById('game')
 
     // Get the current URL
-    var currentUrl = new URL(window.location.href);
+    var currentUrl = new URL(window.location.href)
 
     // Check for the presence of the "text" parameter in the URL
     if (currentUrl.searchParams.has('game')) {
       // Set the text of the element to the value of the "text" parameter
-      textElement.src = currentUrl.searchParams.get('game');
+      textElement.src = currentUrl.searchParams.get('game')
     } else {
     }
 
     setInterval(() => {
-      if (
-        document
-          .getElementById('game')
-          .contentWindow.location.href.includes('https://ckf01.lancsd.org/')
-      ) {
-        textElement.src = currentUrl.searchParams.get('game');
+      if (document.getElementById('game').contentWindow.location.href.includes('https://ckf01.lancsd.org/')) {
+        textElement.src = currentUrl.searchParams.get('game')
       }
-    }, 1000);
+    }, 1000)
 
-    console.log(currentUrl.searchParams.get('game'));
+    console.log(currentUrl.searchParams.get('game'))
   </script>
 </html>
