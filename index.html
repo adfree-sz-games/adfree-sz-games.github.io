@@ -209,6 +209,31 @@
         right: 0;
         position: fixed;
       }
+      .discord-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: #5865f2;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        transition: transform 0.2s;
+      }
+
+      .discord-popup:hover {
+        transform: translateY(-2px);
+      }
+
+      .discord-popup i {
+        font-size: 24px;
+      }
     </style>
   </head>
 
@@ -663,12 +688,6 @@
       })
     </script>
 
-    <section class="sticky">
-      <footer class="press">
-        <a href="/press.html">Press</a>
-        <a href="https://t.me/s/spendelonmoney">SEM Telegram</a>
-      </footer>
-    </section>
     <script>
       document.addEventListener('alpine:init', () => {
         Alpine.data('games', () => ({
@@ -731,5 +750,9 @@
         }))
       })
     </script>
+    <a href="https://discord.gg/YVJDzyjV" target="_blank" class="discord-popup">
+      <i class="fab fa-discord"></i>
+      <span>Join our Discord!</span>
+    </a>
   </body>
 </html>
