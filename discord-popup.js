@@ -8,7 +8,7 @@ class DiscordPopup extends HTMLElement {
     style.textContent = `
       :host {
         position: fixed;
-        bottom: 20px;
+        bottom: 120px;
         left: 20px;
         z-index: 1000;
       }
