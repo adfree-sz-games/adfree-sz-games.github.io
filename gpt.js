@@ -125,3 +125,8 @@ googletag.cmd.push(function () {
   googletag.enableServices()
   googletag.display(interstitialSlot)
 })
+
+let script = document.createElement('script')
+script.async = true
+script.src = 'https://stpd.cloud/saas/8934'
+document.head.appendChild(script)
