@@ -14,6 +14,56 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
       crossorigin="anonymous"
     ></script>
+    <script src="https://stpd.cloud/assets/libraries/inview.min.js"></script>
+    <script>
+      inView.offset(-200)
+    </script>
+
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+    <script src="/gpt-loader.js"></script>
+
+    <style>
+      .ads {
+        text-align: center;
+      }
+      .side_ad_left {
+        top: 130px;
+        left: 0;
+        position: fixed;
+      }
+      .side_ad_right {
+        top: 130px;
+        right: 0;
+        position: fixed;
+      }
+      .discord-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: #5865f2;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        transition: transform 0.2s;
+      }
+
+      .discord-popup:hover {
+        transform: translateY(-2px);
+      }
+
+      .discord-popup i {
+        font-size: 24px;
+      }
+    </style>
+    <script src="/discord-popup.js"></script>
 
     <link rel="manifest" href="https://adfree-sz-games.github.io/manifest.json" />
 
@@ -340,68 +390,70 @@
         }
       </script>
     </div>
-  </body>
 
-  <script>
-    var isFUll = false
+    <script>
+      var isFUll = false
 
-    document.body.onkeyup = function (e) {
-      if (e.keyCode == 27) {
-        if (isFUll) {
-          //document.getElementById('game').style.width = '800px';
+      document.body.onkeyup = function (e) {
+        if (e.keyCode == 27) {
+          if (isFUll) {
+            //document.getElementById('game').style.width = '800px';
+          }
         }
       }
-    }
 
-    function requestFullScreen(element) {
-      // Supports most browsers and their versions.
-      var requestMethod =
-        element.requestFullScreen ||
-        element.webkitRequestFullScreen ||
-        element.mozRequestFullScreen ||
-        element.msRequestFullscreen
+      function requestFullScreen(element) {
+        // Supports most browsers and their versions.
+        var requestMethod =
+          element.requestFullScreen ||
+          element.webkitRequestFullScreen ||
+          element.mozRequestFullScreen ||
+          element.msRequestFullscreen
 
-      if (requestMethod) {
-        // Native full screen.
-        requestMethod.call(element)
-        let hh = window.innerHeight
+        if (requestMethod) {
+          // Native full screen.
+          requestMethod.call(element)
+          let hh = window.innerHeight
 
-        document.getElementById('game').height = hh
-      } else if (typeof window.ActiveXObject !== 'undefined') {
-        // Older IE.
-        var wscript = new ActiveXObject('WScript.Shell')
-        if (wscript !== null) {
-          wscript.SendKeys('{F11}')
+          document.getElementById('game').height = hh
+        } else if (typeof window.ActiveXObject !== 'undefined') {
+          // Older IE.
+          var wscript = new ActiveXObject('WScript.Shell')
+          if (wscript !== null) {
+            wscript.SendKeys('{F11}')
+          }
         }
       }
-    }
-    var canvas = document.getElementById('game')
+      var canvas = document.getElementById('game')
 
-    function makeFullScreen() {
-      isFUll = true
-      requestFullScreen(canvas)
-    }
+      function makeFullScreen() {
+        isFUll = true
+        requestFullScreen(canvas)
+      }
 
-    let hh = window.innerHeight
-
-    document.getElementById('game').height = hh
-    window.onresize = function (event) {
       let hh = window.innerHeight
 
       document.getElementById('game').height = hh
-    }
-    // Get the text element
-    var textElement = document.getElementById('game')
+      window.onresize = function (event) {
+        let hh = window.innerHeight
 
-    // Get the current URL
-    var currentUrl = new URL(window.location.href)
+        document.getElementById('game').height = hh
+      }
+      // Get the text element
+      var textElement = document.getElementById('game')
 
-    // Check for the presence of the "text" parameter in the URL
-    if (currentUrl.searchParams.has('game')) {
-      // Set the text of the element to the value of the "text" parameter
-      textElement.src = currentUrl.searchParams.get('game')
-    }
+      // Get the current URL
+      var currentUrl = new URL(window.location.href)
 
-    console.log(currentUrl.searchParams.get('game'))
-  </script>
+      // Check for the presence of the "text" parameter in the URL
+      if (currentUrl.searchParams.has('game')) {
+        // Set the text of the element to the value of the "text" parameter
+        textElement.src = currentUrl.searchParams.get('game')
+      }
+
+      console.log(currentUrl.searchParams.get('game'))
+    </script>
+    <discord-popup invite-url="https://discord.gg/YVJDzyjV" text="Join our Discord!"></discord-popup>
+    <script src="/div-loader.js"></script>
+  </body>
 </html>
