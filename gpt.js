@@ -161,7 +161,7 @@ let script = document.createElement('script')
 script.async = true
 script.src = 'https://stpd.cloud/saas/8934'
 document.head.appendChild(script)
-var gptLoaded = true
+window.gptLoaded = true
 console.log('gpt.js loaded')
 // emit the event
 document.dispatchEvent(new Event('gpt-loaded'))

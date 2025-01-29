@@ -162,6 +162,6 @@ script.async = true
 script.src = 'https://stpd.cloud/saas/9474'
 document.head.appendChild(script)
 console.log('gpt-sz-games.js loaded')
-var gptLoaded = true
+window.gptLoaded = true
 // emit the event
 document.dispatchEvent(new Event('gpt-loaded'))
