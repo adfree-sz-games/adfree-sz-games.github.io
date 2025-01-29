@@ -7,3 +7,4 @@ if (window.location.hostname === 'sz.games') {
   script.src = '/gpt.js'
   document.head.appendChild(script)
 }
+console.log('gpt-loader.js loaded')

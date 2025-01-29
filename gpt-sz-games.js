@@ -1,6 +1,37 @@
 window.googletag = window.googletag || {}
 googletag.cmd = googletag.cmd || []
 
+function giveReward() {
+  googletag.pubads().removeEventListener('rewardedSlotClosed', dismissReward)
+  loadGame()
+}
+
+function dismissReward(evt) {
+  googletag.destroySlots([evt.rewardedSlot])
+}
+
+function showAd() {
+  googletag.cmd.push(function () {
+    var rewardedSlot = googletag.defineOutOfPageSlot(
+      '/147246189,22921845643/sz.games_rewarded',
+      googletag.enums.OutOfPageFormat.REWARDED
+    )
+    if (rewardedSlot) {
+      rewardedSlot.addService(googletag.pubads())
+    }
+    googletag.pubads().addEventListener('rewardedSlotReady', function (evt) {
+      evt.makeRewardedVisible()
+    })
+    googletag.pubads().addEventListener('rewardedSlotClosed', dismissReward)
+    googletag.pubads().addEventListener('rewardedSlotGranted', function () {
+      giveReward()
+    })
+
+    googletag.display(rewardedSlot)
+    googletag.pubads().refresh([rewardedSlot])
+  })
+}
+
 googletag.cmd.push(function () {
   if (window.innerWidth >= 1200) {
     googletag
@@ -130,3 +161,7 @@ let script = document.createElement('script')
 script.async = true
 script.src = 'https://stpd.cloud/saas/9474'
 document.head.appendChild(script)
+console.log('gpt-sz-games.js loaded')
+var gptLoaded = true
+// emit the event
+document.dispatchEvent(new Event('gpt-loaded'))

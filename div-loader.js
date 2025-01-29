@@ -7,3 +7,4 @@ if (window.location.hostname === 'sz.games') {
   script.src = '/divs.js'
   document.body.appendChild(script)
 }
+console.log('div-loader.js loaded')

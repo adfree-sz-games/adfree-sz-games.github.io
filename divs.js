@@ -46,3 +46,4 @@ if (document.readyState === 'complete') {
 } else {
   window.addEventListener('load', createAdDivs)
 }
+console.log('divs.js loaded')
