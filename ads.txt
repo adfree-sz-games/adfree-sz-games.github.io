@@ -667,6 +667,10 @@ supply.colossusssp.com, 863, RESELLER
 xandr.com, 10490, RESELLER
 yieldmo.com, 3078438591206989879, RESELLER
 #360Playvid end
+# Nomade Lab
+nomadelab.com, 22921845643, DIRECT
+google.com, pub-2960795876206253, RESELLER, f08c47fec0942fa0
+# Nomade Lab end
 
 #Aniview
 aniview.com, 6790d84deebcdb6d320f0455, DIRECT, 78b21b97965ec3f8
