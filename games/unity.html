@@ -113,6 +113,7 @@
 
     if (currentUrl.searchParams.has('game')) {
       game = currentUrl.searchParams.get('game')
+      loadGame()
     }
 
     function requestFullScreen(element) {
@@ -147,13 +148,6 @@
       if (game) {
         textElement.src = game
       }
-    }
-    if (window.gptLoaded) {
-      showAd()
-    } else {
-      document.addEventListener('gpt-loaded', function () {
-        showAd()
-      })
     }
   </script>
 </html>
