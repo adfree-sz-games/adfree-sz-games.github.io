@@ -38,7 +38,7 @@ class DiscordPopup extends HTMLElement {
 
     const link = document.createElement('a')
     link.className = 'discord-popup'
-    link.href = this.getAttribute('invite-url') || 'https://discord.gg/YVJDzyjV'
+    link.href = this.getAttribute('invite-url') || 'https://discord.gg/XaEPUtUZ7G'
     link.target = '_blank'
 
     // Load Font Awesome if not already loaded
