@@ -9,10 +9,6 @@ function createAdDivs() {
       className: 'side_ad_right',
     },
     {
-      id: 'sz_games_anchor_top_responsive',
-      className: 'ads',
-    },
-    {
       id: 'sz_games_anchor_bottom_responsive',
       className: 'ads',
     },
