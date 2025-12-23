@@ -34,22 +34,7 @@ function showAd() {
 
 googletag.cmd.push(function () {
   if (window.innerWidth >= 1200) {
-    googletag
-      .defineSlot(
-        '/147246189,22921845643/adfree-sz-games.github.io_1000x100_desktop_anchor_top',
-        [
-          [1000, 100],
-          [970, 90],
-          [728, 90],
-          [990, 90],
-          [970, 50],
-          [960, 90],
-          [950, 90],
-          [980, 90],
-        ],
-        'adfree_sz_games_github_io_anchor_top_responsive'
-      )
-      .addService(googletag.pubads())
+
     googletag
       .defineSlot(
         '/147246189,22921845643/adfree-sz-games.github.io_1000x100_desktop_anchor_bottom',
@@ -91,22 +76,7 @@ googletag.cmd.push(function () {
       )
       .addService(googletag.pubads())
   } else if (window.innerWidth >= 1024) {
-    googletag
-      .defineSlot(
-        '/147246189,22921845643/adfree-sz-games.github.io_1000x100_desktop_anchor_top',
-        [
-          [1000, 100],
-          [970, 90],
-          [728, 90],
-          [990, 90],
-          [970, 50],
-          [960, 90],
-          [950, 90],
-          [980, 90],
-        ],
-        'adfree_sz_games_github_io_anchor_top_responsive'
-      )
-      .addService(googletag.pubads())
+
     googletag
       .defineSlot(
         '/147246189,22921845643/adfree-sz-games.github.io_1000x100_desktop_anchor_bottom',
