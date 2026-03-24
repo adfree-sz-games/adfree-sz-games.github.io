@@ -33,7 +33,14 @@
       <script async src="https://stpd.cloud/saas/8934"></script>
       <div id="adfree_sz_games_github_io_sidebar_left_desktop">
         <script>
-          googletag.cmd.push(function() { googletag.display('adfree_sz_games_github_io_sidebar_left_desktop'); });
+          googletag.cmd.push(function() { 
+            googletag.display('adfree_sz_games_github_io_sidebar_left_desktop'); 
+            setInterval(function() {
+              if (document.visibilityState === 'visible') {
+                googletag.pubads().refresh();
+              }
+            }, 30000);
+          });
         </script>
       </div>
     </div> 
