@@ -18,6 +18,11 @@
   </head>
   <body>
     <div style="max-width: 300px; height: 250px; max-height: 250px; overflow: hidden; margin: 0;">
+      <script>
+        // Prevent Google Ad Manager / Funding Choices from showing offerwalls in this standalone frame
+        window.googlefc = window.googlefc || {};
+        window.googlefc.controlledMessagingApplies = false;
+      </script>
       <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
       <script>
         window.googletag = window.googletag || {};
