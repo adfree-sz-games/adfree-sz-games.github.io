@@ -2,11 +2,16 @@
 var blockedPatterns = [];
 
 // Load the text file containing blocked patterns
-fetch('/dev/.txt')
+fetch('/dev/ad2.txt')
   .then((response) => response.text())
   .then((data) => {
-    // Split the text file content into an array of patterns
-    blockedPatterns = data.split('\n');
+    // Split the text file content into an array of patterns,
+    // skipping blank lines (e.g. the trailing newline) so an empty
+    // pattern can never match every element on the page.
+    blockedPatterns = data
+      .split('\n')
+      .map((line) => line.trim())
+      .filter((line) => line !== '');
 
     // Remove elements matching blocked patterns
     blockedPatterns.forEach((pattern) => {
