@@ -520,6 +520,8 @@ smartadserver.com, 5302, RESELLER, 060d053dcf45cbf3
 360playvid.com, 22921845643, DIRECT
 smartadline.com, 22921845643, DIRECT
 zippormedia.com, 22921845643, DIRECT
+datammatic.com, 22921845643, DIRECT
+google.com, pub-6106740322220497, RESELLER, f08c47fec0942fa0
 #Amazon Dor
 aps.amazon.com,d4004b5f-4fb6-4be2-82ae-0e36b8f52c12,RESELLER
 pubmatic.com,157150,RESELLER,5d62403b186f2ace
